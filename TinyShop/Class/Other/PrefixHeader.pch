@@ -1,0 +1,19 @@
+//
+//  PrefixHeader.pch
+//  TinyShop
+//
+//  Created by 曹晓东 on 2016/12/21.
+//  Copyright © 2016年 CXD. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Masonry.h"
+
+
+
+#define SCREEN_W [UIScreen mainScreen].bounds.size.width
+#define SCREEN_H [UIScreen mainScreen].bounds.size.height
+
+#endif /* PrefixHeader_pch */
