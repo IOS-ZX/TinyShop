@@ -97,6 +97,13 @@
 		1D5B66AE1E0A19D900606F86 /* TinyShop */ = {
 			isa = PBXGroup;
 			children = (
+				245083BE1E0B660C006DE0D4 /* Home */,
+				245083BF1E0B660C006DE0D4 /* Main */,
+				245083B91E0B65FD006DE0D4 /* 时段收入 */,
+				245083BA1E0B65FD006DE0D4 /* 日常运营 */,
+				245083BB1E0B65FD006DE0D4 /* 历史记录 */,
+				245083BC1E0B65FD006DE0D4 /* 商品运营 */,
+				245083BD1E0B65FD006DE0D4 /* 会员信息 */,
 				1D5B66C61E0A1C5500606F86 /* Class */,
 				1D5B66B81E0A19D900606F86 /* Main.storyboard */,
 				1D5B66BB1E0A19D900606F86 /* Assets.xcassets */,
@@ -208,6 +215,55 @@
 				1DE8131C1E0A544000784636 /* ViewController+MASAdditions.m */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		245083B91E0B65FD006DE0D4 /* 时段收入 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "时段收入";
+			sourceTree = "<group>";
+		};
+		245083BA1E0B65FD006DE0D4 /* 日常运营 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "日常运营";
+			sourceTree = "<group>";
+		};
+		245083BB1E0B65FD006DE0D4 /* 历史记录 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "历史记录";
+			sourceTree = "<group>";
+		};
+		245083BC1E0B65FD006DE0D4 /* 商品运营 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "商品运营";
+			sourceTree = "<group>";
+		};
+		245083BD1E0B65FD006DE0D4 /* 会员信息 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "会员信息";
+			sourceTree = "<group>";
+		};
+		245083BE1E0B660C006DE0D4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		245083BF1E0B660C006DE0D4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
