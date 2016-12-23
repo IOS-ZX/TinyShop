@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "LoginControl.h"
 
 
 @interface LoginViewController ()
@@ -40,7 +39,7 @@
 @property(nonatomic,strong)UITextField    *pwdTextField;
 
 /** 密码线条 **/
-@property(nonatomic,strong)UIView    *pwdView;
+@property(nonatomic,strong)UIImageView    *pwdImageView;
 
 /** 可见button **/
 @property(nonatomic,strong)UIButton    *visibleBtn;
@@ -111,96 +110,11 @@
     
     // ------工号线条
     [self.numView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(SCREEN_W * 0.857, 2));
+        make.size.mas_equalTo(CGSizeMake(SCREEN_W * 0.857, 1));
         make.left.equalTo(self.view.mas_left).offset(SCREEN_W * 0.071);
         make.top.equalTo(self.numberTextField.mas_bottom).offset(SCREEN_W * 0.0214);
     }];
-    // 密码label
-    [self.pwdLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.equalTo(self.numberLabel);
-        make.left.equalTo(self.numberLabel.mas_left);
-        make.top.equalTo(self.numberTextField.mas_bottom).offset(SCREEN_W * 0.0964);
-    }];
-    // 密码输入
-    [self.pwdTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.equalTo(self.numberTextField);
-        make.left.equalTo(self.numberTextField.mas_left);
-        make.top.equalTo(self.numberTextField.mas_bottom).offset(SCREEN_W * 0.0964);
-    }];
-    //底部线条
-    [self.pwdView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.equalTo(self.numView);
-        make.left.equalTo(self.numView.mas_left);
-        make.top.equalTo(self.pwdTextField.mas_bottom).offset(SCREEN_W * 0.0214);
-    }];
-    //记住密码按钮
-    [self.rememberBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(25, 30));
-        make.right.equalTo(self.pwdTextField.mas_right);
-        make.top.equalTo(self.pwdView.mas_bottom).offset(15);
-    }];
-    //记住密码lebel
-    [self.rememberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(80, 30));
-        make.right.equalTo(self.rememberBtn.mas_left).offset(-10);
-        make.centerY.equalTo(self.rememberBtn.mas_centerY);
-    }];
-    //登录按钮
-    [self.loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(self.numView.mas_width);
-        make.height.mas_equalTo(50);
-        make.centerX.equalTo(self.view);
-        make.top.equalTo(self.rememberLabel.mas_bottom).offset(30);
-    }];
-}
-
-- (void)showPassword:(UIButton *)sender{
-    self.pwdTextField.secureTextEntry = sender.selected;
-    sender.selected = !sender.selected;
-}
-
-- (void)rememberPwd:(UIButton *)sender{
-    sender.selected = !sender.selected;
-}
-
-- (void)login:(UIButton *)sender{
-    [self loginInfo];
-    NSDictionary *parameters = @{@"shop_account":self.storeTextField.text,@"user_account":self.numberTextField.text,@"user_password":self.pwdTextField.text};
-    [LoginControl userLogin:parameters response:^(id result, NSError *error) {
-        if (error) {
-            
-        }else{
-            [self.view removeFromSuperview];
-            [self removeFromParentViewController];
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"loginSuccess" object:nil];
-        }
-    }];
-}
-
-- (void)loginInfo{
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    if (self.rememberBtn.selected) {
-        [ud setObject:self.storeTextField.text forKey:@"shop_account"];
-        [ud setObject:self.numberTextField.text forKey:@"user_account"];
-        [ud setObject:self.pwdTextField.text forKey:@"user_password"];
-        [ud setObject:@1 forKey:@"isRemember"];
-    }else{
-        [ud setObject:NULL forKey:@"shop_account"];
-        [ud setObject:NULL forKey:@"user_account"];
-        [ud setObject:NULL forKey:@"user_password"];
-        [ud setObject:@0 forKey:@"isRemember"];
-    }
-}
-
-- (void)readLoginInfo{
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    NSNumber *num = [ud objectForKey:@"isRemember"];
-    if (num.integerValue == 1) {
-        self.storeTextField.text = [ud objectForKey:@"shop_account"];
-        self.numberTextField.text = [ud objectForKey:@"user_account"];
-        self.pwdTextField.text = [ud objectForKey:@"user_password"];
-        self.rememberBtn.selected = YES;
-    }
+    
 }
 
 #pragma mark -- 懒加载
@@ -220,7 +134,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self initializeDataSource];
     [self initilizeInterface];
-    [self readLoginInfo];
 
 }
 
@@ -285,6 +198,7 @@
         _numberTextField = [[UITextField alloc] initWithFrame:CGRectZero];
         _numberTextField.borderStyle = UITextBorderStyleNone;
         _numberTextField.clearButtonMode = UITextFieldViewModeAlways;
+        _numberTextField.secureTextEntry = YES;
         _numberTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
         _numberTextField.textColor = [UIColor colorWithRed:229/255.0 green:60/255.0 blue:53/255.0 alpha:1];
         
@@ -298,85 +212,15 @@
     if (!_numView) {
         _numView = [[UIView alloc] initWithFrame:CGRectZero];
         _numView.backgroundColor = [UIColor colorWithRed:229/255.0 green:60/255.0 blue:53/255.0 alpha:1];
+        
         [self.view addSubview:_numView];
     }
     return _numView;
 }
 
-- (UILabel *)pwdLabel{
-    if (!_pwdLabel) {
-        _pwdLabel = [UILabel new];
-        _pwdLabel.font = self.numberLabel.font;
-        _pwdLabel.textColor = self.numberLabel.textColor;
-        _pwdLabel.text = @"密码:";
-        [self.view addSubview:_pwdLabel];
-    }
-    return _pwdLabel;
-}
-
-- (UIButton *)visibleBtn{
-    if (!_visibleBtn) {
-        _visibleBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 40)];
-        [_visibleBtn setImage:[UIImage imageNamed:@"隐藏密码图标"] forState:UIControlStateNormal];
-        [_visibleBtn setImage:[UIImage imageNamed:@"显示密码图标"] forState:UIControlStateSelected];
-        [_visibleBtn addTarget:self action:@selector(showPassword:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _visibleBtn;
-}
-
-- (UITextField *)pwdTextField{
-    if (!_pwdTextField) {
-        _pwdTextField = [UITextField new];
-        _pwdTextField.rightViewMode = UITextFieldViewModeAlways;
-        _pwdTextField.rightView = self.visibleBtn;
-        _pwdTextField.secureTextEntry = YES;
-        _pwdTextField.textColor = self.numberTextField.textColor;
-        [self.view addSubview:_pwdTextField];
-    }
-    return _pwdTextField;
-}
 
 
-- (UIView *)pwdView{
-    if (!_pwdView) {
-        _pwdView = [UIView new];
-        _pwdView.backgroundColor = self.numView.backgroundColor;
-        [self.view addSubview:_pwdView];
-    }
-    return _pwdView;
-}
 
-- (UILabel *)rememberLabel{
-    if (!_rememberLabel) {
-        _rememberLabel = [UILabel new];
-        _rememberLabel.text = @"记住密码";
-        _rememberLabel.textColor = [UIColor grayColor];
-        _rememberLabel.font = [UIFont systemFontOfSize:16];
-        _rememberLabel.textAlignment = NSTextAlignmentCenter;
-        [self.view addSubview:_rememberLabel];
-    }
-    return _rememberLabel;
-}
 
-- (UIButton *)rememberBtn{
-    if (!_rememberBtn) {
-        _rememberBtn = [UIButton new];
-        [_rememberBtn setImage:[UIImage imageNamed:@"记住密码框"] forState:UIControlStateNormal];
-        [_rememberBtn setImage:[UIImage imageNamed:@"记住密码"] forState:UIControlStateSelected];
-        [_rememberBtn addTarget:self action:@selector(rememberPwd:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:_rememberBtn];
-    }
-    return _rememberBtn;
-}
-
-- (UIButton *)loginBtn{
-    if (!_loginBtn) {
-        _loginBtn = [UIButton new];
-        [_loginBtn setImage:[UIImage imageNamed:@"登录按钮-"] forState:UIControlStateNormal];
-        [_loginBtn addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:_loginBtn];
-    }
-    return _loginBtn;
-}
 
 @end
