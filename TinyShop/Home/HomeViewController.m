@@ -45,6 +45,7 @@
     self.navigationItem.leftBarButtonItem = menu;
     UIBarButtonItem *exit = [[UIBarButtonItem alloc]initWithTitle:@"注销" style:UIBarButtonItemStyleDone target:self action:@selector(userExit)];
     self.navigationItem.rightBarButtonItem = exit;
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:FONT(17)]} forState:UIControlStateNormal];
     self.view.layer.shadowColor = [UIColor blackColor].CGColor;
     self.view.layer.shadowRadius = 2;
     _touchView = [[UIView alloc]initWithFrame:self.view.bounds];
@@ -111,7 +112,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    return SCREEN_W * 0.275;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

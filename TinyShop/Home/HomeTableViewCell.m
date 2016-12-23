@@ -35,7 +35,7 @@
     _label2 = [[UILabel alloc]initWithFrame:CGRectMake(50+SCREENWIDTH*0.05, 50, SCREENWIDTH*0.4, 50)];
     _label3 = [[UILabel alloc]initWithFrame:CGRectMake(30+SCREENWIDTH*0.45, 50, SCREENWIDTH*0.2, 50)];
     _rightImage = [[UIImageView alloc]initWithFrame:CGRectMake(30+SCREENWIDTH*0.75, 30, 40, 40)];
-    _label1.font = [UIFont systemFontOfSize:20 weight:3];
+    _label1.font = [UIFont systemFontOfSize:FONT(20) weight:1];
     _label1.textColor = [UIColor blackColor];
     _label2.font = [UIFont systemFontOfSize:14 weight:1];
     _label2.textColor = [UIColor lightGrayColor];

@@ -11,6 +11,8 @@
 #import "BaseUINavigationController.h"
 #import "DrawerCell.h"
 
+
+
 @interface DrawerViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSArray *_icons;
@@ -42,10 +44,11 @@
 - (void)initView{
     self.view.backgroundColor = [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _headView = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width * 0.5, 80)];
+    _headView = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W * 0.5, 80)];
     _headView.backgroundColor = self.view.backgroundColor;
-    _headView.text = @"\t云迈天行特色火锅";
-    _headView.font = [UIFont systemFontOfSize:24];
+    _headView.text = @"云迈天行特色火锅";
+    _headView.textAlignment = NSTextAlignmentCenter;
+    _headView.font = [UIFont systemFontOfSize:FONT(24) weight:1];
 }
 
 /** 初始化主界面 **/
@@ -97,7 +100,7 @@
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W/3 *2, SCREEN_H)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.backgroundColor = self.view.backgroundColor;

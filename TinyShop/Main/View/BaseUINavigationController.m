@@ -18,6 +18,7 @@
     [super viewDidLoad];
     [self.navigationBar setTintColor:[UIColor redColor]];
     [self.navigationBar setBarTintColor:[UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1]];
+    [self.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:FONT(17)]}];
 }
 
 @end

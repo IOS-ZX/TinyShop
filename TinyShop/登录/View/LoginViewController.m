@@ -75,7 +75,7 @@
     
     // ------店铺label约束
     [self.storeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(SCREEN_W * 0.157, 20));
+        make.size.mas_equalTo(CGSizeMake(60, 20));
         make.left.equalTo(self.view.mas_left).offset(SCREEN_W * 0.1285);
         make.top.equalTo(self.view.mas_top).offset(SCREEN_W * 0.75);
     }];
@@ -97,7 +97,7 @@
     
     // ------工号约束
     [self.numberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(SCREEN_W * 0.157, 20));
+        make.size.mas_equalTo(CGSizeMake(60, 20));
         make.left.equalTo(self.view.mas_left).offset(SCREEN_W * 0.1285);
         make.top.equalTo(self.storeView.mas_bottom).offset(SCREEN_W * 0.0964);
     }];
