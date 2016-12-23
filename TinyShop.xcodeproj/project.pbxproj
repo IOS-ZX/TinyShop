@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0439F7DD1E0CC16A009309E3 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439F7DC1E0CC16A009309E3 /* HomeTableViewCell.m */; };
+		0439F7E01E0CC24D009309E3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439F7DF1E0CC24D009309E3 /* HomeViewController.m */; };
 		1D4F30E31E0A2C6F00C029E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F30E21E0A2C6F00C029E0 /* ViewController.m */; };
 		1D5B66BA1E0A19D900606F86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B66B81E0A19D900606F86 /* Main.storyboard */; };
 		1D5B66BC1E0A19D900606F86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B66BB1E0A19D900606F86 /* Assets.xcassets */; };
@@ -40,6 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0439F7DB1E0CC16A009309E3 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		0439F7DC1E0CC16A009309E3 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		0439F7DE1E0CC24D009309E3 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		0439F7DF1E0CC24D009309E3 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		1D4F30E11E0A2C6F00C029E0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1D4F30E21E0A2C6F00C029E0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1D5B66AC1E0A19D900606F86 /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +125,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0439F7DA1E0CC149009309E3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0439F7DE1E0CC24D009309E3 /* HomeViewController.h */,
+				0439F7DF1E0CC24D009309E3 /* HomeViewController.m */,
+				0439F7DB1E0CC16A009309E3 /* HomeTableViewCell.h */,
+				0439F7DC1E0CC16A009309E3 /* HomeTableViewCell.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		147DF3733EA4BB795BE430CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,8 +165,8 @@
 		1D5B66AE1E0A19D900606F86 /* TinyShop */ = {
 			isa = PBXGroup;
 			children = (
+				0439F7DA1E0CC149009309E3 /* Home */,
 				245083D41E0B9911006DE0D4 /* 登录 */,
-				245083BE1E0B660C006DE0D4 /* Home */,
 				245083BF1E0B660C006DE0D4 /* Main */,
 				245083B91E0B65FD006DE0D4 /* 时段收入 */,
 				245083BA1E0B65FD006DE0D4 /* 日常运营 */,
@@ -298,13 +315,6 @@
 			children = (
 			);
 			path = "会员信息";
-			sourceTree = "<group>";
-		};
-		245083BE1E0B660C006DE0D4 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		245083BF1E0B660C006DE0D4 /* Main */ = {
@@ -567,6 +577,8 @@
 				1D4F30E31E0A2C6F00C029E0 /* ViewController.m in Sources */,
 				1D5B66CF1E0A1C5500606F86 /* AppDelegate.m in Sources */,
 				245083EB1E0B9E53006DE0D4 /* DrawerViewController.m in Sources */,
+				0439F7DD1E0CC16A009309E3 /* HomeTableViewCell.m in Sources */,
+				0439F7E01E0CC24D009309E3 /* HomeViewController.m in Sources */,
 				245083DE1E0B9A1C006DE0D4 /* LoginViewController.m in Sources */,
 				1DE8131F1E0A544000784636 /* MASCompositeConstraint.m in Sources */,
 				1DE813261E0A544000784636 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
