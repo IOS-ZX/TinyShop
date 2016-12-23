@@ -30,7 +30,6 @@
 		245083E11E0B9A45006DE0D4 /* LoginControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083E01E0B9A45006DE0D4 /* LoginControl.m */; };
 		245083EA1E0B9E53006DE0D4 /* BaseUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083E51E0B9E53006DE0D4 /* BaseUINavigationController.m */; };
 		245083EB1E0B9E53006DE0D4 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083E71E0B9E53006DE0D4 /* DrawerViewController.m */; };
-		245083EC1E0B9E53006DE0D4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083E91E0B9E53006DE0D4 /* MainViewController.m */; };
 		245083F11E0B9EA0006DE0D4 /* DrawerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083EF1E0B9EA0006DE0D4 /* DrawerCell.m */; };
 		245083F21E0B9EA0006DE0D4 /* DrawerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 245083F01E0B9EA0006DE0D4 /* DrawerCell.xib */; };
 		2450843E1E0BC62A006DE0D4 /* TQConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084351E0BC62A006DE0D4 /* TQConst.m */; };
@@ -93,8 +92,6 @@
 		245083E51E0B9E53006DE0D4 /* BaseUINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUINavigationController.m; sourceTree = "<group>"; };
 		245083E61E0B9E53006DE0D4 /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
 		245083E71E0B9E53006DE0D4 /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
-		245083E81E0B9E53006DE0D4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		245083E91E0B9E53006DE0D4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		245083EE1E0B9EA0006DE0D4 /* DrawerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerCell.h; sourceTree = "<group>"; };
 		245083EF1E0B9EA0006DE0D4 /* DrawerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerCell.m; sourceTree = "<group>"; };
 		245083F01E0B9EA0006DE0D4 /* DrawerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerCell.xib; sourceTree = "<group>"; };
@@ -398,8 +395,6 @@
 				245083E51E0B9E53006DE0D4 /* BaseUINavigationController.m */,
 				245083E61E0B9E53006DE0D4 /* DrawerViewController.h */,
 				245083E71E0B9E53006DE0D4 /* DrawerViewController.m */,
-				245083E81E0B9E53006DE0D4 /* MainViewController.h */,
-				245083E91E0B9E53006DE0D4 /* MainViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -558,7 +553,6 @@
 				1DE813211E0A544000784636 /* MASConstraintMaker.m in Sources */,
 				2450843E1E0BC62A006DE0D4 /* TQConst.m in Sources */,
 				1D5B66D11E0A1C5500606F86 /* main.m in Sources */,
-				245083EC1E0B9E53006DE0D4 /* MainViewController.m in Sources */,
 				1DE813201E0A544000784636 /* MASConstraint.m in Sources */,
 				245084441E0BC65E006DE0D4 /* NetTool.m in Sources */,
 				1DE813281E0A544000784636 /* ViewController+MASAdditions.m in Sources */,

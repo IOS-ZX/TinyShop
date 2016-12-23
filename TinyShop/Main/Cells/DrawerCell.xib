@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,11 +17,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hph-rG-iZl">
-                        <rect key="frame" x="17" y="19" width="40" height="40"/>
+                        <rect key="frame" x="17" y="19" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="g7B-k1-tJj"/>
                             <constraint firstAttribute="width" constant="40" id="iiz-mG-JKr"/>
@@ -39,12 +40,12 @@
                         </variation>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="cell" text="进货管理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9W-bk-pND">
-                        <rect key="frame" x="88" y="29" width="108" height="21"/>
+                        <rect key="frame" x="108" y="29" width="108" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="108" id="jIR-9s-u5C"/>
                             <constraint firstAttribute="height" constant="21" id="kB6-xT-Ukb"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
                         <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
@@ -65,7 +66,7 @@
                     <constraint firstItem="C9W-bk-pND" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="L20-kr-d3K"/>
                     <constraint firstItem="Hph-rG-iZl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NNg-PM-SVP"/>
                     <constraint firstItem="Hph-rG-iZl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="ODV-tz-MS2"/>
-                    <constraint firstItem="C9W-bk-pND" firstAttribute="leading" secondItem="Hph-rG-iZl" secondAttribute="trailing" constant="20" id="iag-JT-l3K"/>
+                    <constraint firstItem="C9W-bk-pND" firstAttribute="leading" secondItem="Hph-rG-iZl" secondAttribute="trailing" constant="40" id="iag-JT-l3K"/>
                 </constraints>
                 <variation key="default">
                     <mask key="subviews">

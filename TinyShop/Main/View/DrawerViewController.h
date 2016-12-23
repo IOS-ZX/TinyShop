@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DrawerViewController : UITableViewController
+@interface DrawerViewController : UIViewController
 
 @end
