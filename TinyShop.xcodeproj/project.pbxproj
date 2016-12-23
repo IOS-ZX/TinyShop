@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0439F7D31E0CB198009309E3 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439F7D21E0CB198009309E3 /* HomeTableViewCell.m */; };
+		0439F7D61E0CB24D009309E3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439F7D51E0CB24D009309E3 /* HomeViewController.m */; };
 		1D4F30E31E0A2C6F00C029E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F30E21E0A2C6F00C029E0 /* ViewController.m */; };
 		1D5B66BA1E0A19D900606F86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B66B81E0A19D900606F86 /* Main.storyboard */; };
 		1D5B66BC1E0A19D900606F86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B66BB1E0A19D900606F86 /* Assets.xcassets */; };
@@ -40,6 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0439F7D11E0CB198009309E3 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		0439F7D21E0CB198009309E3 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		0439F7D41E0CB24D009309E3 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		0439F7D51E0CB24D009309E3 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		1D4F30E11E0A2C6F00C029E0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1D4F30E21E0A2C6F00C029E0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1D5B66AC1E0A19D900606F86 /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,12 +125,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< Updated upstream
 		147DF3733EA4BB795BE430CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */,
 			);
 			name = Frameworks;
+=======
+		0439F7D01E0CB0E8009309E3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0439F7D41E0CB24D009309E3 /* HomeViewController.h */,
+				0439F7D51E0CB24D009309E3 /* HomeViewController.m */,
+				0439F7D11E0CB198009309E3 /* HomeTableViewCell.h */,
+				0439F7D21E0CB198009309E3 /* HomeTableViewCell.m */,
+			);
+			path = Home;
+>>>>>>> Stashed changes
 			sourceTree = "<group>";
 		};
 		1D5B66A31E0A19D900606F86 = {
@@ -148,8 +166,12 @@
 		1D5B66AE1E0A19D900606F86 /* TinyShop */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< Updated upstream
 				245083D41E0B9911006DE0D4 /* 登录 */,
 				245083BE1E0B660C006DE0D4 /* Home */,
+=======
+				0439F7D01E0CB0E8009309E3 /* Home */,
+>>>>>>> Stashed changes
 				245083BF1E0B660C006DE0D4 /* Main */,
 				245083B91E0B65FD006DE0D4 /* 时段收入 */,
 				245083BA1E0B65FD006DE0D4 /* 日常运营 */,
@@ -298,13 +320,6 @@
 			children = (
 			);
 			path = "会员信息";
-			sourceTree = "<group>";
-		};
-		245083BE1E0B660C006DE0D4 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		245083BF1E0B660C006DE0D4 /* Main */ = {
@@ -546,7 +561,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DE813211E0A544000784636 /* MASConstraintMaker.m in Sources */,
+<<<<<<< Updated upstream
 				2450843E1E0BC62A006DE0D4 /* TQConst.m in Sources */,
+=======
+				1DE470121E0A31E500AFB742 /* LoginViewController.m in Sources */,
+				0439F7D31E0CB198009309E3 /* HomeTableViewCell.m in Sources */,
+>>>>>>> Stashed changes
 				1D5B66D11E0A1C5500606F86 /* main.m in Sources */,
 				245083EC1E0B9E53006DE0D4 /* MainViewController.m in Sources */,
 				1DE813201E0A544000784636 /* MASConstraint.m in Sources */,
@@ -557,8 +577,12 @@
 				245084491E0BC6D6006DE0D4 /* ShopModel.m in Sources */,
 				245083D81E0B99AD006DE0D4 /* NSString+MD5.m in Sources */,
 				1DE813221E0A544000784636 /* MASLayoutConstraint.m in Sources */,
+<<<<<<< Updated upstream
 				245083F11E0B9EA0006DE0D4 /* DrawerCell.m in Sources */,
 				2450843F1E0BC62A006DE0D4 /* MBProgressHUD+MJ.m in Sources */,
+=======
+				0439F7D61E0CB24D009309E3 /* HomeViewController.m in Sources */,
+>>>>>>> Stashed changes
 				1DE813251E0A544000784636 /* NSArray+MASAdditions.m in Sources */,
 				2450844A1E0BC6D6006DE0D4 /* UserInstance.m in Sources */,
 				1DE813241E0A544000784636 /* MASViewConstraint.m in Sources */,
