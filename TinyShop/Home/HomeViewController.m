@@ -42,6 +42,8 @@
     self.view.layer.shadowRadius = 2;
     _touchView = [[UIView alloc]initWithFrame:self.view.bounds];
     _touchView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0];
+    
+    [[UIBarButtonItem appearance]setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -70) forBarMetrics:UIBarMetricsDefault];
 }
 
 /** 注销 **/

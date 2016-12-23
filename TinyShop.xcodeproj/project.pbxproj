@@ -41,6 +41,11 @@
 		245084521E0CD65D006DE0D4 /* NSString+Width.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084511E0CD65D006DE0D4 /* NSString+Width.m */; };
 		245084591E0CF05B006DE0D4 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084571E0CF05B006DE0D4 /* TestViewController.m */; };
 		2450845A1E0CF05B006DE0D4 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 245084581E0CF05B006DE0D4 /* TestViewController.xib */; };
+		245084851E0D3F33006DE0D4 /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084841E0D3F33006DE0D4 /* UserTableViewController.m */; };
+		245084881E0D3F5D006DE0D4 /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084871E0D3F5D006DE0D4 /* HistoryTableViewController.m */; };
+		2450848B1E0D3F90006DE0D4 /* GoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2450848A1E0D3F90006DE0D4 /* GoodsViewController.m */; };
+		2450848E1E0D3FAD006DE0D4 /* DailyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2450848D1E0D3FAD006DE0D4 /* DailyViewController.m */; };
+		245084911E0D3FF4006DE0D4 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084901E0D3FF4006DE0D4 /* TimeViewController.m */; };
 		ABE5B94AF12294997B7ECB53 /* libPods-TinyShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +121,16 @@
 		245084561E0CF05B006DE0D4 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		245084571E0CF05B006DE0D4 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		245084581E0CF05B006DE0D4 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		245084831E0D3F33006DE0D4 /* UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewController.h; sourceTree = "<group>"; };
+		245084841E0D3F33006DE0D4 /* UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
+		245084861E0D3F5D006DE0D4 /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
+		245084871E0D3F5D006DE0D4 /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
+		245084891E0D3F90006DE0D4 /* GoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsViewController.h; sourceTree = "<group>"; };
+		2450848A1E0D3F90006DE0D4 /* GoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsViewController.m; sourceTree = "<group>"; };
+		2450848C1E0D3FAD006DE0D4 /* DailyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyViewController.h; sourceTree = "<group>"; };
+		2450848D1E0D3FAD006DE0D4 /* DailyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyViewController.m; sourceTree = "<group>"; };
+		2450848F1E0D3FF4006DE0D4 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
+		245084901E0D3FF4006DE0D4 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
 		58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TinyShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A505FFF64C656988E6161E /* Pods-TinyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.release.xcconfig"; sourceTree = "<group>"; };
 		B427A3F2277ECC111D854335 /* Pods-TinyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,14 +188,14 @@
 		1D5B66AE1E0A19D900606F86 /* TinyShop */ = {
 			isa = PBXGroup;
 			children = (
+				2450847E1E0D3EF6006DE0D4 /* 会员信息 */,
+				2450847F1E0D3EF6006DE0D4 /* 历史记录 */,
+				245084801E0D3EF6006DE0D4 /* 商品运营 */,
+				245084811E0D3EF6006DE0D4 /* 日常运营 */,
+				245084821E0D3EF6006DE0D4 /* 时段收入 */,
 				0439F7DA1E0CC149009309E3 /* Home */,
 				245083D41E0B9911006DE0D4 /* 登录 */,
 				245083BF1E0B660C006DE0D4 /* Main */,
-				245083B91E0B65FD006DE0D4 /* 时段收入 */,
-				245083BA1E0B65FD006DE0D4 /* 日常运营 */,
-				245083BB1E0B65FD006DE0D4 /* 历史记录 */,
-				245083BC1E0B65FD006DE0D4 /* 商品运营 */,
-				245083BD1E0B65FD006DE0D4 /* 会员信息 */,
 				1D5B66C61E0A1C5500606F86 /* Class */,
 				1D5B66B81E0A19D900606F86 /* Main.storyboard */,
 				1D5B66BB1E0A19D900606F86 /* Assets.xcassets */,
@@ -291,41 +306,6 @@
 				A6A505FFF64C656988E6161E /* Pods-TinyShop.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		245083B91E0B65FD006DE0D4 /* 时段收入 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "时段收入";
-			sourceTree = "<group>";
-		};
-		245083BA1E0B65FD006DE0D4 /* 日常运营 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "日常运营";
-			sourceTree = "<group>";
-		};
-		245083BB1E0B65FD006DE0D4 /* 历史记录 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "历史记录";
-			sourceTree = "<group>";
-		};
-		245083BC1E0B65FD006DE0D4 /* 商品运营 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "商品运营";
-			sourceTree = "<group>";
-		};
-		245083BD1E0B65FD006DE0D4 /* 会员信息 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "会员信息";
 			sourceTree = "<group>";
 		};
 		245083BF1E0B660C006DE0D4 /* Main */ = {
@@ -443,6 +423,51 @@
 				245084381E0BC62A006DE0D4 /* MBProgressHUD+MJ.m */,
 			);
 			path = MJ;
+			sourceTree = "<group>";
+		};
+		2450847E1E0D3EF6006DE0D4 /* 会员信息 */ = {
+			isa = PBXGroup;
+			children = (
+				245084831E0D3F33006DE0D4 /* UserTableViewController.h */,
+				245084841E0D3F33006DE0D4 /* UserTableViewController.m */,
+			);
+			path = "会员信息";
+			sourceTree = "<group>";
+		};
+		2450847F1E0D3EF6006DE0D4 /* 历史记录 */ = {
+			isa = PBXGroup;
+			children = (
+				245084861E0D3F5D006DE0D4 /* HistoryTableViewController.h */,
+				245084871E0D3F5D006DE0D4 /* HistoryTableViewController.m */,
+			);
+			path = "历史记录";
+			sourceTree = "<group>";
+		};
+		245084801E0D3EF6006DE0D4 /* 商品运营 */ = {
+			isa = PBXGroup;
+			children = (
+				245084891E0D3F90006DE0D4 /* GoodsViewController.h */,
+				2450848A1E0D3F90006DE0D4 /* GoodsViewController.m */,
+			);
+			path = "商品运营";
+			sourceTree = "<group>";
+		};
+		245084811E0D3EF6006DE0D4 /* 日常运营 */ = {
+			isa = PBXGroup;
+			children = (
+				2450848C1E0D3FAD006DE0D4 /* DailyViewController.h */,
+				2450848D1E0D3FAD006DE0D4 /* DailyViewController.m */,
+			);
+			path = "日常运营";
+			sourceTree = "<group>";
+		};
+		245084821E0D3EF6006DE0D4 /* 时段收入 */ = {
+			isa = PBXGroup;
+			children = (
+				2450848F1E0D3FF4006DE0D4 /* TimeViewController.h */,
+				245084901E0D3FF4006DE0D4 /* TimeViewController.m */,
+			);
+			path = "时段收入";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -575,10 +600,14 @@
 				1DE813201E0A544000784636 /* MASConstraint.m in Sources */,
 				245084441E0BC65E006DE0D4 /* NetTool.m in Sources */,
 				1DE813281E0A544000784636 /* ViewController+MASAdditions.m in Sources */,
+				2450848E1E0D3FAD006DE0D4 /* DailyViewController.m in Sources */,
+				245084911E0D3FF4006DE0D4 /* TimeViewController.m in Sources */,
+				245084851E0D3F33006DE0D4 /* UserTableViewController.m in Sources */,
 				245083E11E0B9A45006DE0D4 /* LoginControl.m in Sources */,
 				245083EA1E0B9E53006DE0D4 /* BaseUINavigationController.m in Sources */,
 				245084491E0BC6D6006DE0D4 /* ShopModel.m in Sources */,
 				245083D81E0B99AD006DE0D4 /* NSString+MD5.m in Sources */,
+				2450848B1E0D3F90006DE0D4 /* GoodsViewController.m in Sources */,
 				1DE813221E0A544000784636 /* MASLayoutConstraint.m in Sources */,
 				245083F11E0B9EA0006DE0D4 /* DrawerCell.m in Sources */,
 				2450843F1E0BC62A006DE0D4 /* MBProgressHUD+MJ.m in Sources */,
@@ -595,6 +624,7 @@
 				245084521E0CD65D006DE0D4 /* NSString+Width.m in Sources */,
 				0439F7E01E0CC24D009309E3 /* HomeViewController.m in Sources */,
 				245083DE1E0B9A1C006DE0D4 /* LoginViewController.m in Sources */,
+				245084881E0D3F5D006DE0D4 /* HistoryTableViewController.m in Sources */,
 				1DE8131F1E0A544000784636 /* MASCompositeConstraint.m in Sources */,
 				2450844F1E0CD4F7006DE0D4 /* PullChooseView.m in Sources */,
 				1DE813261E0A544000784636 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,

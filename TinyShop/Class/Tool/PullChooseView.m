@@ -18,13 +18,14 @@
     self = [super initWithFrame:CGRectZero];
     if (self) {
         _items = items;
+        _maxWidth = 0;
+        [self maxWidth];
         [self setUp];
     }
     return self;
 }
 
 - (void)setUp{
-    _maxWidth = 0;
     self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3];
     self.frame = CGRectMake(0, 0, SCREEN_W, SCREEN_H);
     _contentView = [[UIView alloc]init];
@@ -32,13 +33,21 @@
     _contentView.layer.masksToBounds = YES;
     _contentView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_contentView];
-    [self makeButtons];
     _tableView = [[UITableView alloc]init];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"pull"];
-    _contentView.frame = CGRectMake(0, 0, _maxWidth + 20, 45 + _items.count);
+    _contentView.frame = CGRectMake(0, 0, _maxWidth + 20, 45 * _items.count);
+    _tableView.frame = _contentView.frame;
     [self makeCenter];
+}
+
+- (void)maxWidth{
+    for (NSString *item in _items) {
+        if (_maxWidth < [item getStringWidth]) {
+            _maxWidth = [item getStringWidth];
+        }
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -64,23 +73,6 @@
     [self.delegate pullChooseViewItemClick:indexPath.row];
 }
 
-- (void)makeButtons{
-    NSInteger index = 1000;
-    for (NSString *title in _items) {
-        if (_maxWidth - 20 < [title getStringWidth]) {
-            _maxWidth = [title getStringWidth] + 20;
-        }
-        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(10, 5 + (index - 1000) * 40, [title getStringWidth] + 20, 40)];
-        btn.tag = index;
-        [btn setTitleColor:[UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1] forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
-        [btn setTitle:title forState:UIControlStateNormal];
-        [_contentView addSubview:btn];
-        index++;
-    }
-    
-}
-
 - (void)makeCenter{
     CGFloat sy = _centerPoint.y;
     CGFloat sx = _centerPoint.x;
@@ -90,44 +82,42 @@
     CGFloat x = 0;
     if ((SCREEN_W - sx) > (fw / 2 + 20)) {
         x = sx;
-        _pointA.x = x - 10;
+        _pointA.x = x - 15;
         _pointB.x = x;
-        _pointC.x = x + 10;
+        _pointC.x = x + 15;
     }else{
         x = SCREEN_W - 20 - fw / 2;
         if (sx < 40) {
-            _pointA.x = x + fw / 2 - 20;
-            _pointB.x = x + fw / 2 - 15;
+            _pointA.x = x + fw / 2 - 25;
+            _pointB.x = x + fw / 2 - 20;
             _pointC.x = x + fw / 2;
         }else{
-            _pointA.x = sx - 15;
+            _pointA.x = sx - 20;
             _pointB.x = sx;
-            _pointC.x = sx + 15;
+            _pointC.x = sx + 20;
         }
     }
     if (x < fw / 2 + 20) {
         x = fw / 2 + 20;
-        _pointA.x = x - fw / 2 + 5;
-        _pointB.x = x - fw / 2 + 20;
-        _pointC.x = x - fw / 2 + 35;
+        _pointA.x = x - fw / 2 + 10;
+        _pointB.x = x - fw / 2 + 25;
+        _pointC.x = x - fw / 2 + 40;
     }
     
     if ((SCREEN_H - sy) > fh + 60) {
         y = sy + 40 + fh / 2;
-        _pointA.y = y - fh / 2 - 8;
-        _pointB.y = y - fh / 2 - 16;
-        _pointC.y = y - fh / 2 - 8;
+        _pointA.y = y - fh / 2 - 10;
+        _pointB.y = y - fh / 2 - 25;
+        _pointC.y = y - fh / 2 - 10;
     }else{
         y = sy - 40 - fh / 2;
-        _pointA.y = y + fh / 2 + 8;
-        _pointB.y = y + fh / 2 + 16;
-        _pointC.y = y + fh / 2 + 8;
+        _pointA.y = y + fh / 2 + 10;
+        _pointB.y = y + fh / 2 + 25;
+        _pointC.y = y + fh / 2 + 10;
     }
     
-    if (y < fh / 2 + 20) {
-        y = fh / 2 + 20;
-    }
     _contentView.center = CGPointMake(x, y);
+    _tableView.center = _contentView.center;
     _triangleColor = self.backgroundColor;
     [self setNeedsDisplay];
 }
