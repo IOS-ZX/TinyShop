@@ -168,11 +168,15 @@
     NSDictionary *parameters = @{@"shop_account":self.storeTextField.text,@"user_account":self.numberTextField.text,@"user_password":self.pwdTextField.text};
     [LoginControl userLogin:parameters response:^(id result, NSError *error) {
         if (error) {
-            
+            [MBProgressHUD showError:@"服务器开小差了。"];
         }else{
-            [self.view removeFromSuperview];
-            [self removeFromParentViewController];
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"loginSuccess" object:nil];
+            if ([result[@"status"] integerValue] == 0) {
+                [self.view removeFromSuperview];
+                [self removeFromParentViewController];
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"loginSuccess" object:nil];
+            }else{
+                [MBProgressHUD showError:result[@"errorMsg"]];
+            }
         }
     }];
 }

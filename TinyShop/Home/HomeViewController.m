@@ -8,7 +8,6 @@
 
 #import "HomeViewController.h"
 #import "HomeTableViewCell.h"
-#import "TestViewController.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -29,10 +28,14 @@
     [self.view addSubview:self.tableView];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.title = @"云迈天行特色火锅-销";
+}
+
 /** 初始化 **/
 - (void)setUp{
     self.view.backgroundColor = [UIColor orangeColor];
-    self.title = @"云迈天行特色火锅-销";
     UIBarButtonItem *menu = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"抽屉按钮"] style:UIBarButtonItemStylePlain target:self action:@selector(showDrawer)];
     self.navigationItem.leftBarButtonItem = menu;
     UIBarButtonItem *exit = [[UIBarButtonItem alloc]initWithTitle:@"注销" style:UIBarButtonItemStyleDone target:self action:@selector(userExit)];
@@ -42,8 +45,7 @@
     self.view.layer.shadowRadius = 2;
     _touchView = [[UIView alloc]initWithFrame:self.view.bounds];
     _touchView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0];
-    
-    [[UIBarButtonItem appearance]setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -70) forBarMetrics:UIBarMetricsDefault];
+    [[UIBarButtonItem appearance]setBackButtonTitlePositionAdjustment:UIOffsetMake(-100, -70) forBarMetrics:UIBarMetricsDefault];
 }
 
 /** 注销 **/
@@ -111,9 +113,52 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    TestViewController *test = [TestViewController new];
-    test.view.backgroundColor = [UIColor whiteColor];
-    [self.navigationController pushViewController:test animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    self.title = @"";
+    switch (indexPath.row) {
+        case 0:
+            //时段收入
+        {
+            TimeViewController *timeVC = [TimeViewController new];
+            timeVC.view.backgroundColor = [UIColor whiteColor];
+            [self.navigationController pushViewController:timeVC animated:YES];
+        }
+            break;
+        case 1:
+            //日常运营
+        {
+            DailyViewController *daily = [DailyViewController new];
+            daily.view.backgroundColor = [UIColor whiteColor];
+            [self.navigationController pushViewController:daily animated:YES];
+        }
+            break;
+        case 2:
+            //商品运营
+        {
+            GoodsViewController *goods = [GoodsViewController new];
+            goods.view.backgroundColor = [UIColor whiteColor];
+            [self.navigationController pushViewController:goods animated:YES];
+        }
+            break;
+        case 3:
+            //会员
+        {
+            UserTableViewController *user = [UserTableViewController new];
+            user.view.backgroundColor = [UIColor whiteColor];
+            [self.navigationController pushViewController:user animated:YES];
+        }
+            break;
+        case 4:
+            //历史
+        {
+            HistoryTableViewController *history = [HistoryTableViewController new];
+            history.view.backgroundColor = [UIColor whiteColor];
+            [self.navigationController pushViewController:history animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

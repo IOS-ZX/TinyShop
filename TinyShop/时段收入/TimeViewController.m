@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.title = @"实时销售总趋势图";
 }
 
 - (void)didReceiveMemoryWarning {

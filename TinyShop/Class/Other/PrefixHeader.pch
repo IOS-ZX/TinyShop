@@ -16,6 +16,12 @@
 #import "MBProgressHUD+MJ.h"
 #import "NSString+Width.h"
 #import "PullChooseView.h"
+#import "TimeViewController.h"
+#import "UserTableViewController.h"
+#import "UserInstance.h"
+#import "HistoryTableViewController.h"
+#import "DailyViewController.h"
+#import "GoodsViewController.h"
 
 
 

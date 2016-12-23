@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.title = @"按天为单位统计";
 }
 
 - (void)didReceiveMemoryWarning {
