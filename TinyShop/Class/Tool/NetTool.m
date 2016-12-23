@@ -50,7 +50,8 @@
     }
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain",@"text/html", nil];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
     manager.requestSerializer.timeoutInterval = 10.0;
     // HTTPS
     //允许无效或非法证书
@@ -70,6 +71,50 @@
         [MBProgressHUD hideHUD];
         errors(error);
     }];
+}
+
++ (BOOL)checkRequest:(NSString *)mod_action
+      loadingMessage:(NSString *)loadingMessage
+           parameter:(NSDictionary *)parameters
+             success:(SuccessHandler)success
+               error:(ErrorHandler)errors
+{
+    //获取 suffixUrl
+    NSArray *rights = [UserInstance sharedUserInstance].rights;
+    NSString *suffixUrl = [self suffixURLBy:mod_action rights:rights];
+    if (suffixUrl.length == 0) {
+        [MBProgressHUD showError:@"用户没有此权限"];
+        return NO;
+    }
+    [self requestWithURL:suffixUrl
+              loadingMsg:loadingMessage
+               parameter:parameters
+                 success:^(NSDictionary *result) {
+                     success(result);
+    } error:^(NSError *error) {
+        errors(error);
+    }];
+    return YES;
+}
+
++ (NSString *)suffixURLBy:(NSString *)mod_action
+                   rights:(NSArray *)rights
+{
+    __block NSString *url;
+    [rights enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj[@"mod_action"] isEqualToString:mod_action]) {
+            url = obj[@"mod_params"];
+            *stop = YES;
+        }
+        if (!url && [obj[@"subs"] count] > 0) {
+            url = [self suffixURLBy:mod_action rights:obj[@"subs"]];
+        }
+        if (url.length > 0) {
+            *stop = YES;
+        }
+    }];
+
+    return url;
 }
 
 @end

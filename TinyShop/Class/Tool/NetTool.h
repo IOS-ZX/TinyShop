@@ -18,4 +18,10 @@ typedef void(^ErrorHandler)(NSError *error);
                  success:(SuccessHandler)success
                    error:(ErrorHandler)error;
 
++ (BOOL)checkRequest:(NSString *)mod_action
+      loadingMessage:(NSString *)loadingMessage
+           parameter:(NSDictionary *)parameters
+             success:(SuccessHandler)success
+               error:(ErrorHandler)errors;
+
 @end

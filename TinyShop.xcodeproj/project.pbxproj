@@ -37,6 +37,10 @@
 		245084441E0BC65E006DE0D4 /* NetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084431E0BC65E006DE0D4 /* NetTool.m */; };
 		245084491E0BC6D6006DE0D4 /* ShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084471E0BC6D6006DE0D4 /* ShopModel.m */; };
 		2450844A1E0BC6D6006DE0D4 /* UserInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084481E0BC6D6006DE0D4 /* UserInstance.m */; };
+		2450844F1E0CD4F7006DE0D4 /* PullChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2450844E1E0CD4F7006DE0D4 /* PullChooseView.m */; };
+		245084521E0CD65D006DE0D4 /* NSString+Width.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084511E0CD65D006DE0D4 /* NSString+Width.m */; };
+		245084591E0CF05B006DE0D4 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084571E0CF05B006DE0D4 /* TestViewController.m */; };
+		2450845A1E0CF05B006DE0D4 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 245084581E0CF05B006DE0D4 /* TestViewController.xib */; };
 		ABE5B94AF12294997B7ECB53 /* libPods-TinyShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +109,13 @@
 		245084461E0BC6D6006DE0D4 /* UserInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInstance.h; sourceTree = "<group>"; };
 		245084471E0BC6D6006DE0D4 /* ShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopModel.m; sourceTree = "<group>"; };
 		245084481E0BC6D6006DE0D4 /* UserInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInstance.m; sourceTree = "<group>"; };
+		2450844D1E0CD4F7006DE0D4 /* PullChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullChooseView.h; sourceTree = "<group>"; };
+		2450844E1E0CD4F7006DE0D4 /* PullChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullChooseView.m; sourceTree = "<group>"; };
+		245084501E0CD65D006DE0D4 /* NSString+Width.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Width.h"; sourceTree = "<group>"; };
+		245084511E0CD65D006DE0D4 /* NSString+Width.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Width.m"; sourceTree = "<group>"; };
+		245084561E0CF05B006DE0D4 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		245084571E0CF05B006DE0D4 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		245084581E0CF05B006DE0D4 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TinyShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A505FFF64C656988E6161E /* Pods-TinyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.release.xcconfig"; sourceTree = "<group>"; };
 		B427A3F2277ECC111D854335 /* Pods-TinyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +222,9 @@
 				1D4F30E21E0A2C6F00C029E0 /* ViewController.m */,
 				1DE8132A1E0A54AF00784636 /* PrefixHeader.pch */,
 				245083D31E0B9440006DE0D4 /* API.h */,
+				245084561E0CF05B006DE0D4 /* TestViewController.h */,
+				245084571E0CF05B006DE0D4 /* TestViewController.m */,
+				245084581E0CF05B006DE0D4 /* TestViewController.xib */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -329,6 +343,8 @@
 			children = (
 				245084421E0BC65E006DE0D4 /* NetTool.h */,
 				245084431E0BC65E006DE0D4 /* NetTool.m */,
+				2450844D1E0CD4F7006DE0D4 /* PullChooseView.h */,
+				2450844E1E0CD4F7006DE0D4 /* PullChooseView.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -348,6 +364,8 @@
 			children = (
 				245083D61E0B99AD006DE0D4 /* NSString+MD5.h */,
 				245083D71E0B99AD006DE0D4 /* NSString+MD5.m */,
+				245084501E0CD65D006DE0D4 /* NSString+Width.h */,
+				245084511E0CD65D006DE0D4 /* NSString+Width.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -489,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				245083F21E0B9EA0006DE0D4 /* DrawerCell.xib in Resources */,
+				2450845A1E0CF05B006DE0D4 /* TestViewController.xib in Resources */,
 				1D5B66BF1E0A19D900606F86 /* LaunchScreen.storyboard in Resources */,
 				1D5B66BC1E0A19D900606F86 /* Assets.xcassets in Resources */,
 				1D5B66BA1E0A19D900606F86 /* Main.storyboard in Resources */,
@@ -572,9 +591,12 @@
 				1D5B66CF1E0A1C5500606F86 /* AppDelegate.m in Sources */,
 				245083EB1E0B9E53006DE0D4 /* DrawerViewController.m in Sources */,
 				0439F7DD1E0CC16A009309E3 /* HomeTableViewCell.m in Sources */,
+				245084591E0CF05B006DE0D4 /* TestViewController.m in Sources */,
+				245084521E0CD65D006DE0D4 /* NSString+Width.m in Sources */,
 				0439F7E01E0CC24D009309E3 /* HomeViewController.m in Sources */,
 				245083DE1E0B9A1C006DE0D4 /* LoginViewController.m in Sources */,
 				1DE8131F1E0A544000784636 /* MASCompositeConstraint.m in Sources */,
+				2450844F1E0CD4F7006DE0D4 /* PullChooseView.m in Sources */,
 				1DE813261E0A544000784636 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,12 +8,13 @@
 
 #import "HomeViewController.h"
 #import "HomeTableViewCell.h"
+#import "TestViewController.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     CGPoint _startPoint;
-    BOOL _isShow;
     UIView *_touchView;
+    BOOL _isShow;
 }
 @property (nonatomic,strong) UITableView *tableView;
 
@@ -21,19 +22,10 @@
 
 @implementation HomeViewController
 
--(UITableView *)tableView{
-    if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    }
-    return _tableView;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUp];
     _isShow = NO;
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
 }
 
@@ -54,6 +46,7 @@
 
 /** 注销 **/
 - (void)userExit{
+    [self willMoveToParentViewController:nil];
     [self.view removeFromSuperview];
     [self removeFromParentViewController];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"loginOut" object:nil];
@@ -115,6 +108,12 @@
     return SCREEN_W * 0.275;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    TestViewController *test = [TestViewController new];
+    test.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:test animated:YES];
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
@@ -133,6 +132,18 @@
     cell.rightImage.contentMode = UIViewContentModeCenter;
     cell.rightImage.image = [UIImage imageNamed:rightImageName[indexPath.row]];
     return cell;
+}
+
+#pragma mark - 懒加载
+
+-(UITableView *)tableView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    return _tableView;
 }
 
 @end

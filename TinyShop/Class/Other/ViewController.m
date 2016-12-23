@@ -37,7 +37,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initializeDataSource];
     [self initilizeInterface];
     self.view.backgroundColor = [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(initializeDrawer) name:@"loginSuccess" object:nil];

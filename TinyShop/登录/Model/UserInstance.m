@@ -42,7 +42,7 @@
     {
         [self.userShop.subs enumerateObjectsUsingBlock:^(id   obj, NSUInteger idx, BOOL *  stop) {
             ShopModel *model=(ShopModel *)obj;
-            NSString *shopId=model.shop_id;
+            NSString *shopId= [model valueForKey:@"shop_id"];
             [arrM addObject:shopId];
         }];
     }
