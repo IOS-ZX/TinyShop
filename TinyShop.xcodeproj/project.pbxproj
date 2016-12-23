@@ -13,7 +13,6 @@
 		1D5B66BF1E0A19D900606F86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B66BD1E0A19D900606F86 /* LaunchScreen.storyboard */; };
 		1D5B66CF1E0A1C5500606F86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5B66C91E0A1C5500606F86 /* AppDelegate.m */; };
 		1D5B66D11E0A1C5500606F86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5B66CB1E0A1C5500606F86 /* main.m */; };
-		1DE470121E0A31E500AFB742 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE470111E0A31E500AFB742 /* LoginViewController.m */; };
 		1DE8131F1E0A544000784636 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE813051E0A544000784636 /* MASCompositeConstraint.m */; };
 		1DE813201E0A544000784636 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE813081E0A544000784636 /* MASConstraint.m */; };
 		1DE813211E0A544000784636 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8130A1E0A544000784636 /* MASConstraintMaker.m */; };
@@ -24,6 +23,20 @@
 		1DE813261E0A544000784636 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE813171E0A544000784636 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		1DE813271E0A544000784636 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE813191E0A544000784636 /* View+MASAdditions.m */; };
 		1DE813281E0A544000784636 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8131C1E0A544000784636 /* ViewController+MASAdditions.m */; };
+		245083D81E0B99AD006DE0D4 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083D71E0B99AD006DE0D4 /* NSString+MD5.m */; };
+		245083DE1E0B9A1C006DE0D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083DD1E0B9A1C006DE0D4 /* LoginViewController.m */; };
+		245083E11E0B9A45006DE0D4 /* LoginControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083E01E0B9A45006DE0D4 /* LoginControl.m */; };
+		245083EA1E0B9E53006DE0D4 /* BaseUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083E51E0B9E53006DE0D4 /* BaseUINavigationController.m */; };
+		245083EB1E0B9E53006DE0D4 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083E71E0B9E53006DE0D4 /* DrawerViewController.m */; };
+		245083EC1E0B9E53006DE0D4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083E91E0B9E53006DE0D4 /* MainViewController.m */; };
+		245083F11E0B9EA0006DE0D4 /* DrawerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083EF1E0B9EA0006DE0D4 /* DrawerCell.m */; };
+		245083F21E0B9EA0006DE0D4 /* DrawerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 245083F01E0B9EA0006DE0D4 /* DrawerCell.xib */; };
+		2450843E1E0BC62A006DE0D4 /* TQConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084351E0BC62A006DE0D4 /* TQConst.m */; };
+		2450843F1E0BC62A006DE0D4 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084381E0BC62A006DE0D4 /* MBProgressHUD+MJ.m */; };
+		245084441E0BC65E006DE0D4 /* NetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084431E0BC65E006DE0D4 /* NetTool.m */; };
+		245084491E0BC6D6006DE0D4 /* ShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084471E0BC6D6006DE0D4 /* ShopModel.m */; };
+		2450844A1E0BC6D6006DE0D4 /* UserInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084481E0BC6D6006DE0D4 /* UserInstance.m */; };
+		ABE5B94AF12294997B7ECB53 /* libPods-TinyShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +50,6 @@
 		1D5B66C91E0A1C5500606F86 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D5B66CA1E0A1C5500606F86 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D5B66CB1E0A1C5500606F86 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1DE470101E0A31E500AFB742 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		1DE470111E0A31E500AFB742 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		1DE813041E0A544000784636 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		1DE813051E0A544000784636 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		1DE813061E0A544000784636 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -65,6 +76,35 @@
 		1DE8131B1E0A544000784636 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		1DE8131C1E0A544000784636 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		1DE8132A1E0A54AF00784636 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		245083D31E0B9440006DE0D4 /* API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		245083D61E0B99AD006DE0D4 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		245083D71E0B99AD006DE0D4 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		245083DC1E0B9A1C006DE0D4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		245083DD1E0B9A1C006DE0D4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		245083DF1E0B9A45006DE0D4 /* LoginControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginControl.h; sourceTree = "<group>"; };
+		245083E01E0B9A45006DE0D4 /* LoginControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginControl.m; sourceTree = "<group>"; };
+		245083E41E0B9E53006DE0D4 /* BaseUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUINavigationController.h; sourceTree = "<group>"; };
+		245083E51E0B9E53006DE0D4 /* BaseUINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUINavigationController.m; sourceTree = "<group>"; };
+		245083E61E0B9E53006DE0D4 /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
+		245083E71E0B9E53006DE0D4 /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
+		245083E81E0B9E53006DE0D4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		245083E91E0B9E53006DE0D4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		245083EE1E0B9EA0006DE0D4 /* DrawerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerCell.h; sourceTree = "<group>"; };
+		245083EF1E0B9EA0006DE0D4 /* DrawerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerCell.m; sourceTree = "<group>"; };
+		245083F01E0B9EA0006DE0D4 /* DrawerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerCell.xib; sourceTree = "<group>"; };
+		245084341E0BC62A006DE0D4 /* TQConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQConst.h; sourceTree = "<group>"; };
+		245084351E0BC62A006DE0D4 /* TQConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQConst.m; sourceTree = "<group>"; };
+		245084371E0BC62A006DE0D4 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		245084381E0BC62A006DE0D4 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		245084421E0BC65E006DE0D4 /* NetTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetTool.h; sourceTree = "<group>"; };
+		245084431E0BC65E006DE0D4 /* NetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetTool.m; sourceTree = "<group>"; };
+		245084451E0BC6D6006DE0D4 /* ShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopModel.h; sourceTree = "<group>"; };
+		245084461E0BC6D6006DE0D4 /* UserInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInstance.h; sourceTree = "<group>"; };
+		245084471E0BC6D6006DE0D4 /* ShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopModel.m; sourceTree = "<group>"; };
+		245084481E0BC6D6006DE0D4 /* UserInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInstance.m; sourceTree = "<group>"; };
+		58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TinyShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6A505FFF64C656988E6161E /* Pods-TinyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.release.xcconfig"; sourceTree = "<group>"; };
+		B427A3F2277ECC111D854335 /* Pods-TinyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,17 +112,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABE5B94AF12294997B7ECB53 /* libPods-TinyShop.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		147DF3733EA4BB795BE430CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1D5B66A31E0A19D900606F86 = {
 			isa = PBXGroup;
 			children = (
 				1D5B66AE1E0A19D900606F86 /* TinyShop */,
 				1D5B66AD1E0A19D900606F86 /* Products */,
+				22208203A7EC6774C8167D07 /* Pods */,
+				147DF3733EA4BB795BE430CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +148,7 @@
 		1D5B66AE1E0A19D900606F86 /* TinyShop */ = {
 			isa = PBXGroup;
 			children = (
+				245083D41E0B9911006DE0D4 /* 登录 */,
 				245083BE1E0B660C006DE0D4 /* Home */,
 				245083BF1E0B660C006DE0D4 /* Main */,
 				245083B91E0B65FD006DE0D4 /* 时段收入 */,
@@ -123,8 +175,10 @@
 		1D5B66C61E0A1C5500606F86 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				1D5B66D31E0A1D5700606F86 /* Tool */,
-				1D5B66D41E0A1D5700606F86 /* Extension */,
+				245084331E0BC62A006DE0D4 /* Const */,
+				245084361E0BC62A006DE0D4 /* MJ */,
+				245083D51E0B99AD006DE0D4 /* Extension */,
+				245083CC1E0B7E02006DE0D4 /* Tool */,
 				1D5B66D51E0A1D5700606F86 /* General */,
 				1D5B66C71E0A1C5500606F86 /* Other */,
 				1DE813001E0A540000784636 /* Lib */,
@@ -141,25 +195,10 @@
 				1D5B66CB1E0A1C5500606F86 /* main.m */,
 				1D4F30E11E0A2C6F00C029E0 /* ViewController.h */,
 				1D4F30E21E0A2C6F00C029E0 /* ViewController.m */,
-				1DE470101E0A31E500AFB742 /* LoginViewController.h */,
-				1DE470111E0A31E500AFB742 /* LoginViewController.m */,
 				1DE8132A1E0A54AF00784636 /* PrefixHeader.pch */,
+				245083D31E0B9440006DE0D4 /* API.h */,
 			);
 			path = Other;
-			sourceTree = "<group>";
-		};
-		1D5B66D31E0A1D5700606F86 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tool;
-			sourceTree = "<group>";
-		};
-		1D5B66D41E0A1D5700606F86 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		1D5B66D51E0A1D5700606F86 /* General */ = {
@@ -217,6 +256,15 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		22208203A7EC6774C8167D07 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B427A3F2277ECC111D854335 /* Pods-TinyShop.debug.xcconfig */,
+				A6A505FFF64C656988E6161E /* Pods-TinyShop.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		245083B91E0B65FD006DE0D4 /* 时段收入 */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,8 +310,116 @@
 		245083BF1E0B660C006DE0D4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				245083ED1E0B9E78006DE0D4 /* Cells */,
+				245083E21E0B9E53006DE0D4 /* Control */,
+				245083E31E0B9E53006DE0D4 /* View */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		245083CC1E0B7E02006DE0D4 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				245084421E0BC65E006DE0D4 /* NetTool.h */,
+				245084431E0BC65E006DE0D4 /* NetTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		245083D41E0B9911006DE0D4 /* 登录 */ = {
+			isa = PBXGroup;
+			children = (
+				245083D91E0B9A1C006DE0D4 /* Control */,
+				245083DA1E0B9A1C006DE0D4 /* Model */,
+				245083DB1E0B9A1C006DE0D4 /* View */,
+			);
+			path = "登录";
+			sourceTree = "<group>";
+		};
+		245083D51E0B99AD006DE0D4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				245083D61E0B99AD006DE0D4 /* NSString+MD5.h */,
+				245083D71E0B99AD006DE0D4 /* NSString+MD5.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		245083D91E0B9A1C006DE0D4 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				245083DF1E0B9A45006DE0D4 /* LoginControl.h */,
+				245083E01E0B9A45006DE0D4 /* LoginControl.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		245083DA1E0B9A1C006DE0D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				245084451E0BC6D6006DE0D4 /* ShopModel.h */,
+				245084461E0BC6D6006DE0D4 /* UserInstance.h */,
+				245084471E0BC6D6006DE0D4 /* ShopModel.m */,
+				245084481E0BC6D6006DE0D4 /* UserInstance.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		245083DB1E0B9A1C006DE0D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				245083DC1E0B9A1C006DE0D4 /* LoginViewController.h */,
+				245083DD1E0B9A1C006DE0D4 /* LoginViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		245083E21E0B9E53006DE0D4 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		245083E31E0B9E53006DE0D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				245083E41E0B9E53006DE0D4 /* BaseUINavigationController.h */,
+				245083E51E0B9E53006DE0D4 /* BaseUINavigationController.m */,
+				245083E61E0B9E53006DE0D4 /* DrawerViewController.h */,
+				245083E71E0B9E53006DE0D4 /* DrawerViewController.m */,
+				245083E81E0B9E53006DE0D4 /* MainViewController.h */,
+				245083E91E0B9E53006DE0D4 /* MainViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		245083ED1E0B9E78006DE0D4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				245083EE1E0B9EA0006DE0D4 /* DrawerCell.h */,
+				245083EF1E0B9EA0006DE0D4 /* DrawerCell.m */,
+				245083F01E0B9EA0006DE0D4 /* DrawerCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		245084331E0BC62A006DE0D4 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				245084341E0BC62A006DE0D4 /* TQConst.h */,
+				245084351E0BC62A006DE0D4 /* TQConst.m */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
+		245084361E0BC62A006DE0D4 /* MJ */ = {
+			isa = PBXGroup;
+			children = (
+				245084371E0BC62A006DE0D4 /* MBProgressHUD+MJ.h */,
+				245084381E0BC62A006DE0D4 /* MBProgressHUD+MJ.m */,
+			);
+			path = MJ;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,9 +429,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D5B66C31E0A19D900606F86 /* Build configuration list for PBXNativeTarget "TinyShop" */;
 			buildPhases = (
+				753B589ABF153BEFF64385DA /* [CP] Check Pods Manifest.lock */,
 				1D5B66A81E0A19D900606F86 /* Sources */,
 				1D5B66A91E0A19D900606F86 /* Frameworks */,
 				1D5B66AA1E0A19D900606F86 /* Resources */,
+				F22905BC6F36D6E5223D39A4 /* [CP] Embed Pods Frameworks */,
+				2329724DF43820EEBF8DAEB4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,6 +483,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				245083F21E0B9EA0006DE0D4 /* DrawerCell.xib in Resources */,
 				1D5B66BF1E0A19D900606F86 /* LaunchScreen.storyboard in Resources */,
 				1D5B66BC1E0A19D900606F86 /* Assets.xcassets in Resources */,
 				1D5B66BA1E0A19D900606F86 /* Main.storyboard in Resources */,
@@ -332,23 +492,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2329724DF43820EEBF8DAEB4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		753B589ABF153BEFF64385DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F22905BC6F36D6E5223D39A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1D5B66A81E0A19D900606F86 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1DE813211E0A544000784636 /* MASConstraintMaker.m in Sources */,
-				1DE470121E0A31E500AFB742 /* LoginViewController.m in Sources */,
+				2450843E1E0BC62A006DE0D4 /* TQConst.m in Sources */,
 				1D5B66D11E0A1C5500606F86 /* main.m in Sources */,
+				245083EC1E0B9E53006DE0D4 /* MainViewController.m in Sources */,
 				1DE813201E0A544000784636 /* MASConstraint.m in Sources */,
+				245084441E0BC65E006DE0D4 /* NetTool.m in Sources */,
 				1DE813281E0A544000784636 /* ViewController+MASAdditions.m in Sources */,
+				245083E11E0B9A45006DE0D4 /* LoginControl.m in Sources */,
+				245083EA1E0B9E53006DE0D4 /* BaseUINavigationController.m in Sources */,
+				245084491E0BC6D6006DE0D4 /* ShopModel.m in Sources */,
+				245083D81E0B99AD006DE0D4 /* NSString+MD5.m in Sources */,
 				1DE813221E0A544000784636 /* MASLayoutConstraint.m in Sources */,
+				245083F11E0B9EA0006DE0D4 /* DrawerCell.m in Sources */,
+				2450843F1E0BC62A006DE0D4 /* MBProgressHUD+MJ.m in Sources */,
 				1DE813251E0A544000784636 /* NSArray+MASAdditions.m in Sources */,
+				2450844A1E0BC6D6006DE0D4 /* UserInstance.m in Sources */,
 				1DE813241E0A544000784636 /* MASViewConstraint.m in Sources */,
 				1DE813231E0A544000784636 /* MASViewAttribute.m in Sources */,
 				1DE813271E0A544000784636 /* View+MASAdditions.m in Sources */,
 				1D4F30E31E0A2C6F00C029E0 /* ViewController.m in Sources */,
 				1D5B66CF1E0A1C5500606F86 /* AppDelegate.m in Sources */,
+				245083EB1E0B9E53006DE0D4 /* DrawerViewController.m in Sources */,
+				245083DE1E0B9A1C006DE0D4 /* LoginViewController.m in Sources */,
 				1DE8131F1E0A544000784636 /* MASCompositeConstraint.m in Sources */,
 				1DE813261E0A544000784636 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 			);
@@ -466,6 +685,7 @@
 		};
 		1D5B66C41E0A19D900606F86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B427A3F2277ECC111D854335 /* Pods-TinyShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -479,6 +699,7 @@
 		};
 		1D5B66C51E0A19D900606F86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6A505FFF64C656988E6161E /* Pods-TinyShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
