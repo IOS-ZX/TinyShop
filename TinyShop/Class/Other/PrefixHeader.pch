@@ -22,6 +22,8 @@
 #import "HistoryTableViewController.h"
 #import "DailyViewController.h"
 #import "GoodsViewController.h"
+#import <MJExtension.h>
+#import "UIView+Addtions.h"
 
 
 

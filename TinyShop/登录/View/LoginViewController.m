@@ -173,6 +173,15 @@
             if ([result[@"status"] integerValue] == 0) {
                 [self.view removeFromSuperview];
                 [self removeFromParentViewController];
+                NSDictionary *body = result[@"body"];
+                NSDictionary *user = body[@"user"];
+                NSDictionary *shop = body[@"shop"];
+                NSArray *rights = body[@"rights"];
+                [UserInstance sharedUserInstance].accessToken = user[@"mgr_login_token"];
+                [UserInstance sharedUserInstance].mgrBaseId = user[@"mgr_base_id"];
+                [UserInstance sharedUserInstance].mgrShopId = user[@"mgr_shop_id"];
+                [UserInstance sharedUserInstance].rights = rights;
+                [UserInstance sharedUserInstance].userShop = [ShopModel mj_objectWithKeyValues:shop];
                 [[NSNotificationCenter defaultCenter]postNotificationName:@"loginSuccess" object:nil];
             }else{
                 [MBProgressHUD showError:result[@"errorMsg"]];

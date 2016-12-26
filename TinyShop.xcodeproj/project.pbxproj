@@ -43,7 +43,12 @@
 		245084881E0D3F5D006DE0D4 /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084871E0D3F5D006DE0D4 /* HistoryTableViewController.m */; };
 		2450848B1E0D3F90006DE0D4 /* GoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2450848A1E0D3F90006DE0D4 /* GoodsViewController.m */; };
 		2450848E1E0D3FAD006DE0D4 /* DailyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2450848D1E0D3FAD006DE0D4 /* DailyViewController.m */; };
-		245084911E0D3FF4006DE0D4 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084901E0D3FF4006DE0D4 /* TimeViewController.m */; };
+		247672641E0E3B8C001B0899 /* TimeControll.m in Sources */ = {isa = PBXBuildFile; fileRef = 247672631E0E3B8C001B0899 /* TimeControll.m */; };
+		24B2EBC11E0E034F00596882 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B2EBC01E0E034F00596882 /* TimeViewController.m */; };
+		24B6077B1E10D71A002282A3 /* GrayWhiteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607741E10D71A002282A3 /* GrayWhiteView.m */; };
+		24B6077C1E10D71A002282A3 /* MZLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607761E10D71A002282A3 /* MZLineView.m */; };
+		24B6077D1E10D71A002282A3 /* UIView+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607781E10D71A002282A3 /* UIView+Addtions.m */; };
+		24B6077E1E10D71A002282A3 /* ZFCirque.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B6077A1E10D71A002282A3 /* ZFCirque.m */; };
 		ABE5B94AF12294997B7ECB53 /* libPods-TinyShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */; };
 /* End PBXBuildFile section */
 
@@ -124,8 +129,19 @@
 		2450848A1E0D3F90006DE0D4 /* GoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsViewController.m; sourceTree = "<group>"; };
 		2450848C1E0D3FAD006DE0D4 /* DailyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyViewController.h; sourceTree = "<group>"; };
 		2450848D1E0D3FAD006DE0D4 /* DailyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyViewController.m; sourceTree = "<group>"; };
-		2450848F1E0D3FF4006DE0D4 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
-		245084901E0D3FF4006DE0D4 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
+		247672621E0E3B8C001B0899 /* TimeControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeControll.h; sourceTree = "<group>"; };
+		247672631E0E3B8C001B0899 /* TimeControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeControll.m; sourceTree = "<group>"; };
+		24B2EBBF1E0E034F00596882 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
+		24B2EBC01E0E034F00596882 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
+		24B607721E10D71A002282A3 /* ColorDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorDefine.h; sourceTree = "<group>"; };
+		24B607731E10D71A002282A3 /* GrayWhiteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrayWhiteView.h; sourceTree = "<group>"; };
+		24B607741E10D71A002282A3 /* GrayWhiteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrayWhiteView.m; sourceTree = "<group>"; };
+		24B607751E10D71A002282A3 /* MZLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZLineView.h; sourceTree = "<group>"; };
+		24B607761E10D71A002282A3 /* MZLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZLineView.m; sourceTree = "<group>"; };
+		24B607771E10D71A002282A3 /* UIView+Addtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addtions.h"; sourceTree = "<group>"; };
+		24B607781E10D71A002282A3 /* UIView+Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addtions.m"; sourceTree = "<group>"; };
+		24B607791E10D71A002282A3 /* ZFCirque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCirque.h; sourceTree = "<group>"; };
+		24B6077A1E10D71A002282A3 /* ZFCirque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFCirque.m; sourceTree = "<group>"; };
 		58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TinyShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A505FFF64C656988E6161E /* Pods-TinyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.release.xcconfig"; sourceTree = "<group>"; };
 		B427A3F2277ECC111D854335 /* Pods-TinyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +199,7 @@
 		1D5B66AE1E0A19D900606F86 /* TinyShop */ = {
 			isa = PBXGroup;
 			children = (
+				24B607711E10D71A002282A3 /* Describle */,
 				2450847E1E0D3EF6006DE0D4 /* 会员信息 */,
 				2450847F1E0D3EF6006DE0D4 /* 历史记录 */,
 				245084801E0D3EF6006DE0D4 /* 商品运营 */,
@@ -456,10 +473,52 @@
 		245084821E0D3EF6006DE0D4 /* 时段收入 */ = {
 			isa = PBXGroup;
 			children = (
-				2450848F1E0D3FF4006DE0D4 /* TimeViewController.h */,
-				245084901E0D3FF4006DE0D4 /* TimeViewController.m */,
+				24B2EBBC1E0E034F00596882 /* Control */,
+				24B2EBBD1E0E034F00596882 /* Model */,
+				24B2EBBE1E0E034F00596882 /* View */,
 			);
 			path = "时段收入";
+			sourceTree = "<group>";
+		};
+		24B2EBBC1E0E034F00596882 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				247672621E0E3B8C001B0899 /* TimeControll.h */,
+				247672631E0E3B8C001B0899 /* TimeControll.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		24B2EBBD1E0E034F00596882 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		24B2EBBE1E0E034F00596882 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				24B2EBBF1E0E034F00596882 /* TimeViewController.h */,
+				24B2EBC01E0E034F00596882 /* TimeViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		24B607711E10D71A002282A3 /* Describle */ = {
+			isa = PBXGroup;
+			children = (
+				24B607721E10D71A002282A3 /* ColorDefine.h */,
+				24B607731E10D71A002282A3 /* GrayWhiteView.h */,
+				24B607741E10D71A002282A3 /* GrayWhiteView.m */,
+				24B607751E10D71A002282A3 /* MZLineView.h */,
+				24B607761E10D71A002282A3 /* MZLineView.m */,
+				24B607771E10D71A002282A3 /* UIView+Addtions.h */,
+				24B607781E10D71A002282A3 /* UIView+Addtions.m */,
+				24B607791E10D71A002282A3 /* ZFCirque.h */,
+				24B6077A1E10D71A002282A3 /* ZFCirque.m */,
+			);
+			path = Describle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -585,21 +644,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24B6077C1E10D71A002282A3 /* MZLineView.m in Sources */,
 				1DE813211E0A544000784636 /* MASConstraintMaker.m in Sources */,
+				24B6077E1E10D71A002282A3 /* ZFCirque.m in Sources */,
+				247672641E0E3B8C001B0899 /* TimeControll.m in Sources */,
 				2450843E1E0BC62A006DE0D4 /* TQConst.m in Sources */,
 				1D5B66D11E0A1C5500606F86 /* main.m in Sources */,
 				1DE813201E0A544000784636 /* MASConstraint.m in Sources */,
 				245084441E0BC65E006DE0D4 /* NetTool.m in Sources */,
+				24B6077D1E10D71A002282A3 /* UIView+Addtions.m in Sources */,
 				1DE813281E0A544000784636 /* ViewController+MASAdditions.m in Sources */,
 				2450848E1E0D3FAD006DE0D4 /* DailyViewController.m in Sources */,
-				245084911E0D3FF4006DE0D4 /* TimeViewController.m in Sources */,
 				245084851E0D3F33006DE0D4 /* UserTableViewController.m in Sources */,
+				24B2EBC11E0E034F00596882 /* TimeViewController.m in Sources */,
 				245083E11E0B9A45006DE0D4 /* LoginControl.m in Sources */,
 				245083EA1E0B9E53006DE0D4 /* BaseUINavigationController.m in Sources */,
 				245084491E0BC6D6006DE0D4 /* ShopModel.m in Sources */,
 				245083D81E0B99AD006DE0D4 /* NSString+MD5.m in Sources */,
 				2450848B1E0D3F90006DE0D4 /* GoodsViewController.m in Sources */,
 				1DE813221E0A544000784636 /* MASLayoutConstraint.m in Sources */,
+				24B6077B1E10D71A002282A3 /* GrayWhiteView.m in Sources */,
 				245083F11E0B9EA0006DE0D4 /* DrawerCell.m in Sources */,
 				2450843F1E0BC62A006DE0D4 /* MBProgressHUD+MJ.m in Sources */,
 				1DE813251E0A544000784636 /* NSArray+MASAdditions.m in Sources */,

@@ -66,7 +66,11 @@
     NSLog(@"%@",parameters);
     [manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [MBProgressHUD hideHUD];
-        success(responseObject);
+        if ([responseObject[@"status"] integerValue] == 0) {
+            success(responseObject);
+        }else{
+            [MBProgressHUD showError:responseObject[@"errorMsg"]];
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [MBProgressHUD hideHUD];
         errors(error);

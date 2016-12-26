@@ -34,6 +34,7 @@
     _contentView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_contentView];
     _tableView = [[UITableView alloc]init];
+    _tableView.backgroundColor = self.backgroundColor;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"pull"];
