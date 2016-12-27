@@ -11,8 +11,8 @@
 @implementation TimeControll
 
 // 获取数据
-+ (void)timeIncomeRequest:(SuccessResult)succesResult{
-    [NetTool checkRequest:@"incomeTimeAction" loadingMessage:@"加载中.." parameter:@{@"body":@{@"shop_id":[[UserInstance sharedUserInstance]allShopIDs]}} success:^(NSDictionary *result) {
++ (void)timeIncomeRequest:(SuccessResult)succesResult shopId:(NSString*)shopId{
+    [NetTool checkRequest:@"incomeTimeAction" loadingMessage:@"加载中.." parameter:@{@"body":@{@"shop_id":shopId}} success:^(NSDictionary *result) {
         NSMutableArray *resultData = [NSMutableArray array];
         NSDictionary *dic = result[@"body"][@"value"];
         NSArray *keys = [self getKeys:dic];

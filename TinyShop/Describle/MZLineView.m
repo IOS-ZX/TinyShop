@@ -17,6 +17,8 @@
 @interface MZLineView()
 //顶部总收入
 @property(nonatomic, strong) UILabel* topLabel;
+/** 所有店铺 **/
+@property(nonatomic,strong)UILabel *allShopLabel;
 //
 @property(nonatomic, strong) UIScrollView *scrollview;
 //网格背景图
@@ -62,6 +64,7 @@
     return self;
 }
 #pragma mark- Getter
+
 -(UILabel *)topLabel
 {
     
@@ -182,6 +185,8 @@
 
 - (void)storkePath
 {
+    self.backGrayView = nil;
+    [self.lineLayerStore removeAllObjects];
     [self calculate];
     [self addSubview:self.topLabel];
     [self addSubview:self.scrollview];
@@ -194,7 +199,7 @@
 {
     for (int i = 0; i < self.titleStore.count; i++) {
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(1+(self.singleWidth+1)*i-10, self.backGrayView.height-30, self.singleWidth+20, 25)];
-        label.text = self.titleStore[i];
+        label.text = [NSString stringWithFormat:@"%@%@",self.titleStore[i],self.titleStr];
         label.textAlignment = NSTextAlignmentCenter;
         label.font = FONT(14);
         label.transform = self.labelTransform;
@@ -281,8 +286,6 @@
     //
     [self.backGrayView.layer addSublayer:layer];
     [self.lineLayerStore addObject:layer];
-    
-    
 }
 
 

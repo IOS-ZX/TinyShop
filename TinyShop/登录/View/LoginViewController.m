@@ -170,6 +170,7 @@
         if (error) {
             [MBProgressHUD showError:@"服务器开小差了。"];
         }else{
+            NSLog(@"result:%@",result);
             if ([result[@"status"] integerValue] == 0) {
                 [self.view removeFromSuperview];
                 [self removeFromParentViewController];

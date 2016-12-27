@@ -12,6 +12,6 @@
 
 typedef void(^SuccessResult)(NSArray *titles,NSArray *values);
 
-+ (void)timeIncomeRequest:(SuccessResult)succesResult;
++ (void)timeIncomeRequest:(SuccessResult)succesResult shopId:(NSString*)shopId;
 
 @end

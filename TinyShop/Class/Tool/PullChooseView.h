@@ -36,7 +36,7 @@
 
 - (instancetype)initWithItems:(NSArray *)items;
 
-- (void)showView:(UIViewController *)controller;
+- (void)showView;
 
 - (void)hiddenView;
 

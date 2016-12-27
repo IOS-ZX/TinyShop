@@ -29,6 +29,8 @@
 
 - (NSString *)allShopIDs;
 
+- (NSArray *)allShop;
+
 //get参数
 - (NSString *)getParamsString;
 

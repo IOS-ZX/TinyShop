@@ -9,85 +9,97 @@
 #import "TimeViewController.h"
 #import "TimeControll.h"
 #import "MZLineView.h"
+#import "ColorDefine.h"
 
-@interface TimeViewController ()
+@interface TimeViewController ()<ChooseStoreViewDelgate>
 
-/** 所有店铺 **/
-@property(nonatomic,strong)UILabel *allShopLabel;
 /** 折线图 **/
 @property(nonatomic,strong)MZLineView *lineView;
+/** 所有店铺 **/
+@property(nonatomic,strong)UILabel *allStore;
+/** 店铺选择 **/
+@property(nonatomic,strong)ChooseStoreView *chooseView;
+/** shopId **/
+@property(nonatomic,strong)NSString *shopId;
 
 @end
 
 @implementation TimeViewController
 
-- (void)lineBtnClick:(NSInteger)tag{
-    
-}
-
 #pragma mark - View
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view addSubview:self.allStore];
+    self.shopId = [UserInstance sharedUserInstance].allShopIDs;
     [self loadDatas];
 }
 
 #pragma mark - 初始化
 - (void)setUp{
     self.title = @"实时销售总趋势图";
+    UIBarButtonItem *chooseShop = [[UIBarButtonItem alloc]initWithTitle:@"选择店铺" style:UIBarButtonItemStyleDone target:self action:@selector(chooseShop)];
+    self.navigationItem.rightBarButtonItem = chooseShop;
+}
+
+- (void)chooseShop{
+    self.chooseView.stores = [[UserInstance sharedUserInstance] allShop];
+    self.chooseView.hidden = !self.chooseView.hidden;
 }
 
 - (void)loadDatas{
     __weak typeof(self) weakSelf = self;
     [TimeControll timeIncomeRequest:^(NSArray *titles, NSArray *values) {
         [self setUp];
-//        [self setUpUI];
-        [self.view layoutIfNeeded];
         weakSelf.lineView.titleStore = titles;
-        weakSelf.lineView.bottomMargin = 65;
-        weakSelf.lineView.incomeBottomMargin = 30;
-        weakSelf.lineView.brefixStr = @"桌数";
         weakSelf.lineView.incomeStore = values;
         [weakSelf.view addSubview:weakSelf.lineView];
-        weakSelf.lineView.topTitleCallBack = ^NSString *(CGFloat sumValue){
-            return [NSString stringWithFormat:@"实时总收入:%.1f元",sumValue];
-        };
-        
         weakSelf.lineView.selectCallback = ^(NSUInteger index){
             NSLog(@"选中第%@个",@(index));
         };
         [weakSelf.lineView storkePath];
-    }];
+    } shopId:self.shopId];
 }
-
-#pragma mark - 约束
-- (void)setUpUI{
-    __weak typeof(self) weakSelf = self;
-    [self.allShopLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(150, 35));
-        make.bottom.equalTo(weakSelf.lineView.mas_top);
-        make.left.equalTo(self.view.mas_left).offset(20);
-    }];
+#pragma mark - 选中代理
+- (void)chooseShop:(NSString *)shopid{
+    self.shopId = shopid;
+    [self loadDatas];
 }
 
 #pragma mark - 懒加载
 
-- (UILabel *)allShopLabel{
-    if (!_allShopLabel) {
-        _allShopLabel = [[UILabel alloc]init];
-        _allShopLabel.textColor = [UIColor redColor];
-        _allShopLabel.font = [UIFont systemFontOfSize:20];
-        _allShopLabel.text = @"所有店铺";
-        [self.view addSubview:_allShopLabel];
-    }
-    return _allShopLabel;
-}
-
-
 - (MZLineView *)lineView{
     if (!_lineView) {
         _lineView = [[MZLineView alloc]initWithFrame:CGRectMake(0, 64+40, self.view.width,self.view.height-144)];
+        _lineView.bottomMargin = 65;
+        _lineView.incomeBottomMargin = 30;
+        _lineView.brefixStr = @"收入";
+        _lineView.titleStr = @"时";
+        _lineView.topTitleCallBack = ^NSString *(CGFloat sumValue){
+            return [NSString stringWithFormat:@"实时总收入:%.1f元",sumValue];
+        };
     }
     return _lineView;
+}
+
+- (UILabel *)allStore{
+    if (!_allStore) {
+        _allStore = [[UILabel alloc]initWithFrame:CGRectMake(10, 79, 200, 25)];
+        _allStore.textColor = MAIN_COLOR;
+        _allStore.font = FONT(18);
+        _allStore.text = @"所有店铺";
+    }
+    return _allStore;
+}
+
+- (ChooseStoreView *)chooseView{
+    if (!_chooseView) {
+        _chooseView = [[ChooseStoreView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H)];
+        _chooseView.hidden = YES;
+        _chooseView.delegate = self;
+        UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
+        [currentWindow addSubview:_chooseView];
+    }
+    return _chooseView;
 }
 
 @end

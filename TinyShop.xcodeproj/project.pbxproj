@@ -49,6 +49,10 @@
 		24B6077C1E10D71A002282A3 /* MZLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607761E10D71A002282A3 /* MZLineView.m */; };
 		24B6077D1E10D71A002282A3 /* UIView+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607781E10D71A002282A3 /* UIView+Addtions.m */; };
 		24B6077E1E10D71A002282A3 /* ZFCirque.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B6077A1E10D71A002282A3 /* ZFCirque.m */; };
+		24B607A41E10FFAE002282A3 /* ChooseStoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607A31E10FFAE002282A3 /* ChooseStoreView.m */; };
+		24B607A81E11030C002282A3 /* ChooseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607A61E11030C002282A3 /* ChooseTableCell.m */; };
+		24B607A91E11030C002282A3 /* ChooseTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B607A71E11030C002282A3 /* ChooseTableCell.xib */; };
+		24B607AC1E1105B8002282A3 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607AB1E1105B8002282A3 /* UIColor+Hex.m */; };
 		ABE5B94AF12294997B7ECB53 /* libPods-TinyShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +146,13 @@
 		24B607781E10D71A002282A3 /* UIView+Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addtions.m"; sourceTree = "<group>"; };
 		24B607791E10D71A002282A3 /* ZFCirque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCirque.h; sourceTree = "<group>"; };
 		24B6077A1E10D71A002282A3 /* ZFCirque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFCirque.m; sourceTree = "<group>"; };
+		24B607A21E10FFAE002282A3 /* ChooseStoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseStoreView.h; sourceTree = "<group>"; };
+		24B607A31E10FFAE002282A3 /* ChooseStoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseStoreView.m; sourceTree = "<group>"; };
+		24B607A51E11030C002282A3 /* ChooseTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseTableCell.h; sourceTree = "<group>"; };
+		24B607A61E11030C002282A3 /* ChooseTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseTableCell.m; sourceTree = "<group>"; };
+		24B607A71E11030C002282A3 /* ChooseTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseTableCell.xib; sourceTree = "<group>"; };
+		24B607AA1E1105B8002282A3 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		24B607AB1E1105B8002282A3 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TinyShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A505FFF64C656988E6161E /* Pods-TinyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.release.xcconfig"; sourceTree = "<group>"; };
 		B427A3F2277ECC111D854335 /* Pods-TinyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -355,6 +366,8 @@
 				245083D71E0B99AD006DE0D4 /* NSString+MD5.m */,
 				245084501E0CD65D006DE0D4 /* NSString+Width.h */,
 				245084511E0CD65D006DE0D4 /* NSString+Width.m */,
+				24B607AA1E1105B8002282A3 /* UIColor+Hex.h */,
+				24B607AB1E1105B8002282A3 /* UIColor+Hex.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -501,6 +514,11 @@
 			children = (
 				24B2EBBF1E0E034F00596882 /* TimeViewController.h */,
 				24B2EBC01E0E034F00596882 /* TimeViewController.m */,
+				24B607A21E10FFAE002282A3 /* ChooseStoreView.h */,
+				24B607A31E10FFAE002282A3 /* ChooseStoreView.m */,
+				24B607A51E11030C002282A3 /* ChooseTableCell.h */,
+				24B607A61E11030C002282A3 /* ChooseTableCell.m */,
+				24B607A71E11030C002282A3 /* ChooseTableCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -586,6 +604,7 @@
 				1D5B66BF1E0A19D900606F86 /* LaunchScreen.storyboard in Resources */,
 				1D5B66BC1E0A19D900606F86 /* Assets.xcassets in Resources */,
 				1D5B66BA1E0A19D900606F86 /* Main.storyboard in Resources */,
+				24B607A91E11030C002282A3 /* ChooseTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24B6077C1E10D71A002282A3 /* MZLineView.m in Sources */,
+				24B607AC1E1105B8002282A3 /* UIColor+Hex.m in Sources */,
 				1DE813211E0A544000784636 /* MASConstraintMaker.m in Sources */,
 				24B6077E1E10D71A002282A3 /* ZFCirque.m in Sources */,
 				247672641E0E3B8C001B0899 /* TimeControll.m in Sources */,
@@ -653,9 +673,11 @@
 				1DE813201E0A544000784636 /* MASConstraint.m in Sources */,
 				245084441E0BC65E006DE0D4 /* NetTool.m in Sources */,
 				24B6077D1E10D71A002282A3 /* UIView+Addtions.m in Sources */,
+				24B607A41E10FFAE002282A3 /* ChooseStoreView.m in Sources */,
 				1DE813281E0A544000784636 /* ViewController+MASAdditions.m in Sources */,
 				2450848E1E0D3FAD006DE0D4 /* DailyViewController.m in Sources */,
 				245084851E0D3F33006DE0D4 /* UserTableViewController.m in Sources */,
+				24B607A81E11030C002282A3 /* ChooseTableCell.m in Sources */,
 				24B2EBC11E0E034F00596882 /* TimeViewController.m in Sources */,
 				245083E11E0B9A45006DE0D4 /* LoginControl.m in Sources */,
 				245083EA1E0B9E53006DE0D4 /* BaseUINavigationController.m in Sources */,

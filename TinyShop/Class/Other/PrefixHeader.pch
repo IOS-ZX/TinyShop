@@ -24,6 +24,8 @@
 #import "GoodsViewController.h"
 #import <MJExtension.h>
 #import "UIView+Addtions.h"
+#import "UIColor+Hex.h"
+#import "ChooseStoreView.h"
 
 
 

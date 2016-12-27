@@ -123,10 +123,11 @@
     [self setNeedsDisplay];
 }
 
-- (void)showView:(UIViewController *)controller{
+- (void)showView{
     [self makeCenter];
     if (!self.superview) {
-        [controller.view addSubview:self];
+        UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
+        [currentWindow addSubview:self];
     }else{
         self.hidden = NO;
     }

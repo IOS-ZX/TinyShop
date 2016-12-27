@@ -52,6 +52,20 @@
     return [arrM componentsJoinedByString:@","];
 }
 
+- (NSArray *)allShop{
+    __block NSMutableArray *shops = [NSMutableArray array];
+    if (self.userShop.shop_name) {
+        [shops addObject:self.userShop];
+    }
+    if (self.userShop.subs.count > 0) {
+        [self.userShop.subs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            ShopModel *model = (ShopModel*)obj;
+            [shops addObject:model];
+        }];
+    }
+    return shops;
+}
+
 
 - (NSString *)getParamsString
 {
