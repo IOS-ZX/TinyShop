@@ -29,6 +29,37 @@
     }];
 }
 
+// 获取子图数据
++ (void)subgraphRequest:(SubSuccessResult)succesResult shopId:(NSString *)shopId time:(NSString *)time
+{
+    NSString *times = [self checkTimes:time];
+    [NetTool checkRequest:@"incomeScaleAction" loadingMessage:@"加载中.." parameter:@{@"body":@{@"shop_id":shopId,@"time":times}} success:^(NSDictionary *result) {
+        succesResult(result);
+    } error:^(NSError *error) {
+        [MBProgressHUD showError:@"服务器开小差了"];
+    }];
+}
+
+// 处理时间
++ (NSString*)checkTimes:(NSString*)time{
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setDateFormat:@"yyyy-MM"];
+    NSString *year = [formatter stringFromDate:date];
+    [formatter setDateFormat:@"hh"];
+    NSString *hh = [formatter stringFromDate:date];
+    NSString *times;
+    if ([time integerValue] > [hh integerValue]) {
+        [formatter setDateFormat:@"dd"];
+        NSString *dd = [NSString stringWithFormat:@"%ld",[formatter stringFromDate:date].integerValue - 1];
+        times = [NSString stringWithFormat:@"%@-%@ %@",year,dd,time];
+    }else if ([time integerValue] >= 0 && [time integerValue] < [hh integerValue]) {
+        [formatter setDateFormat:@"yyyy-MM-dd"];
+        times = [NSString stringWithFormat:@"%@ %@",[formatter stringFromDate:date],time];
+    }
+    return times;
+}
+
 // 排序处理
 + (NSArray *)getKeys:(NSDictionary*)dic{
     NSDate *date = [NSDate new];

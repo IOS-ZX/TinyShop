@@ -187,6 +187,8 @@
 {
     self.backGrayView = nil;
     [self.lineLayerStore removeAllObjects];
+    [self.scrollview removeFromSuperview];
+    self.scrollview = nil;
     [self calculate];
     [self addSubview:self.topLabel];
     [self addSubview:self.scrollview];
@@ -283,6 +285,12 @@
     layer.lineWidth = 3;
     //线条颜色
     layer.strokeColor = [MAIN_COLOR CGColor];
+    CABasicAnimation *basicAnimation = [CABasicAnimation animation];
+    basicAnimation.keyPath = @"strokeEnd";
+    basicAnimation.fromValue = @0;
+    basicAnimation.toValue = @1;
+    basicAnimation.duration = 0.6;
+    [layer addAnimation:basicAnimation forKey:@"22"];
     //
     [self.backGrayView.layer addSublayer:layer];
     [self.lineLayerStore addObject:layer];

@@ -10,6 +10,7 @@
 #import "TimeControll.h"
 #import "MZLineView.h"
 #import "ColorDefine.h"
+#import "TimeIncomeDetailViewController.h"
 
 @interface TimeViewController ()<ChooseStoreViewDelgate>
 
@@ -52,10 +53,6 @@
         [self setUp];
         weakSelf.lineView.titleStore = titles;
         weakSelf.lineView.incomeStore = values;
-        [weakSelf.view addSubview:weakSelf.lineView];
-        weakSelf.lineView.selectCallback = ^(NSUInteger index){
-            NSLog(@"选中第%@个",@(index));
-        };
         [weakSelf.lineView storkePath];
     } shopId:self.shopId];
 }
@@ -76,6 +73,16 @@
         _lineView.titleStr = @"时";
         _lineView.topTitleCallBack = ^NSString *(CGFloat sumValue){
             return [NSString stringWithFormat:@"实时总收入:%.1f元",sumValue];
+        };
+        [self.view addSubview:_lineView];
+        __weak typeof(self) weakSelf = self;
+        _lineView.selectCallback = ^(NSUInteger index){
+            TimeIncomeDetailViewController *time = [TimeIncomeDetailViewController new];
+            NSMutableArray *arr = [NSMutableArray arrayWithArray:[weakSelf.shopId componentsSeparatedByString:@","]];
+            [arr removeObject:@([UserInstance sharedUserInstance].userShop.shop_id.integerValue)];
+            time.time = weakSelf.lineView.titleStore[index];
+            time.shopId = [arr componentsJoinedByString:@","];
+            [weakSelf.navigationController pushViewController:time animated:YES];
         };
     }
     return _lineView;

@@ -53,6 +53,17 @@
 		24B607A81E11030C002282A3 /* ChooseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607A61E11030C002282A3 /* ChooseTableCell.m */; };
 		24B607A91E11030C002282A3 /* ChooseTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B607A71E11030C002282A3 /* ChooseTableCell.xib */; };
 		24B607AC1E1105B8002282A3 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607AB1E1105B8002282A3 /* UIColor+Hex.m */; };
+		24B607B21E11FFE6002282A3 /* TimeIncomeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607B11E11FFE6002282A3 /* TimeIncomeDetailViewController.m */; };
+		24B607C11E12855B002282A3 /* MZPieChartDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607B81E12855B002282A3 /* MZPieChartDataSet.m */; };
+		24B607C21E12855B002282A3 /* MZPieChartFontColorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607BA1E12855B002282A3 /* MZPieChartFontColorSet.m */; };
+		24B607C31E12855B002282A3 /* MZPieChartSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607BC1E12855B002282A3 /* MZPieChartSet.m */; };
+		24B607C41E12855B002282A3 /* MZPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607BE1E12855B002282A3 /* MZPieChartView.m */; };
+		24B607C51E12855B002282A3 /* UIView+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607C01E12855B002282A3 /* UIView+Addtions.m */; };
+		24B607C81E12884B002282A3 /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607C71E12884B002282A3 /* PieChartView.m */; };
+		24B607CC1E128B78002282A3 /* ChartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607CA1E128B78002282A3 /* ChartTableViewCell.m */; };
+		24B607CD1E128B78002282A3 /* ChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B607CB1E128B78002282A3 /* ChartTableViewCell.xib */; };
+		24B607D31E13A828002282A3 /* MyPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607D21E13A828002282A3 /* MyPieChartView.m */; };
+		24B607D61E13B2EE002282A3 /* ChartTableViewDetailCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607D51E13B2EE002282A3 /* ChartTableViewDetailCellTableViewCell.m */; };
 		ABE5B94AF12294997B7ECB53 /* libPods-TinyShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +164,27 @@
 		24B607A71E11030C002282A3 /* ChooseTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseTableCell.xib; sourceTree = "<group>"; };
 		24B607AA1E1105B8002282A3 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		24B607AB1E1105B8002282A3 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		24B607B01E11FFE6002282A3 /* TimeIncomeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIncomeDetailViewController.h; sourceTree = "<group>"; };
+		24B607B11E11FFE6002282A3 /* TimeIncomeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIncomeDetailViewController.m; sourceTree = "<group>"; };
+		24B607B71E12855B002282A3 /* MZPieChartDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZPieChartDataSet.h; sourceTree = "<group>"; };
+		24B607B81E12855B002282A3 /* MZPieChartDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPieChartDataSet.m; sourceTree = "<group>"; };
+		24B607B91E12855B002282A3 /* MZPieChartFontColorSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZPieChartFontColorSet.h; sourceTree = "<group>"; };
+		24B607BA1E12855B002282A3 /* MZPieChartFontColorSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPieChartFontColorSet.m; sourceTree = "<group>"; };
+		24B607BB1E12855B002282A3 /* MZPieChartSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZPieChartSet.h; sourceTree = "<group>"; };
+		24B607BC1E12855B002282A3 /* MZPieChartSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPieChartSet.m; sourceTree = "<group>"; };
+		24B607BD1E12855B002282A3 /* MZPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZPieChartView.h; sourceTree = "<group>"; };
+		24B607BE1E12855B002282A3 /* MZPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPieChartView.m; sourceTree = "<group>"; };
+		24B607BF1E12855B002282A3 /* UIView+Addtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addtions.h"; sourceTree = "<group>"; };
+		24B607C01E12855B002282A3 /* UIView+Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addtions.m"; sourceTree = "<group>"; };
+		24B607C61E12884B002282A3 /* PieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartView.h; sourceTree = "<group>"; };
+		24B607C71E12884B002282A3 /* PieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartView.m; sourceTree = "<group>"; };
+		24B607C91E128B78002282A3 /* ChartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartTableViewCell.h; sourceTree = "<group>"; };
+		24B607CA1E128B78002282A3 /* ChartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartTableViewCell.m; sourceTree = "<group>"; };
+		24B607CB1E128B78002282A3 /* ChartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartTableViewCell.xib; sourceTree = "<group>"; };
+		24B607D11E13A828002282A3 /* MyPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPieChartView.h; sourceTree = "<group>"; };
+		24B607D21E13A828002282A3 /* MyPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPieChartView.m; sourceTree = "<group>"; };
+		24B607D41E13B2EE002282A3 /* ChartTableViewDetailCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartTableViewDetailCellTableViewCell.h; sourceTree = "<group>"; };
+		24B607D51E13B2EE002282A3 /* ChartTableViewDetailCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartTableViewDetailCellTableViewCell.m; sourceTree = "<group>"; };
 		58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TinyShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A505FFF64C656988E6161E /* Pods-TinyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.release.xcconfig"; sourceTree = "<group>"; };
 		B427A3F2277ECC111D854335 /* Pods-TinyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +242,7 @@
 		1D5B66AE1E0A19D900606F86 /* TinyShop */ = {
 			isa = PBXGroup;
 			children = (
+				24B607B61E12855B002282A3 /* MZPieChartView */,
 				24B607711E10D71A002282A3 /* Describle */,
 				2450847E1E0D3EF6006DE0D4 /* 会员信息 */,
 				2450847F1E0D3EF6006DE0D4 /* 历史记录 */,
@@ -519,6 +552,17 @@
 				24B607A51E11030C002282A3 /* ChooseTableCell.h */,
 				24B607A61E11030C002282A3 /* ChooseTableCell.m */,
 				24B607A71E11030C002282A3 /* ChooseTableCell.xib */,
+				24B607B01E11FFE6002282A3 /* TimeIncomeDetailViewController.h */,
+				24B607B11E11FFE6002282A3 /* TimeIncomeDetailViewController.m */,
+				24B607C61E12884B002282A3 /* PieChartView.h */,
+				24B607C71E12884B002282A3 /* PieChartView.m */,
+				24B607C91E128B78002282A3 /* ChartTableViewCell.h */,
+				24B607CA1E128B78002282A3 /* ChartTableViewCell.m */,
+				24B607CB1E128B78002282A3 /* ChartTableViewCell.xib */,
+				24B607D11E13A828002282A3 /* MyPieChartView.h */,
+				24B607D21E13A828002282A3 /* MyPieChartView.m */,
+				24B607D41E13B2EE002282A3 /* ChartTableViewDetailCellTableViewCell.h */,
+				24B607D51E13B2EE002282A3 /* ChartTableViewDetailCellTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -537,6 +581,23 @@
 				24B6077A1E10D71A002282A3 /* ZFCirque.m */,
 			);
 			path = Describle;
+			sourceTree = "<group>";
+		};
+		24B607B61E12855B002282A3 /* MZPieChartView */ = {
+			isa = PBXGroup;
+			children = (
+				24B607B71E12855B002282A3 /* MZPieChartDataSet.h */,
+				24B607B81E12855B002282A3 /* MZPieChartDataSet.m */,
+				24B607B91E12855B002282A3 /* MZPieChartFontColorSet.h */,
+				24B607BA1E12855B002282A3 /* MZPieChartFontColorSet.m */,
+				24B607BB1E12855B002282A3 /* MZPieChartSet.h */,
+				24B607BC1E12855B002282A3 /* MZPieChartSet.m */,
+				24B607BD1E12855B002282A3 /* MZPieChartView.h */,
+				24B607BE1E12855B002282A3 /* MZPieChartView.m */,
+				24B607BF1E12855B002282A3 /* UIView+Addtions.h */,
+				24B607C01E12855B002282A3 /* UIView+Addtions.m */,
+			);
+			path = MZPieChartView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -602,6 +663,7 @@
 			files = (
 				245083F21E0B9EA0006DE0D4 /* DrawerCell.xib in Resources */,
 				1D5B66BF1E0A19D900606F86 /* LaunchScreen.storyboard in Resources */,
+				24B607CD1E128B78002282A3 /* ChartTableViewCell.xib in Resources */,
 				1D5B66BC1E0A19D900606F86 /* Assets.xcassets in Resources */,
 				1D5B66BA1E0A19D900606F86 /* Main.storyboard in Resources */,
 				24B607A91E11030C002282A3 /* ChooseTableCell.xib in Resources */,
@@ -673,6 +735,7 @@
 				1DE813201E0A544000784636 /* MASConstraint.m in Sources */,
 				245084441E0BC65E006DE0D4 /* NetTool.m in Sources */,
 				24B6077D1E10D71A002282A3 /* UIView+Addtions.m in Sources */,
+				24B607D61E13B2EE002282A3 /* ChartTableViewDetailCellTableViewCell.m in Sources */,
 				24B607A41E10FFAE002282A3 /* ChooseStoreView.m in Sources */,
 				1DE813281E0A544000784636 /* ViewController+MASAdditions.m in Sources */,
 				2450848E1E0D3FAD006DE0D4 /* DailyViewController.m in Sources */,
@@ -681,12 +744,18 @@
 				24B2EBC11E0E034F00596882 /* TimeViewController.m in Sources */,
 				245083E11E0B9A45006DE0D4 /* LoginControl.m in Sources */,
 				245083EA1E0B9E53006DE0D4 /* BaseUINavigationController.m in Sources */,
+				24B607B21E11FFE6002282A3 /* TimeIncomeDetailViewController.m in Sources */,
+				24B607C11E12855B002282A3 /* MZPieChartDataSet.m in Sources */,
+				24B607C81E12884B002282A3 /* PieChartView.m in Sources */,
 				245084491E0BC6D6006DE0D4 /* ShopModel.m in Sources */,
+				24B607D31E13A828002282A3 /* MyPieChartView.m in Sources */,
 				245083D81E0B99AD006DE0D4 /* NSString+MD5.m in Sources */,
+				24B607C41E12855B002282A3 /* MZPieChartView.m in Sources */,
 				2450848B1E0D3F90006DE0D4 /* GoodsViewController.m in Sources */,
 				1DE813221E0A544000784636 /* MASLayoutConstraint.m in Sources */,
 				24B6077B1E10D71A002282A3 /* GrayWhiteView.m in Sources */,
 				245083F11E0B9EA0006DE0D4 /* DrawerCell.m in Sources */,
+				24B607CC1E128B78002282A3 /* ChartTableViewCell.m in Sources */,
 				2450843F1E0BC62A006DE0D4 /* MBProgressHUD+MJ.m in Sources */,
 				1DE813251E0A544000784636 /* NSArray+MASAdditions.m in Sources */,
 				2450844A1E0BC6D6006DE0D4 /* UserInstance.m in Sources */,
@@ -697,7 +766,10 @@
 				1D5B66CF1E0A1C5500606F86 /* AppDelegate.m in Sources */,
 				245083EB1E0B9E53006DE0D4 /* DrawerViewController.m in Sources */,
 				0439F7DD1E0CC16A009309E3 /* HomeTableViewCell.m in Sources */,
+				24B607C51E12855B002282A3 /* UIView+Addtions.m in Sources */,
+				24B607C21E12855B002282A3 /* MZPieChartFontColorSet.m in Sources */,
 				245084521E0CD65D006DE0D4 /* NSString+Width.m in Sources */,
+				24B607C31E12855B002282A3 /* MZPieChartSet.m in Sources */,
 				0439F7E01E0CC24D009309E3 /* HomeViewController.m in Sources */,
 				245083DE1E0B9A1C006DE0D4 /* LoginViewController.m in Sources */,
 				245084881E0D3F5D006DE0D4 /* HistoryTableViewController.m in Sources */,
