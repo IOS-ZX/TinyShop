@@ -10,6 +10,8 @@
 
 @implementation TimeControll
 
+
+
 // 获取数据
 + (void)timeIncomeRequest:(SuccessResult)succesResult shopId:(NSString*)shopId{
     [NetTool checkRequest:@"incomeTimeAction" loadingMessage:@"加载中.." parameter:@{@"body":@{@"shop_id":shopId}} success:^(NSDictionary *result) {

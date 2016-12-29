@@ -10,4 +10,5 @@
 
 @interface GoodsViewController : UIViewController
 
+
 @end

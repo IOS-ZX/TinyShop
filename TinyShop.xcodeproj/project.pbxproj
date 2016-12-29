@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		0439F7DD1E0CC16A009309E3 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439F7DC1E0CC16A009309E3 /* HomeTableViewCell.m */; };
 		0439F7E01E0CC24D009309E3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439F7DF1E0CC24D009309E3 /* HomeViewController.m */; };
+		1D3D0F2B1E14B4C300B7EB24 /* LogCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D0F2A1E14B4C300B7EB24 /* LogCategory.m */; };
+		1D3D0F311E14EDC900B7EB24 /* ProductAnalysisNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D0F301E14EDC900B7EB24 /* ProductAnalysisNetwork.m */; };
 		1D4F30E31E0A2C6F00C029E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4F30E21E0A2C6F00C029E0 /* ViewController.m */; };
 		1D5B66BA1E0A19D900606F86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B66B81E0A19D900606F86 /* Main.storyboard */; };
 		1D5B66BC1E0A19D900606F86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B66BB1E0A19D900606F86 /* Assets.xcassets */; };
 		1D5B66BF1E0A19D900606F86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B66BD1E0A19D900606F86 /* LaunchScreen.storyboard */; };
 		1D5B66CF1E0A1C5500606F86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5B66C91E0A1C5500606F86 /* AppDelegate.m */; };
 		1D5B66D11E0A1C5500606F86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5B66CB1E0A1C5500606F86 /* main.m */; };
+		1DA1AA041E10F9D0008C807B /* MZBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1AA031E10F9D0008C807B /* MZBarChartView.m */; };
 		1DE8131F1E0A544000784636 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE813051E0A544000784636 /* MASCompositeConstraint.m */; };
 		1DE813201E0A544000784636 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE813081E0A544000784636 /* MASConstraint.m */; };
 		1DE813211E0A544000784636 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8130A1E0A544000784636 /* MASConstraintMaker.m */; };
@@ -72,6 +75,10 @@
 		0439F7DC1E0CC16A009309E3 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		0439F7DE1E0CC24D009309E3 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0439F7DF1E0CC24D009309E3 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		1D3D0F291E14B4C300B7EB24 /* LogCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogCategory.h; sourceTree = "<group>"; };
+		1D3D0F2A1E14B4C300B7EB24 /* LogCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogCategory.m; sourceTree = "<group>"; };
+		1D3D0F2F1E14EDC800B7EB24 /* ProductAnalysisNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductAnalysisNetwork.h; sourceTree = "<group>"; };
+		1D3D0F301E14EDC900B7EB24 /* ProductAnalysisNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductAnalysisNetwork.m; sourceTree = "<group>"; };
 		1D4F30E11E0A2C6F00C029E0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1D4F30E21E0A2C6F00C029E0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1D5B66AC1E0A19D900606F86 /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +89,8 @@
 		1D5B66C91E0A1C5500606F86 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D5B66CA1E0A1C5500606F86 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D5B66CB1E0A1C5500606F86 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1DA1AA021E10F9D0008C807B /* MZBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZBarChartView.h; sourceTree = "<group>"; };
+		1DA1AA031E10F9D0008C807B /* MZBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZBarChartView.m; sourceTree = "<group>"; };
 		1DE813041E0A544000784636 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		1DE813051E0A544000784636 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		1DE813061E0A544000784636 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -221,6 +230,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1D3D0F281E14B4C300B7EB24 /* jison打印出来是中文 */ = {
+			isa = PBXGroup;
+			children = (
+				1D3D0F291E14B4C300B7EB24 /* LogCategory.h */,
+				1D3D0F2A1E14B4C300B7EB24 /* LogCategory.m */,
+			);
+			path = "jison打印出来是中文";
+			sourceTree = "<group>";
+		};
 		1D5B66A31E0A19D900606F86 = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +322,15 @@
 			path = General;
 			sourceTree = "<group>";
 		};
+		1DA1AA011E10F9D0008C807B /* MZBarChart */ = {
+			isa = PBXGroup;
+			children = (
+				1DA1AA021E10F9D0008C807B /* MZBarChartView.h */,
+				1DA1AA031E10F9D0008C807B /* MZBarChartView.m */,
+			);
+			path = MZBarChart;
+			sourceTree = "<group>";
+		};
 		1DE813001E0A540000784636 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +401,7 @@
 		245083CC1E0B7E02006DE0D4 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				1D3D0F281E14B4C300B7EB24 /* jison打印出来是中文 */,
 				245084421E0BC65E006DE0D4 /* NetTool.h */,
 				245084431E0BC65E006DE0D4 /* NetTool.m */,
 				2450844D1E0CD4F7006DE0D4 /* PullChooseView.h */,
@@ -503,6 +531,9 @@
 			children = (
 				245084891E0D3F90006DE0D4 /* GoodsViewController.h */,
 				2450848A1E0D3F90006DE0D4 /* GoodsViewController.m */,
+				1D3D0F2F1E14EDC800B7EB24 /* ProductAnalysisNetwork.h */,
+				1D3D0F301E14EDC900B7EB24 /* ProductAnalysisNetwork.m */,
+				1DA1AA011E10F9D0008C807B /* MZBarChart */,
 			);
 			path = "商品运营";
 			sourceTree = "<group>";
@@ -768,12 +799,15 @@
 				0439F7DD1E0CC16A009309E3 /* HomeTableViewCell.m in Sources */,
 				24B607C51E12855B002282A3 /* UIView+Addtions.m in Sources */,
 				24B607C21E12855B002282A3 /* MZPieChartFontColorSet.m in Sources */,
+				1D3D0F2B1E14B4C300B7EB24 /* LogCategory.m in Sources */,
+				1D3D0F311E14EDC900B7EB24 /* ProductAnalysisNetwork.m in Sources */,
 				245084521E0CD65D006DE0D4 /* NSString+Width.m in Sources */,
 				24B607C31E12855B002282A3 /* MZPieChartSet.m in Sources */,
 				0439F7E01E0CC24D009309E3 /* HomeViewController.m in Sources */,
 				245083DE1E0B9A1C006DE0D4 /* LoginViewController.m in Sources */,
 				245084881E0D3F5D006DE0D4 /* HistoryTableViewController.m in Sources */,
 				1DE8131F1E0A544000784636 /* MASCompositeConstraint.m in Sources */,
+				1DA1AA041E10F9D0008C807B /* MZBarChartView.m in Sources */,
 				2450844F1E0CD4F7006DE0D4 /* PullChooseView.m in Sources */,
 				1DE813261E0A544000784636 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 			);
