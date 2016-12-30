@@ -45,7 +45,6 @@
 		245084851E0D3F33006DE0D4 /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084841E0D3F33006DE0D4 /* UserTableViewController.m */; };
 		245084881E0D3F5D006DE0D4 /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245084871E0D3F5D006DE0D4 /* HistoryTableViewController.m */; };
 		2450848B1E0D3F90006DE0D4 /* GoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2450848A1E0D3F90006DE0D4 /* GoodsViewController.m */; };
-		2450848E1E0D3FAD006DE0D4 /* DailyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2450848D1E0D3FAD006DE0D4 /* DailyViewController.m */; };
 		247672641E0E3B8C001B0899 /* TimeControll.m in Sources */ = {isa = PBXBuildFile; fileRef = 247672631E0E3B8C001B0899 /* TimeControll.m */; };
 		24B2EBC11E0E034F00596882 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B2EBC01E0E034F00596882 /* TimeViewController.m */; };
 		24B6077B1E10D71A002282A3 /* GrayWhiteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607741E10D71A002282A3 /* GrayWhiteView.m */; };
@@ -67,6 +66,10 @@
 		24B607CD1E128B78002282A3 /* ChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B607CB1E128B78002282A3 /* ChartTableViewCell.xib */; };
 		24B607D31E13A828002282A3 /* MyPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607D21E13A828002282A3 /* MyPieChartView.m */; };
 		24B607D61E13B2EE002282A3 /* ChartTableViewDetailCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607D51E13B2EE002282A3 /* ChartTableViewDetailCellTableViewCell.m */; };
+		24B607DC1E13DD31002282A3 /* DailyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607DB1E13DD31002282A3 /* DailyViewController.m */; };
+		24B607DF1E13DDA7002282A3 /* DailyTimeControll.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607DE1E13DDA7002282A3 /* DailyTimeControll.m */; };
+		24B607E21E14BDFD002282A3 /* ChooseDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B607E11E14BDFD002282A3 /* ChooseDateView.m */; };
+		24B608111E1608DE002282A3 /* DailyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B608101E1608DE002282A3 /* DailyDetailViewController.m */; };
 		ABE5B94AF12294997B7ECB53 /* libPods-TinyShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */; };
 /* End PBXBuildFile section */
 
@@ -151,8 +154,6 @@
 		245084871E0D3F5D006DE0D4 /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
 		245084891E0D3F90006DE0D4 /* GoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsViewController.h; sourceTree = "<group>"; };
 		2450848A1E0D3F90006DE0D4 /* GoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsViewController.m; sourceTree = "<group>"; };
-		2450848C1E0D3FAD006DE0D4 /* DailyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyViewController.h; sourceTree = "<group>"; };
-		2450848D1E0D3FAD006DE0D4 /* DailyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyViewController.m; sourceTree = "<group>"; };
 		247672621E0E3B8C001B0899 /* TimeControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeControll.h; sourceTree = "<group>"; };
 		247672631E0E3B8C001B0899 /* TimeControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeControll.m; sourceTree = "<group>"; };
 		24B2EBBF1E0E034F00596882 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
@@ -194,6 +195,14 @@
 		24B607D21E13A828002282A3 /* MyPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPieChartView.m; sourceTree = "<group>"; };
 		24B607D41E13B2EE002282A3 /* ChartTableViewDetailCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartTableViewDetailCellTableViewCell.h; sourceTree = "<group>"; };
 		24B607D51E13B2EE002282A3 /* ChartTableViewDetailCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartTableViewDetailCellTableViewCell.m; sourceTree = "<group>"; };
+		24B607DA1E13DD31002282A3 /* DailyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyViewController.h; sourceTree = "<group>"; };
+		24B607DB1E13DD31002282A3 /* DailyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyViewController.m; sourceTree = "<group>"; };
+		24B607DD1E13DDA7002282A3 /* DailyTimeControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyTimeControll.h; sourceTree = "<group>"; };
+		24B607DE1E13DDA7002282A3 /* DailyTimeControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyTimeControll.m; sourceTree = "<group>"; };
+		24B607E01E14BDFD002282A3 /* ChooseDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseDateView.h; sourceTree = "<group>"; };
+		24B607E11E14BDFD002282A3 /* ChooseDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseDateView.m; sourceTree = "<group>"; };
+		24B6080F1E1608DE002282A3 /* DailyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyDetailViewController.h; sourceTree = "<group>"; };
+		24B608101E1608DE002282A3 /* DailyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDetailViewController.m; sourceTree = "<group>"; };
 		58CF7CA41E8CA82B7B15846F /* libPods-TinyShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TinyShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A505FFF64C656988E6161E /* Pods-TinyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.release.xcconfig"; sourceTree = "<group>"; };
 		B427A3F2277ECC111D854335 /* Pods-TinyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinyShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinyShop/Pods-TinyShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -541,8 +550,9 @@
 		245084811E0D3EF6006DE0D4 /* 日常运营 */ = {
 			isa = PBXGroup;
 			children = (
-				2450848C1E0D3FAD006DE0D4 /* DailyViewController.h */,
-				2450848D1E0D3FAD006DE0D4 /* DailyViewController.m */,
+				24B607D71E13DD31002282A3 /* Controller */,
+				24B607D81E13DD31002282A3 /* Model */,
+				24B607D91E13DD31002282A3 /* View */,
 			);
 			path = "日常运营";
 			sourceTree = "<group>";
@@ -629,6 +639,35 @@
 				24B607C01E12855B002282A3 /* UIView+Addtions.m */,
 			);
 			path = MZPieChartView;
+			sourceTree = "<group>";
+		};
+		24B607D71E13DD31002282A3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				24B607DD1E13DDA7002282A3 /* DailyTimeControll.h */,
+				24B607DE1E13DDA7002282A3 /* DailyTimeControll.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		24B607D81E13DD31002282A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		24B607D91E13DD31002282A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				24B607DA1E13DD31002282A3 /* DailyViewController.h */,
+				24B607DB1E13DD31002282A3 /* DailyViewController.m */,
+				24B6080F1E1608DE002282A3 /* DailyDetailViewController.h */,
+				24B608101E1608DE002282A3 /* DailyDetailViewController.m */,
+				24B607E01E14BDFD002282A3 /* ChooseDateView.h */,
+				24B607E11E14BDFD002282A3 /* ChooseDateView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -769,11 +808,11 @@
 				24B607D61E13B2EE002282A3 /* ChartTableViewDetailCellTableViewCell.m in Sources */,
 				24B607A41E10FFAE002282A3 /* ChooseStoreView.m in Sources */,
 				1DE813281E0A544000784636 /* ViewController+MASAdditions.m in Sources */,
-				2450848E1E0D3FAD006DE0D4 /* DailyViewController.m in Sources */,
 				245084851E0D3F33006DE0D4 /* UserTableViewController.m in Sources */,
 				24B607A81E11030C002282A3 /* ChooseTableCell.m in Sources */,
 				24B2EBC11E0E034F00596882 /* TimeViewController.m in Sources */,
 				245083E11E0B9A45006DE0D4 /* LoginControl.m in Sources */,
+				24B607E21E14BDFD002282A3 /* ChooseDateView.m in Sources */,
 				245083EA1E0B9E53006DE0D4 /* BaseUINavigationController.m in Sources */,
 				24B607B21E11FFE6002282A3 /* TimeIncomeDetailViewController.m in Sources */,
 				24B607C11E12855B002282A3 /* MZPieChartDataSet.m in Sources */,
@@ -783,6 +822,7 @@
 				245083D81E0B99AD006DE0D4 /* NSString+MD5.m in Sources */,
 				24B607C41E12855B002282A3 /* MZPieChartView.m in Sources */,
 				2450848B1E0D3F90006DE0D4 /* GoodsViewController.m in Sources */,
+				24B608111E1608DE002282A3 /* DailyDetailViewController.m in Sources */,
 				1DE813221E0A544000784636 /* MASLayoutConstraint.m in Sources */,
 				24B6077B1E10D71A002282A3 /* GrayWhiteView.m in Sources */,
 				245083F11E0B9EA0006DE0D4 /* DrawerCell.m in Sources */,
@@ -793,6 +833,8 @@
 				1DE813241E0A544000784636 /* MASViewConstraint.m in Sources */,
 				1DE813231E0A544000784636 /* MASViewAttribute.m in Sources */,
 				1DE813271E0A544000784636 /* View+MASAdditions.m in Sources */,
+				24B607DC1E13DD31002282A3 /* DailyViewController.m in Sources */,
+				24B607DF1E13DDA7002282A3 /* DailyTimeControll.m in Sources */,
 				1D4F30E31E0A2C6F00C029E0 /* ViewController.m in Sources */,
 				1D5B66CF1E0A1C5500606F86 /* AppDelegate.m in Sources */,
 				245083EB1E0B9E53006DE0D4 /* DrawerViewController.m in Sources */,

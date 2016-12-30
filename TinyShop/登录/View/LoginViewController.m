@@ -213,6 +213,7 @@
         self.storeTextField.text = [ud objectForKey:@"shop_account"];
         self.numberTextField.text = [ud objectForKey:@"user_account"];
         self.pwdTextField.text = [ud objectForKey:@"user_password"];
+        
         self.rememberBtn.selected = YES;
     }
 }

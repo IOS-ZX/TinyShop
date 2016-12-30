@@ -195,6 +195,7 @@
     [self.scrollview addSubview:self.backGrayView];
     [self addTitleLabels];
     [self createPointsAndLines];
+    self.topLabel.text = self.topTitleCallBack(self.sumValue);
 }
 
 - (void)addTitleLabels
@@ -235,15 +236,19 @@
         
         //4、添加income label
         CGFloat sum = 0;
-        if (idx == 0) {
-            sum += [self.incomeStore[idx + 1] floatValue];
-        }else if(idx == self.incomeStore.count -1)
-        {
-            sum += [self.incomeStore[idx -1] floatValue];
-        }else
-        {
-            sum += [self.incomeStore[idx + 1] floatValue];
-            sum += [self.incomeStore[idx -1] floatValue];
+        if (self.incomeStore.count > 1) {
+            if (idx == 0) {
+                sum += [self.incomeStore[idx + 1] floatValue];
+            }else if(idx == self.incomeStore.count -1)
+            {
+                sum += [self.incomeStore[idx -1] floatValue];
+            }else
+            {
+                sum += [self.incomeStore[idx + 1] floatValue];
+                sum += [self.incomeStore[idx -1] floatValue];
+            }
+        }else{
+            sum = [self.incomeStore[0] floatValue];
         }
         CGPoint labelCenter = currentCenter;
         if (sum / 2.0 > obj.floatValue) {

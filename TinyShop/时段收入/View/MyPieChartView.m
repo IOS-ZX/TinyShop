@@ -38,8 +38,7 @@
 }
 
 - (void)checkShop{
-    NSArray *arr = [self.shopId componentsSeparatedByString:@","];
-    if (arr.count > 1) {
+    if ([self.data[@"body"][@"branch"] count] > 1) {
         self.scrollView.contentOffset = CGPointMake(SCREEN_W * 0.8 + 7, 0);
     }else{
         self.scrollView.contentSize = CGSizeMake(0, 0);
@@ -59,7 +58,6 @@
 
 - (void)setShopId:(NSString *)shopId{
     _shopId = shopId;
-    [self checkShop];
 }
 
 // 处理数据

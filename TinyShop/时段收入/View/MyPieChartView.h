@@ -15,4 +15,10 @@
 /** shopID **/
 @property(nonatomic,strong)NSString *shopId;
 
+/** 主图数据 **/
+@property(nonatomic,strong)NSArray *dataArray;
+
+/** 详图数据 **/
+@property(nonatomic,strong)NSArray *detailArray;
+
 @end

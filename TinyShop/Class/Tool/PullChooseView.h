@@ -15,15 +15,6 @@
 @end
 
 @interface PullChooseView : UIView
-{
-    NSArray *_items;
-    UIView *_contentView;
-    CGFloat _maxWidth;
-    CGPoint _pointA;
-    CGPoint _pointB;
-    CGPoint _pointC;
-    UITableView *_tableView;
-}
 
 /** 中心点 **/
 @property(nonatomic,assign)CGPoint centerPoint;
