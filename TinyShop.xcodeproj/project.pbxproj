@@ -9,6 +9,25 @@
 /* Begin PBXBuildFile section */
 		0439F7DD1E0CC16A009309E3 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439F7DC1E0CC16A009309E3 /* HomeTableViewCell.m */; };
 		0439F7E01E0CC24D009309E3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439F7DF1E0CC24D009309E3 /* HomeViewController.m */; };
+		049286E21E1B87D700DD3270 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049286DD1E1B87D700DD3270 /* HistoryDetailViewController.m */; };
+		049286E31E1B87D700DD3270 /* HistoryRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049286DF1E1B87D700DD3270 /* HistoryRecordViewController.m */; };
+		049286E41E1B87D700DD3270 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049286E11E1B87D700DD3270 /* HistoryViewController.m */; };
+		049286E91E1B87F000DD3270 /* HistoryDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049286E61E1B87F000DD3270 /* HistoryDetailModel.m */; };
+		049286EA1E1B87F000DD3270 /* HistoryOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049286E81E1B87F000DD3270 /* HistoryOrderModel.m */; };
+		049286EF1E1B880100DD3270 /* HistoryDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049286EC1E1B880100DD3270 /* HistoryDetailTableViewCell.m */; };
+		049286F01E1B880100DD3270 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049286EE1E1B880100DD3270 /* HistoryTableViewCell.m */; };
+		049286F81E1B889A00DD3270 /* GoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049286F51E1B889A00DD3270 /* GoodsModel.m */; };
+		049286F91E1B889A00DD3270 /* TypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049286F71E1B889A00DD3270 /* TypeModel.m */; };
+		049286FE1E1B88BF00DD3270 /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049286FB1E1B88BF00DD3270 /* OrderModel.m */; };
+		049286FF1E1B88BF00DD3270 /* VipModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 049286FD1E1B88BF00DD3270 /* VipModel.m */; };
+		049287021E1B890000DD3270 /* TypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049287011E1B890000DD3270 /* TypeTableViewCell.m */; };
+		049287051E1B892F00DD3270 /* GoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049287041E1B892F00DD3270 /* GoodsTableViewCell.m */; };
+		0492870A1E1B895B00DD3270 /* OrderSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049287071E1B895B00DD3270 /* OrderSectionHeaderView.m */; };
+		0492870B1E1B895B00DD3270 /* OrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049287091E1B895B00DD3270 /* OrderTableViewCell.m */; };
+		049287111E1B8A6800DD3270 /* NetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 049287101E1B8A6800DD3270 /* NetTool.m */; };
+		049287161E1B999900DD3270 /* DetailOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049287131E1B999900DD3270 /* DetailOrderViewController.m */; };
+		049287171E1B999900DD3270 /* MemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049287151E1B999900DD3270 /* MemberViewController.m */; };
+		049287201E1B99FF00DD3270 /* MemberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492871D1E1B99FF00DD3270 /* MemberTableViewCell.m */; };
 		1D3D0F311E14EDC900B7EB24 /* ProductAnalysisNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D0F301E14EDC900B7EB24 /* ProductAnalysisNetwork.m */; };
 		1D5B66BA1E0A19D900606F86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B66B81E0A19D900606F86 /* Main.storyboard */; };
 		1D5B66BC1E0A19D900606F86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B66BB1E0A19D900606F86 /* Assets.xcassets */; };
@@ -65,7 +84,6 @@
 		24B608821E179A52002282A3 /* MZPieChartSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B6085A1E179A52002282A3 /* MZPieChartSet.m */; };
 		24B608831E179A52002282A3 /* MZPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B6085C1E179A52002282A3 /* MZPieChartView.m */; };
 		24B608841E179A52002282A3 /* UIView+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B6085E1E179A52002282A3 /* UIView+Addtions.m */; };
-		24B608851E179A52002282A3 /* NetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B608601E179A52002282A3 /* NetTool.m */; };
 		24B608861E179A52002282A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B608641E179A52002282A3 /* AppDelegate.m */; };
 		24B608871E179A52002282A3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24B608651E179A52002282A3 /* Info.plist */; };
 		24B608881E179A52002282A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B608661E179A52002282A3 /* main.m */; };
@@ -79,6 +97,44 @@
 		0439F7DC1E0CC16A009309E3 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		0439F7DE1E0CC24D009309E3 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0439F7DF1E0CC24D009309E3 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		049286DC1E1B87D700DD3270 /* HistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryDetailViewController.h; path = "TinyShop/历史记录/Controller/HistoryDetailViewController.h"; sourceTree = SOURCE_ROOT; };
+		049286DD1E1B87D700DD3270 /* HistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryDetailViewController.m; path = "TinyShop/历史记录/Controller/HistoryDetailViewController.m"; sourceTree = SOURCE_ROOT; };
+		049286DE1E1B87D700DD3270 /* HistoryRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryRecordViewController.h; path = "TinyShop/历史记录/Controller/HistoryRecordViewController.h"; sourceTree = SOURCE_ROOT; };
+		049286DF1E1B87D700DD3270 /* HistoryRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryRecordViewController.m; path = "TinyShop/历史记录/Controller/HistoryRecordViewController.m"; sourceTree = SOURCE_ROOT; };
+		049286E01E1B87D700DD3270 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryViewController.h; path = "TinyShop/历史记录/Controller/HistoryViewController.h"; sourceTree = SOURCE_ROOT; };
+		049286E11E1B87D700DD3270 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryViewController.m; path = "TinyShop/历史记录/Controller/HistoryViewController.m"; sourceTree = SOURCE_ROOT; };
+		049286E51E1B87F000DD3270 /* HistoryDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryDetailModel.h; path = "TinyShop/历史记录/Model/HistoryDetailModel.h"; sourceTree = SOURCE_ROOT; };
+		049286E61E1B87F000DD3270 /* HistoryDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryDetailModel.m; path = "TinyShop/历史记录/Model/HistoryDetailModel.m"; sourceTree = SOURCE_ROOT; };
+		049286E71E1B87F000DD3270 /* HistoryOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryOrderModel.h; path = "TinyShop/历史记录/Model/HistoryOrderModel.h"; sourceTree = SOURCE_ROOT; };
+		049286E81E1B87F000DD3270 /* HistoryOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryOrderModel.m; path = "TinyShop/历史记录/Model/HistoryOrderModel.m"; sourceTree = SOURCE_ROOT; };
+		049286EB1E1B880100DD3270 /* HistoryDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryDetailTableViewCell.h; path = "TinyShop/历史记录/View/HistoryDetailTableViewCell.h"; sourceTree = SOURCE_ROOT; };
+		049286EC1E1B880100DD3270 /* HistoryDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryDetailTableViewCell.m; path = "TinyShop/历史记录/View/HistoryDetailTableViewCell.m"; sourceTree = SOURCE_ROOT; };
+		049286ED1E1B880100DD3270 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryTableViewCell.h; path = "TinyShop/历史记录/View/HistoryTableViewCell.h"; sourceTree = SOURCE_ROOT; };
+		049286EE1E1B880100DD3270 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryTableViewCell.m; path = "TinyShop/历史记录/View/HistoryTableViewCell.m"; sourceTree = SOURCE_ROOT; };
+		049286F41E1B889A00DD3270 /* GoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsModel.h; sourceTree = "<group>"; };
+		049286F51E1B889A00DD3270 /* GoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsModel.m; sourceTree = "<group>"; };
+		049286F61E1B889A00DD3270 /* TypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeModel.h; sourceTree = "<group>"; };
+		049286F71E1B889A00DD3270 /* TypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeModel.m; sourceTree = "<group>"; };
+		049286FA1E1B88BF00DD3270 /* OrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderModel.h; sourceTree = "<group>"; };
+		049286FB1E1B88BF00DD3270 /* OrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
+		049286FC1E1B88BF00DD3270 /* VipModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VipModel.h; sourceTree = "<group>"; };
+		049286FD1E1B88BF00DD3270 /* VipModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VipModel.m; sourceTree = "<group>"; };
+		049287001E1B890000DD3270 /* TypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeTableViewCell.h; sourceTree = "<group>"; };
+		049287011E1B890000DD3270 /* TypeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeTableViewCell.m; sourceTree = "<group>"; };
+		049287031E1B892F00DD3270 /* GoodsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsTableViewCell.h; sourceTree = "<group>"; };
+		049287041E1B892F00DD3270 /* GoodsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsTableViewCell.m; sourceTree = "<group>"; };
+		049287061E1B895B00DD3270 /* OrderSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderSectionHeaderView.h; sourceTree = "<group>"; };
+		049287071E1B895B00DD3270 /* OrderSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderSectionHeaderView.m; sourceTree = "<group>"; };
+		049287081E1B895B00DD3270 /* OrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTableViewCell.h; sourceTree = "<group>"; };
+		049287091E1B895B00DD3270 /* OrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTableViewCell.m; sourceTree = "<group>"; };
+		0492870F1E1B8A6800DD3270 /* NetTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetTool.h; sourceTree = "<group>"; };
+		049287101E1B8A6800DD3270 /* NetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetTool.m; sourceTree = "<group>"; };
+		049287121E1B999900DD3270 /* DetailOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailOrderViewController.h; sourceTree = "<group>"; };
+		049287131E1B999900DD3270 /* DetailOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailOrderViewController.m; sourceTree = "<group>"; };
+		049287141E1B999900DD3270 /* MemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberViewController.h; sourceTree = "<group>"; };
+		049287151E1B999900DD3270 /* MemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberViewController.m; sourceTree = "<group>"; };
+		0492871C1E1B99FF00DD3270 /* MemberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberTableViewCell.h; sourceTree = "<group>"; };
+		0492871D1E1B99FF00DD3270 /* MemberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberTableViewCell.m; sourceTree = "<group>"; };
 		1D3D0F2F1E14EDC800B7EB24 /* ProductAnalysisNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductAnalysisNetwork.h; sourceTree = "<group>"; };
 		1D3D0F301E14EDC900B7EB24 /* ProductAnalysisNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductAnalysisNetwork.m; sourceTree = "<group>"; };
 		1D5B66AC1E0A19D900606F86 /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,8 +248,6 @@
 		24B6085C1E179A52002282A3 /* MZPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPieChartView.m; sourceTree = "<group>"; };
 		24B6085D1E179A52002282A3 /* UIView+Addtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addtions.h"; sourceTree = "<group>"; };
 		24B6085E1E179A52002282A3 /* UIView+Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addtions.m"; sourceTree = "<group>"; };
-		24B6085F1E179A52002282A3 /* NetTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetTool.h; sourceTree = "<group>"; };
-		24B608601E179A52002282A3 /* NetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetTool.m; sourceTree = "<group>"; };
 		24B608621E179A52002282A3 /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		24B608631E179A52002282A3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24B608641E179A52002282A3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -230,6 +284,87 @@
 				0439F7DC1E0CC16A009309E3 /* HomeTableViewCell.m */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		049286C41E1B833D00DD3270 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				049286DC1E1B87D700DD3270 /* HistoryDetailViewController.h */,
+				049286DD1E1B87D700DD3270 /* HistoryDetailViewController.m */,
+				049286DE1E1B87D700DD3270 /* HistoryRecordViewController.h */,
+				049286DF1E1B87D700DD3270 /* HistoryRecordViewController.m */,
+				049286E01E1B87D700DD3270 /* HistoryViewController.h */,
+				049286E11E1B87D700DD3270 /* HistoryViewController.m */,
+			);
+			name = Controller;
+			path = "../商品运营/Controller";
+			sourceTree = "<group>";
+		};
+		049286C51E1B833D00DD3270 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				049286E51E1B87F000DD3270 /* HistoryDetailModel.h */,
+				049286E61E1B87F000DD3270 /* HistoryDetailModel.m */,
+				049286E71E1B87F000DD3270 /* HistoryOrderModel.h */,
+				049286E81E1B87F000DD3270 /* HistoryOrderModel.m */,
+			);
+			name = Model;
+			path = "../商品运营/Model";
+			sourceTree = "<group>";
+		};
+		049286C61E1B833D00DD3270 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049286EB1E1B880100DD3270 /* HistoryDetailTableViewCell.h */,
+				049286EC1E1B880100DD3270 /* HistoryDetailTableViewCell.m */,
+				049286ED1E1B880100DD3270 /* HistoryTableViewCell.h */,
+				049286EE1E1B880100DD3270 /* HistoryTableViewCell.m */,
+			);
+			name = View;
+			path = "../商品运营/View";
+			sourceTree = "<group>";
+		};
+		049286F11E1B885600DD3270 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				049287121E1B999900DD3270 /* DetailOrderViewController.h */,
+				049287131E1B999900DD3270 /* DetailOrderViewController.m */,
+				049287141E1B999900DD3270 /* MemberViewController.h */,
+				049287151E1B999900DD3270 /* MemberViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		049286F21E1B885600DD3270 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				049286FA1E1B88BF00DD3270 /* OrderModel.h */,
+				049286FB1E1B88BF00DD3270 /* OrderModel.m */,
+				049286FC1E1B88BF00DD3270 /* VipModel.h */,
+				049286FD1E1B88BF00DD3270 /* VipModel.m */,
+				049286F41E1B889A00DD3270 /* GoodsModel.h */,
+				049286F51E1B889A00DD3270 /* GoodsModel.m */,
+				049286F61E1B889A00DD3270 /* TypeModel.h */,
+				049286F71E1B889A00DD3270 /* TypeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		049286F31E1B885600DD3270 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0492871C1E1B99FF00DD3270 /* MemberTableViewCell.h */,
+				0492871D1E1B99FF00DD3270 /* MemberTableViewCell.m */,
+				049287061E1B895B00DD3270 /* OrderSectionHeaderView.h */,
+				049287071E1B895B00DD3270 /* OrderSectionHeaderView.m */,
+				049287081E1B895B00DD3270 /* OrderTableViewCell.h */,
+				049287091E1B895B00DD3270 /* OrderTableViewCell.m */,
+				049287031E1B892F00DD3270 /* GoodsTableViewCell.h */,
+				049287041E1B892F00DD3270 /* GoodsTableViewCell.m */,
+				049287001E1B890000DD3270 /* TypeTableViewCell.h */,
+				049287011E1B890000DD3270 /* TypeTableViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		147DF3733EA4BB795BE430CB /* Frameworks */ = {
@@ -336,8 +471,8 @@
 			isa = PBXGroup;
 			children = (
 				245084451E0BC6D6006DE0D4 /* ShopModel.h */,
-				245084461E0BC6D6006DE0D4 /* UserInstance.h */,
 				245084471E0BC6D6006DE0D4 /* ShopModel.m */,
+				245084461E0BC6D6006DE0D4 /* UserInstance.h */,
 				245084481E0BC6D6006DE0D4 /* UserInstance.m */,
 			);
 			path = Model;
@@ -383,6 +518,9 @@
 		2450847E1E0D3EF6006DE0D4 /* 会员信息 */ = {
 			isa = PBXGroup;
 			children = (
+				049286F11E1B885600DD3270 /* Controller */,
+				049286F21E1B885600DD3270 /* Model */,
+				049286F31E1B885600DD3270 /* View */,
 				245084831E0D3F33006DE0D4 /* UserTableViewController.h */,
 				245084841E0D3F33006DE0D4 /* UserTableViewController.m */,
 			);
@@ -392,6 +530,9 @@
 		2450847F1E0D3EF6006DE0D4 /* 历史记录 */ = {
 			isa = PBXGroup;
 			children = (
+				049286C41E1B833D00DD3270 /* Controller */,
+				049286C51E1B833D00DD3270 /* Model */,
+				049286C61E1B833D00DD3270 /* View */,
 				245084861E0D3F5D006DE0D4 /* HistoryTableViewController.h */,
 				245084871E0D3F5D006DE0D4 /* HistoryTableViewController.m */,
 			);
@@ -510,8 +651,8 @@
 				24B608361E179A52002282A3 /* Masonry */,
 				24B608511E179A52002282A3 /* MJ */,
 				24B608541E179A52002282A3 /* MZPieChartView */,
-				24B6085F1E179A52002282A3 /* NetTool.h */,
-				24B608601E179A52002282A3 /* NetTool.m */,
+				0492870F1E1B8A6800DD3270 /* NetTool.h */,
+				049287101E1B8A6800DD3270 /* NetTool.m */,
 				24B608611E179A52002282A3 /* Other */,
 				24B6086A1E179A52002282A3 /* PullChooseView.h */,
 				24B6086B1E179A52002282A3 /* PullChooseView.m */,
@@ -785,7 +926,10 @@
 				24B608711E179A52002282A3 /* NSString+MD5.m in Sources */,
 				24B607A41E10FFAE002282A3 /* ChooseStoreView.m in Sources */,
 				24B608701E179A52002282A3 /* ZFCirque.m in Sources */,
+				049286E31E1B87D700DD3270 /* HistoryRecordViewController.m in Sources */,
+				049286F91E1B889A00DD3270 /* TypeModel.m in Sources */,
 				245084851E0D3F33006DE0D4 /* UserTableViewController.m in Sources */,
+				049287161E1B999900DD3270 /* DetailOrderViewController.m in Sources */,
 				24B6088A1E179A52002282A3 /* PullChooseView.m in Sources */,
 				24B607A81E11030C002282A3 /* ChooseTableCell.m in Sources */,
 				24B6087C1E179A52002282A3 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -793,21 +937,29 @@
 				24B608891E179A52002282A3 /* ViewController.m in Sources */,
 				24B6087E1E179A52002282A3 /* ViewController+MASAdditions.m in Sources */,
 				24B608821E179A52002282A3 /* MZPieChartSet.m in Sources */,
+				0492870B1E1B895B00DD3270 /* OrderTableViewCell.m in Sources */,
+				0492870A1E1B895B00DD3270 /* OrderSectionHeaderView.m in Sources */,
 				24B608861E179A52002282A3 /* AppDelegate.m in Sources */,
+				049287111E1B8A6800DD3270 /* NetTool.m in Sources */,
+				049287201E1B99FF00DD3270 /* MemberTableViewCell.m in Sources */,
 				24B607E21E14BDFD002282A3 /* ChooseDateView.m in Sources */,
-				24B608851E179A52002282A3 /* NetTool.m in Sources */,
+				049286E41E1B87D700DD3270 /* HistoryViewController.m in Sources */,
 				24B6086C1E179A52002282A3 /* TQConst.m in Sources */,
 				245083EA1E0B9E53006DE0D4 /* BaseUINavigationController.m in Sources */,
 				24B607C81E12884B002282A3 /* PieChartView.m in Sources */,
 				24B608741E179A52002282A3 /* LogCategory.m in Sources */,
 				245084491E0BC6D6006DE0D4 /* ShopModel.m in Sources */,
+				049287171E1B999900DD3270 /* MemberViewController.m in Sources */,
 				24B607D31E13A828002282A3 /* MyPieChartView.m in Sources */,
 				24B6086E1E179A52002282A3 /* MZLineView.m in Sources */,
 				2450848B1E0D3F90006DE0D4 /* GoodsViewController.m in Sources */,
 				24B608781E179A52002282A3 /* MASLayoutConstraint.m in Sources */,
+				049286E21E1B87D700DD3270 /* HistoryDetailViewController.m in Sources */,
 				24B608161E1793B5002282A3 /* DailyDetailViewController.m in Sources */,
 				24B608751E179A52002282A3 /* MASCompositeConstraint.m in Sources */,
 				24B6087B1E179A52002282A3 /* NSArray+MASAdditions.m in Sources */,
+				049286F01E1B880100DD3270 /* HistoryTableViewCell.m in Sources */,
+				049286E91E1B87F000DD3270 /* HistoryDetailModel.m in Sources */,
 				245083F11E0B9EA0006DE0D4 /* DrawerCell.m in Sources */,
 				24B608761E179A52002282A3 /* MASConstraint.m in Sources */,
 				24B6081D1E1793F9002282A3 /* TimeViewController.m in Sources */,
@@ -821,15 +973,22 @@
 				24B6086F1E179A52002282A3 /* UIView+Addtions.m in Sources */,
 				24B608841E179A52002282A3 /* UIView+Addtions.m in Sources */,
 				1D3D0F311E14EDC900B7EB24 /* ProductAnalysisNetwork.m in Sources */,
+				049287021E1B890000DD3270 /* TypeTableViewCell.m in Sources */,
 				24B608721E179A52002282A3 /* NSString+Width.m in Sources */,
+				049287051E1B892F00DD3270 /* GoodsTableViewCell.m in Sources */,
 				24B6081C1E1793F9002282A3 /* TimeIncomeDetailViewController.m in Sources */,
 				24B608801E179A52002282A3 /* MZPieChartDataSet.m in Sources */,
+				049286FE1E1B88BF00DD3270 /* OrderModel.m in Sources */,
 				24B608811E179A52002282A3 /* MZPieChartFontColorSet.m in Sources */,
+				049286EF1E1B880100DD3270 /* HistoryDetailTableViewCell.m in Sources */,
 				0439F7E01E0CC24D009309E3 /* HomeViewController.m in Sources */,
+				049286FF1E1B88BF00DD3270 /* VipModel.m in Sources */,
 				245083DE1E0B9A1C006DE0D4 /* LoginViewController.m in Sources */,
 				24B608731E179A52002282A3 /* UIColor+Hex.m in Sources */,
 				245084881E0D3F5D006DE0D4 /* HistoryTableViewController.m in Sources */,
 				1DA1AA041E10F9D0008C807B /* MZBarChartView.m in Sources */,
+				049286EA1E1B87F000DD3270 /* HistoryOrderModel.m in Sources */,
+				049286F81E1B889A00DD3270 /* GoodsModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,4 +24,9 @@ typedef void(^ErrorHandler)(NSError *error);
              success:(SuccessHandler)success
                error:(ErrorHandler)errors;
 
++ (void)requestWithURL:(NSString *)suffixURL
+                  loadingMsg:(NSString *)loadingMsg
+                      params:(NSDictionary *)params
+                     success:(SuccessHandler)successHandler
+                       error:(ErrorHandler)ErrorHandler;
 @end

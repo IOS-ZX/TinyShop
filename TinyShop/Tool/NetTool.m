@@ -52,7 +52,7 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
-    manager.requestSerializer.timeoutInterval = 20.0;
+    manager.requestSerializer.timeoutInterval = 10.0;
     // HTTPS
     //允许无效或非法证书
     manager.securityPolicy.allowInvalidCertificates = YES;
@@ -67,14 +67,12 @@
     [manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [MBProgressHUD hideHUD];
         if ([responseObject[@"status"] integerValue] == 0) {
-            [MBProgressHUD showSuccess:@"加载成功！"];
             success(responseObject);
         }else{
             [MBProgressHUD showError:responseObject[@"errorMsg"]];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [MBProgressHUD hideHUD];
-        [MBProgressHUD showError:@"服务器开小差了。"];
         errors(error);
     }];
 }

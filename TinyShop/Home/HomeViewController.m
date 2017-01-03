@@ -8,6 +8,8 @@
 
 #import "HomeViewController.h"
 #import "HomeTableViewCell.h"
+#import "HistoryViewController.h"
+#import "MemberViewController.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -143,16 +145,17 @@
         case 3:
             //会员
         {
-            UserTableViewController *user = [UserTableViewController new];
-            user.view.backgroundColor = [UIColor whiteColor];
+            //UserTableViewController *user = [UserTableViewController new];
+            MemberViewController *user = [[MemberViewController alloc]init];
+            user.view.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
             [self.navigationController pushViewController:user animated:YES];
         }
             break;
         case 4:
             //历史
         {
-            HistoryTableViewController *history = [HistoryTableViewController new];
-            history.view.backgroundColor = [UIColor whiteColor];
+            HistoryViewController *history = [HistoryViewController new];
+            history.view.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
             [self.navigationController pushViewController:history animated:YES];
         }
             break;
