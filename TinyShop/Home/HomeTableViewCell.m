@@ -30,11 +30,11 @@
 }
 
 -(void)loadInterFace{
-    _leftImage = [[UIImageView alloc]initWithFrame:CGRectMake(30, 0, SCREENWIDTH*0.05, 80)];
-    _label1 = [[UILabel alloc]initWithFrame:CGRectMake(50+SCREENWIDTH*0.05, 0, SCREENWIDTH*0.4, 50)];
-    _label2 = [[UILabel alloc]initWithFrame:CGRectMake(50+SCREENWIDTH*0.05, 50, SCREENWIDTH*0.4, 50)];
-    _label3 = [[UILabel alloc]initWithFrame:CGRectMake(30+SCREENWIDTH*0.45, 50, SCREENWIDTH*0.2, 50)];
-    _rightImage = [[UIImageView alloc]initWithFrame:CGRectMake(30+SCREENWIDTH*0.75, 30, 40, 40)];
+    _leftImage = [[UIImageView alloc]initWithFrame:CGRectMake(30, 0, SCREEN_W*0.05, 80)];
+    _label1 = [[UILabel alloc]initWithFrame:CGRectMake(50+SCREEN_W*0.05, 0, SCREEN_W*0.4, 50)];
+    _label2 = [[UILabel alloc]initWithFrame:CGRectMake(50+SCREEN_W*0.05, 50, SCREEN_W*0.4, 50)];
+    _label3 = [[UILabel alloc]initWithFrame:CGRectMake(30+SCREEN_W*0.45, 50, SCREEN_W*0.2, 50)];
+    _rightImage = [[UIImageView alloc]initWithFrame:CGRectMake(30+SCREEN_W*0.75, 30, 40, 40)];
     _label1.font = [UIFont systemFontOfSize:FONT(20) weight:1];
     _label1.textColor = [UIColor blackColor];
     _label2.font = [UIFont systemFontOfSize:14];
@@ -42,7 +42,7 @@
     _label3.font = [UIFont systemFontOfSize:14];
     _label3.textColor = [UIColor lightGrayColor];
     
-    UIView *bottomLine = [[UIView alloc]initWithFrame:CGRectMake(0, 98, SCREENWIDTH, 2)];
+    UIView *bottomLine = [[UIView alloc]initWithFrame:CGRectMake(0, 98, SCREEN_W, 2)];
     bottomLine.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1];
     
     [self.contentView addSubview:bottomLine];

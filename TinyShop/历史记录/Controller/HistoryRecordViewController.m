@@ -7,11 +7,8 @@
 //
 
 #import "HistoryRecordViewController.h"
-#import "NetTool.h"
-#import "TQConst.h"
 #import "OrderModel.h"
 #import "TypeTableViewCell.h"
-#import <MJExtension.h>
 #import "OrderTableViewCell.h"
 #import "OrderSectionHeaderView.h"
 

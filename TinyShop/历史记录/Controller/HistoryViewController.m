@@ -7,12 +7,8 @@
 //
 
 #import "HistoryViewController.h"
-#import "NetTool.h"
-#import "TQConst.h"
 #import "HistoryOrderModel.h"
-#import <MJExtension.h>
 #import "HistoryTableViewCell.h"
-#import "UserInstance.h"
 #import "HistoryDetailViewController.h"
 
 @interface HistoryViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -26,7 +22,7 @@
 
 -(UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(SCREENWIDTH*0.05, 0, SCREENWIDTH*0.9, SCREENHEIGHT) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(SCREEN_W*0.05, 0, SCREEN_W*0.9, SCREEN_H) style:UITableViewStyleGrouped];
         _tableView.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
     }
     return _tableView;
@@ -88,32 +84,32 @@
     // section的header的背景视图
     NSString *day = [_headerData[section][@"date"] substringWithRange:NSMakeRange(8, 2)];
     NSString *month = [_headerData[section][@"date"] substringToIndex:7];
-    UIImageView *headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREENWIDTH*0.05, 5, SCREENWIDTH*0.9, 50)];
+    UIImageView *headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_W*0.05, 5, SCREEN_W*0.9, 50)];
     headerImageView.image = [UIImage imageNamed:@"半圆角背景图"];
     
-    UIImageView *calendar = [[UIImageView alloc] initWithFrame:CGRectMake(SCREENWIDTH*0.1, 5, SCREENWIDTH*0.225, 40)];
+    UIImageView *calendar = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_W*0.1, 5, SCREEN_W*0.225, 40)];
     calendar.contentMode = UIViewContentModeCenter;
     calendar.image = [UIImage imageNamed:@"日历框"];
     
-    UILabel *calendarLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREENWIDTH*0.1, 20, SCREENWIDTH*0.225, 20)];
+    UILabel *calendarLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_W*0.1, 20, SCREEN_W*0.225, 20)];
     calendarLabel.text = [NSString stringWithFormat:@"%@日",day];
     calendarLabel.textAlignment = NSTextAlignmentCenter;
     calendarLabel.font = [UIFont systemFontOfSize:14];
     calendarLabel.textColor = [UIColor colorWithRed:248/255.0 green:82/255.0 blue:61/255.0 alpha:1];
     
-    UILabel *dateDay = [[UILabel alloc] initWithFrame:CGRectMake(SCREENWIDTH*0.1, 45, SCREENWIDTH*0.225, 10)];
+    UILabel *dateDay = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_W*0.1, 45, SCREEN_W*0.225, 10)];
     dateDay.text = month;
     dateDay.textAlignment = NSTextAlignmentCenter;
     dateDay.font = [UIFont systemFontOfSize:12];
     dateDay.textColor = [UIColor grayColor];
     
-    UILabel *goods_amount = [[UILabel alloc]initWithFrame:CGRectMake(SCREENWIDTH*0.275, 35, SCREENWIDTH*0.3, 10)];
+    UILabel *goods_amount = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_W*0.275, 35, SCREEN_W*0.3, 10)];
     goods_amount.text = [NSString stringWithFormat:@"应收:%@",_headerData[section][@"orderInfo"][@"cash_money"]];
     goods_amount.textAlignment = NSTextAlignmentCenter;
     goods_amount.font = [UIFont systemFontOfSize:12];
     goods_amount.textColor = [UIColor grayColor];
     
-    UILabel *cash_money = [[UILabel alloc]initWithFrame:CGRectMake(SCREENWIDTH*0.575, 35, SCREENWIDTH*0.3, 10)];
+    UILabel *cash_money = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_W*0.575, 35, SCREEN_W*0.3, 10)];
     cash_money.text = [NSString stringWithFormat:@"实收:%@",_headerData[section][@"orderInfo"][@"goods_amount"]];
     cash_money.textAlignment = NSTextAlignmentCenter;
     cash_money.font = [UIFont systemFontOfSize:12];
@@ -131,7 +127,7 @@
     NSString *weekLastText = [weekString substringFromIndex:1];
     NSLog(@"%@",weekString);
     
-    UILabel *week = [[UILabel alloc]initWithFrame:CGRectMake(SCREENWIDTH*0.575, 15, SCREENWIDTH*0.33, 10)];
+    UILabel *week = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_W*0.575, 15, SCREEN_W*0.33, 10)];
     week.text = [NSString stringWithFormat:@"星期%@",weekLastText];
     week.textAlignment= NSTextAlignmentCenter;
     week.font = [UIFont systemFontOfSize:12];

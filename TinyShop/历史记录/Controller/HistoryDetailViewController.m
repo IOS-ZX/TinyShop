@@ -7,12 +7,9 @@
 //
 
 #import "HistoryDetailViewController.h"
-#import "TQConst.h"
-#import "NetTool.h"
 #import "HistoryDetailModel.h"
 #import "HistoryDetailTableViewCell.h"
 #import "HistoryRecordViewController.h"
-#import <MJExtension.h>
 
 @interface HistoryDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -25,7 +22,7 @@
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H) style:UITableViewStylePlain];
         _tableView.backgroundColor = [UIColor whiteColor];
     }
     return _tableView;

@@ -8,10 +8,6 @@
 
 #import "MemberViewController.h"
 #import "MemberTableViewCell.h"
-#import "UserInstance.h"
-#import "NetTool.h"
-#import "TQConst.h"
-#import <MJExtension.h>
 #import "VipModel.h"
 #import "DetailOrderViewController.h"
 
@@ -81,7 +77,7 @@ UISearchControllerDelegate,UISearchBarDelegate>
         });
         NSLog(@"%@",_dataSource);
     } error:^(NSError *error) {
-        
+        [MBProgressHUD showError:@"服务器开小差了"];
     }];
     
 }

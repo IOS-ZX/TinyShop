@@ -7,11 +7,8 @@
 //
 
 #import "DetailOrderViewController.h"
-#import "NetTool.h"
-#import "TQConst.h"
 #import "OrderModel.h"
 #import "TypeTableViewCell.h"
-#import <MJExtension.h>
 #import "OrderTableViewCell.h"
 #import "OrderSectionHeaderView.h"
 
@@ -140,7 +137,7 @@
             [self.tableView reloadData];
         });
     } error:^(NSError *error) {
-        
+        [MBProgressHUD showError:@"服务器开小差了"];
     }];
 }
 

@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
 
 @interface HistoryDetailTableViewCell : UITableViewCell
 

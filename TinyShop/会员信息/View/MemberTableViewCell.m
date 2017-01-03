@@ -30,9 +30,9 @@
 }
 
 - (void)loadUI{
-    _vip_nickname = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, SCREENWIDTH*0.5, 40)];
-    _vip_mobile = [[UILabel alloc]initWithFrame:CGRectMake(20, 40, SCREENWIDTH*0.5, 40)];
-    _uvgrade_money = [[UILabel alloc]initWithFrame:CGRectMake(SCREENWIDTH*0.5+20, 40, SCREENWIDTH*0.5-20, 40)];
+    _vip_nickname = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, SCREEN_W*0.5, 40)];
+    _vip_mobile = [[UILabel alloc]initWithFrame:CGRectMake(20, 40, SCREEN_W*0.5, 40)];
+    _uvgrade_money = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_W*0.5+20, 40, SCREEN_W*0.5-20, 40)];
     _vip_mobile.textColor = [UIColor lightGrayColor];
     _uvgrade_money.textColor = [UIColor grayColor];
     
