@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger,RequestQueryType) {
 @interface DailyTimeControll : NSObject
 
 typedef void(^SuccessResult)(NSArray *titles,NSArray* values);
-typedef void(^SubSuccessResult)(NSDictionary *dic);
+typedef void(^subSuccessResult)(NSArray *branch,NSArray* times,NSArray* way,NSArray* vip);
 
 + (void)dailyTimeRequest:(SuccessResult)succesResult
                   shopId:(NSString*)shopId
@@ -35,7 +35,7 @@ typedef void(^SubSuccessResult)(NSDictionary *dic);
                    sTime:(NSString*)s_time
                    eTime:(NSString*)e_time;
 
-+ (void)subDailyTimeRequest:(SuccessResult)succesResult
++ (void)subDailyTimeRequest:(subSuccessResult)succesResult
                   shopId:(NSString*)shopId
          statisticalType:(RequestDataType)type
                    query:(RequestQueryType)query

@@ -33,6 +33,8 @@
 
 - (NSString *)getShopIdByShopName:(NSString *)name;
 
+- (NSString *)getNameBySHopId:(NSString *)shopId;
+
 //get参数
 - (NSString *)getParamsString;
 

@@ -166,9 +166,15 @@
     [self.shapeLayerStore enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperlayer];
     }];
+    [self.labelStore enumerateObjectsUsingBlock:^(UILabel * _Nonnull label, NSUInteger idx, BOOL * _Nonnull stop) {
+        [label removeFromSuperview];
+    }];
+    [self.lineLayer removeFromSuperlayer];
+    [self.percentStore removeAllObjects];
     [self.startAngleStore removeAllObjects];
     [self.shapeLayerStore removeAllObjects];
     [self.labelStore removeAllObjects];
+    self.selectIndex = -1;
 }
 
 -(void)stroke
@@ -367,7 +373,9 @@
 - (CGPathRef)shapLayerPathByIndex:(NSInteger)index
 {
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
-    
+    if (self.startAngleStore == 0) {
+        return nil;
+    }
     //开始角度
     CGFloat startAngle = [self.startAngleStore[index] floatValue];
     //结束角度

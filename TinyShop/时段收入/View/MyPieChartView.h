@@ -21,4 +21,10 @@
 /** 详图数据 **/
 @property(nonatomic,strong)NSArray *detailArray;
 
+/** 滑动 **/
+@property(nonatomic,strong)UIScrollView *scrollView;
+
+
+- (void)stork;
+
 @end

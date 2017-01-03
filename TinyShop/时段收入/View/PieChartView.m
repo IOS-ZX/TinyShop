@@ -140,7 +140,7 @@
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.height / 2, self.width, self.height / 2)];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.height / 2, self.width, self.height / 2 - 60)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.bounces = NO;

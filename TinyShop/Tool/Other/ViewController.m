@@ -17,11 +17,6 @@
 
 @implementation ViewController
 
--(void)initializeDataSource
-{
-
-}
-
 -(void)initializeDrawer
 {
     DrawerViewController *drawer = [DrawerViewController new];

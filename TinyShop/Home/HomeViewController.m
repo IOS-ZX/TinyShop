@@ -30,7 +30,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.title = @"云迈天行特色火锅-销";
+    self.title = [NSString stringWithFormat:@"%@-销",[UserInstance sharedUserInstance].userShop.shop_name];
 }
 
 /** 初始化 **/

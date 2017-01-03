@@ -46,7 +46,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _headView = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W * 0.5, 80)];
     _headView.backgroundColor = self.view.backgroundColor;
-    _headView.text = @"云迈天行特色火锅";
+    _headView.text = [UserInstance sharedUserInstance].userShop.shop_name;
     _headView.textAlignment = NSTextAlignmentCenter;
     _headView.font = [UIFont systemFontOfSize:FONT(24) weight:1];
 }

@@ -96,4 +96,19 @@
     return shopId;
 }
 
+- (NSString *)getNameBySHopId:(NSString *)shopId{
+    __block NSString *name;
+    if ([shopId isEqualToString:self.userShop.shop_id]) {
+        return self.userShop.shop_name;
+    }
+    [self.userShop.subs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        ShopModel *model=(ShopModel *)obj;
+        if ([shopId isEqualToString:[model valueForKey:@"shop_id"]]) {
+            name = [model valueForKey:@"shop_name"];
+            *stop = YES;
+        }
+    }];
+    return name;
+}
+
 @end

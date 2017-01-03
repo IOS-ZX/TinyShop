@@ -32,14 +32,41 @@
 }
 
 // 获取子图数据
-+ (void)subgraphRequest:(SubSuccessResult)succesResult shopId:(NSString *)shopId time:(NSString *)time
++ (void)subgraphRequest:(SuccessResult)succesResult shopId:(NSString *)shopId time:(NSString *)time
 {
     NSString *times = [self checkTimes:time];
     [NetTool checkRequest:@"incomeScaleAction" loadingMessage:@"加载中.." parameter:@{@"body":@{@"shop_id":shopId,@"time":times}} success:^(NSDictionary *result) {
-        succesResult(result);
+        [self makeDatas:result result:succesResult];
     } error:^(NSError *error) {
         [MBProgressHUD showError:@"服务器开小差了"];
     }];
+}
+
+// 处理子图数据
++ (void)makeDatas:(NSDictionary *)dic result:(SuccessResult)success{
+    __block NSMutableArray *titles = [NSMutableArray array];
+    [dic[@"body"][@"branch"] enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj,NSUInteger idx, BOOL * _Nonnull stop) {
+        NSMutableDictionary *data = [NSMutableDictionary dictionary];
+        [data setObject:obj[@"name"] forKey:@"title"];
+        [data setObject:obj[@"value"] forKey:@"value"];
+        [titles addObject:data];
+    }];
+    __block NSMutableArray *values = [NSMutableArray array];
+    NSArray *keys = [dic[@"body"][@"vegetables"] allKeys];
+    [keys enumerateObjectsUsingBlock:^(NSString * _Nonnull key, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSArray *data = dic[@"body"][@"vegetables"][key];
+        if (data.count > 0) {
+            __block NSMutableArray *valueDatas = [NSMutableArray array];
+            [data enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger index, BOOL * _Nonnull stops) {
+                NSMutableDictionary *value = [NSMutableDictionary dictionary];
+                [value setObject:obj[@"name"] forKey:@"title"];
+                [value setObject:obj[@"value"] forKey:@"value"];
+                [valueDatas addObject:value];
+            }];
+            [values addObject:valueDatas];
+        }
+    }];
+    success(titles,values);
 }
 
 // 处理时间

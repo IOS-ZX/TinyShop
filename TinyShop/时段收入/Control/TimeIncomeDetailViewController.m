@@ -33,9 +33,9 @@
 // 请求数据
 - (void)loadDatas{
     __weak typeof(self) weakSelf = self;
-    [TimeControll subgraphRequest:^(NSDictionary *dic) {
-        weakSelf.chartView.shopId = weakSelf.shopId;
-        weakSelf.chartView.data = dic;
+    [TimeControll subgraphRequest:^(NSArray *titles, NSArray *values) {
+        weakSelf.chartView.detailArray = values;
+        weakSelf.chartView.dataArray = titles;
     } shopId:self.shopId time:self.time];
 }
 

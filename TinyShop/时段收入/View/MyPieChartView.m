@@ -11,8 +11,6 @@
 
 @interface MyPieChartView()
 
-/** 滑动 **/
-@property(nonatomic,strong)UIScrollView *scrollView;
 /** dataSet **/
 @property(nonatomic,strong)MZPieChartDataSet *dataSet;
 /** chartView **/
@@ -38,21 +36,25 @@
 }
 
 - (void)checkShop{
-    if ([self.data[@"body"][@"branch"] count] > 1) {
+    if (self.dataArray.count > 1) {
         self.scrollView.contentOffset = CGPointMake(SCREEN_W * 0.8 + 7, 0);
     }else{
         self.scrollView.contentSize = CGSizeMake(0, 0);
         self.chartView.hidden = YES;
         self.detailsChart.frame = CGRectMake(0, 0, self.width, self.height);
-        [self details:0 data:self.data];
+        [self details:0];
     }
+}
+
+- (void)stork{
+    [self details:self.index];
 }
 
 #pragma mark - Setter
 
-- (void)setData:(NSDictionary *)data{
-    _data = data;
-    [self makeDatas:self.data];
+- (void)setDataArray:(NSArray *)dataArray{
+    _dataArray = dataArray;
+    [self makeDatas];
     [self checkShop];
 }
 
@@ -61,11 +63,11 @@
 }
 
 // 处理数据
-- (void)makeDatas:(NSDictionary*)data{
+- (void)makeDatas{
     __block NSMutableArray *titles = [NSMutableArray array];
     __block NSMutableArray *values = [NSMutableArray array];
-    [data[@"body"][@"branch"] enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [titles addObject:obj[@"name"]];
+    [self.dataArray enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [titles addObject:obj[@"title"]];
         [values addObject:obj[@"value"]];
     }];
     self.dataSet.textStore = titles;
@@ -84,20 +86,18 @@
         weakSelf.index = index;
         weakSelf.scrollView.scrollEnabled = YES;
         weakSelf.carveUp.hidden = NO;
-        [weakSelf details:index data:data];
+        [weakSelf details:index];
     };
 }
 
 //详细界面
-- (void)details:(NSInteger)index data:(NSDictionary*)data{
+- (void)details:(NSInteger)index{
     MZPieChartDataSet *set = [MZPieChartDataSet new];
     __block NSMutableArray *titles = [NSMutableArray array];
     __block NSMutableArray *values = [NSMutableArray array];
-    NSString *shopName = data[@"body"][@"branch"][index][@"name"];
-    NSString *shopId = [NSString stringWithFormat:@"shop_id_%@",[[UserInstance sharedUserInstance]getShopIdByShopName:shopName]];
-    [data[@"body"][@"vegetables"][shopId] enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [titles addObject:obj[@"name"]];
-        [values addObject:obj[@"value"]];
+    [self.detailArray[index] enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull dic, NSUInteger idx, BOOL * _Nonnull stop) {
+        [titles addObject:dic[@"title"]];
+        [values addObject:dic[@"value"]];
     }];
     set.textStore = titles;
     set.valueStore = values;

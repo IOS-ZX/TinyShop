@@ -38,6 +38,9 @@
 
 @implementation DailyViewController
 
+#pragma mark - 回调
+
+// 下拉菜单选择回调
 - (void)pullChooseViewItemClick:(NSInteger)index{
     if (index == 0) {
         self.chooseView.hidden = YES;
@@ -48,9 +51,30 @@
     }
 }
 
+// 店铺选择回调
 - (void)chooseShop:(NSString *)shopid{
     self.shopId = shopid;
     [self loadDatas];
+}
+
+// 时间选择回调
+- (ChooseDate)chooseValue{
+    __weak typeof(self) weakSelf = self;
+    return ^(RequestQueryType type, NSString* value){
+        weakSelf.queryType = type;
+        weakSelf.chooseValueString = value;
+        [weakSelf loadDatas];
+    };
+}
+
+#pragma mark - View
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = @"按天为单位统计";
+    [self initDatas];
+    [self loadDatas];
+    [self typeClick:self.topBtns[0]];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -59,14 +83,11 @@
     self.navigationItem.rightBarButtonItem = more;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.title = @"按天为单位统计";
-    [self initDatas];
-    [self loadDatas];
-    [self makeTypeButton];
-    [self typeClick:self.topBtns[0]];
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
+
+#pragma mark - 自定义方法
 
 // 初始化数据
 - (void)initDatas{
@@ -75,6 +96,7 @@
     self.titleText = @"销售额";
     self.shopId = [[UserInstance sharedUserInstance]allShopIDs];
     self.chooseValueString = [self defaultStartTime];
+    [self makeTypeButton];
 }
 
 
@@ -110,12 +132,15 @@
 - (void)loadDatas{
     __weak typeof(self) weakSelf = self;
     [DailyTimeControll dailyTimeRequest:^(NSArray *titles, NSArray *values) {
+        // 设置数据
         weakSelf.lineView.titleStore = titles;
         weakSelf.lineView.incomeStore = values;
+        // 开始绘图
         [weakSelf.lineView storkePath];
+        // 显示顶部按钮
+        [weakSelf showBtns];
     } shopId:self.shopId statisticalType:self.dataType query:self.queryType sTime:self.chooseValueString eTime:[self endTime]];
 }
-
 
 //获取当前时间
 - (NSString*)endTime{
@@ -160,10 +185,18 @@
         UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake( idx * (w + 10) + 10, 114 - (w + 10) / 2, w, w + 10)];
         btn.tag = 1000+idx;
         [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@-选中",obj]] forState:UIControlStateSelected];
+        btn.hidden = YES;
         [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@-未选",obj]] forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(typeClick:) forControlEvents:UIControlEventTouchUpInside];
         [weakSelf.view addSubview:btn];
         [weakSelf.topBtns addObject:btn];
+    }];
+}
+
+// 默认为不显示，修改为显示
+- (void)showBtns{
+    [self.topBtns enumerateObjectsUsingBlock:^(UIButton * _Nonnull btn, NSUInteger idx, BOOL * _Nonnull stop) {
+        btn.hidden = NO;
     }];
 }
 
@@ -216,23 +249,12 @@
             break;
     }
     __weak typeof(self) weakSelf = self;
+    // 标题回调
     self.lineView.topTitleCallBack = ^NSString *(CGFloat sumValue){
         return [NSString stringWithFormat:@"总%@:%.1f%@",weakSelf.titleText,sumValue,titleHx];
     };
+    // 重新获取数据
     [self loadDatas];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-- (ChooseDate)chooseValue{
-    __weak typeof(self) weakSelf = self;
-    return ^(RequestQueryType type, NSString* value){
-        weakSelf.queryType = type;
-        weakSelf.chooseValueString = value;
-        [weakSelf loadDatas];
-    };
 }
 
 #pragma mark - 懒加载
@@ -254,8 +276,12 @@
         [self.view addSubview:_lineView];
         __weak typeof(self) weakSelf = self;
         _lineView.selectCallback = ^(NSUInteger index){
-            DailyDetailViewController *detail = [DailyDetailViewController new];
-            [weakSelf.navigationController pushViewController:detail animated:YES];
+            DailyDetailViewController *detailView = [DailyDetailViewController new];
+            detailView.shopId = weakSelf.shopId;
+            detailView.date = weakSelf.lineView.titleStore[index];
+            detailView.dataType = weakSelf.dataType;
+            detailView.queryType = weakSelf.queryType;
+            [weakSelf.navigationController pushViewController:detailView animated:YES];
         };
     }
     return _lineView;

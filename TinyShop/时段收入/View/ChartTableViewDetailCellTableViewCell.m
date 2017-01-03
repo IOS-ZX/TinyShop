@@ -92,7 +92,8 @@
 
 - (UILabel *)valueLabel{
     if (!_valueLabel) {
-        _valueLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.width - 60, 0, 40, self.height)];
+        _valueLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.width - 120, 0, 100, self.height)];
+        _valueLabel.textAlignment = NSTextAlignmentRight;
         _valueLabel.textColor = [UIColor hexColor:@"919191"];
         [self.contentView addSubview:_valueLabel];
     }

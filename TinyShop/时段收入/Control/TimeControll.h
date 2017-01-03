@@ -11,10 +11,9 @@
 @interface TimeControll : NSObject
 
 typedef void(^SuccessResult)(NSArray *titles,NSArray *values);
-typedef void(^SubSuccessResult)(NSDictionary *dic);
 
 + (void)timeIncomeRequest:(SuccessResult)succesResult shopId:(NSString*)shopId;
 
-+ (void)subgraphRequest:(SubSuccessResult)succesResult shopId:(NSString*)shopId time:(NSString*)time;
++ (void)subgraphRequest:(SuccessResult)succesResult shopId:(NSString*)shopId time:(NSString*)time;
 
 @end
