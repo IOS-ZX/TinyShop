@@ -1,23 +1,17 @@
-//
-//  GoodsViewController.m
-//  TinyShop
-//
-//  Created by rimi on 2016/12/23.
-//  Copyright © 2016年 CXD. All rights reserved.
-//
 
 #import "GoodsViewController.h"
 #import "MZBarChartView.h"
 #import "UIView+Addtions.h"
 #import "ColorDefine.h"
-//#import "ProductAnalysisNetwork.h"
-
+#import "GoodsSubViewController.h"
+#import "Date.h"
+#import "MoreView.h"
 
 
 
 #define BASE_TAG 20130
 
-@interface GoodsViewController ()
+@interface GoodsViewController ()<ChooseStoreViewDelgate>
 
 /** <#注释#> **/
 @property(nonatomic,strong)NSArray    *colors;
@@ -32,11 +26,99 @@
 /** 分段控制器 **/
 @property(nonatomic,strong)UISegmentedControl    *segmentedC;
 
+/** <#注释#> **/
+@property(nonatomic,strong)NSArray    *barValueStore;
+
+/** 排好序时间数组 **/
+@property(nonatomic,strong)NSMutableArray    *timerArray;
+
+/** btn上面的文字 **/
+@property(nonatomic,strong)UILabel    *btnLabel;
+
+//更多的弹框
+@property(nonatomic,strong)MoreView* popView;
+//三角形弹框
+@property(nonatomic,strong)UIImageView* imageView;
+
+@property(nonatomic,strong)UIView* bgView;
+
+/** 店铺选择 **/
+@property(nonatomic,strong)ChooseStoreView *chooseView;
+
+/** 日期 **/
+@property(nonatomic,strong)ChooseDateView    *dateView;
+
 
 
 @end
 
 @implementation GoodsViewController
+
+-(void)initNavigationItem{
+    UIBarButtonItem* rightBtn = [[UIBarButtonItem alloc]initWithTitle:@"更多" style:UIBarButtonItemStylePlain target:self action:@selector(more)];
+    self.navigationItem.rightBarButtonItem = rightBtn;
+}
+
+-(void)more{
+
+    UIWindow * window = [UIApplication sharedApplication].keyWindow;
+    _bgView = [[UIView alloc]init];
+    _bgView.frame = window.bounds;
+
+    _bgView.backgroundColor = [[UIColor grayColor]colorWithAlphaComponent:0.4];
+    [window addSubview:_bgView];
+    
+    //给这个view添加点击事件，当点击这个view时，背景和弹框消失
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgViewTapped:)];
+    [_bgView addGestureRecognizer:tapGesture];
+    
+    //三角形
+    _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.width - 45, 64, 30, 6)];
+    [_imageView setImage:[UIImage imageNamed:@"三角形-1"]];
+    [window addSubview:_imageView];
+    
+    //弹框
+    _popView = [[MoreView alloc]initWithFrame:CGRectMake(self.view.width - 160, 70, 140, 135)];
+    
+    
+    //传回用户选择的是店铺、日期还是种类
+    //避免retain cycle
+    __block GoodsViewController *blockSelf = self;
+    self.popView.moreChooseCallBack = ^(NSInteger index){
+        
+        //移除三角形
+        [blockSelf.imageView removeFromSuperview];
+        //再次弹出其它选项
+        if (index == 0) {
+            //店铺
+            blockSelf.chooseView.stores = [[UserInstance sharedUserInstance] allShop];
+            blockSelf.chooseView.hidden = !blockSelf.chooseView.hidden;
+            [blockSelf.bgView removeFromSuperview];
+        }
+        if (index == 1) {
+            //日期
+            [blockSelf.view addSubview:blockSelf.dateView];
+            blockSelf.dateView.hidden = NO;
+            
+            [blockSelf.bgView removeFromSuperview];
+        }
+        if (index == 2) {
+            //种类
+            
+            [blockSelf.bgView removeFromSuperview];
+        }
+    };
+    
+    //4. 把需要展示的控件添加上去
+    [window addSubview:_popView];
+}
+
+#pragma mark - 点击背景时，弹框消失
+-(void)bgViewTapped:(UITapGestureRecognizer*)tapGesture{
+    [_bgView removeFromSuperview];
+    [_popView removeFromSuperview];
+    [_imageView removeFromSuperview];
+}
 
 -(void)shopingNetworking:(NSString *)sales_copies type_name:(NSString *)type_name goods_name:(NSString *)goods_name query:(NSString *)query s_time:(NSString *)s_time e_time:(NSString *)e_time
 {
@@ -47,7 +129,7 @@
         NSDictionary *value = result[@"body"][@"value"];
         NSLog(@"value--%@",value);
         NSMutableArray *timeStore = [[value allKeys] mutableCopy];
-//        NSLog(@"timeStore---%@",timeStore);
+        NSLog(@"timeStore---%@",timeStore);
         
         //对时间排序
         
@@ -64,16 +146,18 @@
             NSDate *date1 = [formatter dateFromString:obj1];
             NSDate *date2 = [formatter dateFromString:obj2];
             NSComparisonResult result = [date1 compare:date2];
-            return result == NSOrderedAscending;
+            return result == NSOrderedDescending;
         }];
-        for (int i = 0; i < [timeStore count]; i++) {
-            NSLog(@"array--:%@", [timeStore objectAtIndex:i]);
-        }
+        
+        _timerArray = timeStore;
+//            NSLog(@"timearr:%@",_timerArray);
+        
         
         //排好序了
-        NSArray *barValueStore = [value objectsForKeys:timeStore notFoundMarker:@"0"];
-        NSLog(@"barValueStore---:%@",barValueStore);
+        _barValueStore = [value objectsForKeys:timeStore notFoundMarker:@"0"];
+        NSLog(@"barValueStore---:%@",_barValueStore);
         
+        [self createBarChartView];
     } error:^(NSError *error) {
         
         
@@ -84,10 +168,28 @@
 }
 
 #pragma mark -- getter  goodsTimeAction
+-(ChooseDateView *)dateView
+{
+    if (!_dateView) {
+        _dateView = [[ChooseDateView alloc] init];
+    }
+    return _dateView;
+}
+
+- (ChooseStoreView *)chooseView{
+    if (!_chooseView) {
+        _chooseView = [[ChooseStoreView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H)];
+        _chooseView.hidden = YES;
+        _chooseView.delegate = self;
+        UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
+        [currentWindow addSubview:_chooseView];
+    }
+    return _chooseView;
+}
 -(NSArray *)types
 {
     if (!_types) {
-        _types = @[@"滑蛋粥",@"红薯",@"板栗",@"玉米",@"香蕉",@"苹果",@"梨",@"蛋挞",@"芝士"];
+        _types = @[@"私家秘制",@"时鲜蔬菜",@"牛肉类",@"猪肉类",@"酒水",@"特色主打菜",@"进口啤酒",@"鸡肉类",@"下酒小菜",@"饮料",@"味碟类",@"赠送类"];
     }
     return _types;
 }
@@ -111,6 +213,16 @@
     }
     return _segmentedC;
 }
+
+-(MZBarChartView *)barChartView
+{
+    if (!_barChartView) {
+        _barChartView = [[MZBarChartView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.scrollViewBtn.frame), self.view.width, SCREEN_W * 1.035)];
+//        _scrollViewBtn.backgroundColor = [UIColor orangeColor];
+        [self.view addSubview:_barChartView];
+    }
+    return _barChartView;
+}
 #pragma mark -- Action
 -(void)showOrHiddenType:(UIButton *)button
 {
@@ -133,9 +245,12 @@
 -(void)segmentedCChange:(UISegmentedControl *)sender
 {
     if (sender.selectedSegmentIndex == 0) {
-        NSLog(@"1");
+        //调用网络方法
+        [self shopingNetworking:@"sales" type_name:@"0" goods_name:@"0" query:@"day" s_time:[Date getNineDaysAgo] e_time:[Date getCurrentDate]];
+        
     }else if (sender.selectedSegmentIndex == 1)
     {
+        [self shopingNetworking:@"sales" type_name:@"0" goods_name:@"0" query:@"day" s_time:@"2016-12-19" e_time:@"2016-12-27"];
         NSLog(@"2");
     }
     
@@ -143,9 +258,9 @@
 #pragma mark -- Create
 -(void)createTypeViews
 {
-    CGFloat width = 60;
+    CGFloat width = SCREEN_W * 0.20;
     CGFloat margin = 15;
-    _scrollViewBtn = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 150, self.view.width, 100)];
+    _scrollViewBtn = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.segmentedC.frame)+90, self.view.width, 100)];
     _scrollViewBtn.contentSize = CGSizeMake(margin + self.types.count * (margin + width+15), width);
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, _scrollViewBtn.maxY - 7, self.view.width, 4)];
     view.backgroundColor = LIGHTRED_COLOR;//滑动线条底部颜色
@@ -154,12 +269,20 @@
     
    [self.types enumerateObjectsUsingBlock:^(NSString  *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-       button.frame = CGRectMake(margin + (width+margin)*idx, 0, width, width);
+       button.frame = CGRectMake(margin + (width+margin)*idx, 0, width, SCREEN_W * 0.24);
        button.tag = BASE_TAG + idx;
        [button setBackgroundImage:[UIImage imageNamed:@"类别框-须自己填色"] forState:UIControlStateNormal];
+       //设置字体
+       button.titleLabel.font = FONT(13);
        
        [button addTarget:self action:@selector(showOrHiddenType:) forControlEvents:UIControlEventTouchUpInside];
        //设置副文本
+       UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 20, 10)];
+       label.center = CGPointMake(button.width/2, button.height/2 +15 );
+       label.text = @"统计";
+       label.textColor = [UIColor whiteColor];
+       label.textAlignment = NSTextAlignmentCenter;
+       label.font = FONT(9);
        
        
        [button setTitle:self.types[idx] forState:UIControlStateNormal];
@@ -167,6 +290,7 @@
        button.backgroundColor = self.colors[idx];
        button.layer.masksToBounds = YES;
        [_scrollViewBtn addSubview:button];
+       [button addSubview:label];
    }];
     
     //segmentedC 约束
@@ -178,13 +302,12 @@
     
 }
 
+
+
 -(void)createBarChartView
 {
-    self.barChartView = [[MZBarChartView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.scrollViewBtn.frame), self.view.width, SCREEN_W * 1.035)];
-    [self.view addSubview:self.barChartView];
-    
-    
-    self.barChartView.titleStore = @[@"2016-11-11",@"2016-11-12",@"2016-11-13",@"2016-11-14",@"2016-11-15",@"2016-11-16",@"2016-11-17"];
+    __weak typeof (self) weakself = self;
+    self.barChartView.titleStore = _timerArray;
     CGAffineTransform transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -5);
     transform = CGAffineTransformRotate(transform, M_PI * 0.25);
     self.barChartView.labelTransform = transform;
@@ -192,7 +315,9 @@
     self.barChartView.incomeBottomMargin = 0;
     self.barChartView.brefixStr = @"份数";
     
-    self.barChartView.incomeStore = @[@{@"滑蛋粥":@"2",@"红薯":@"3",@"板栗":@"0",@"玉米":@"1",@"香蕉":@"1",@"苹果":@"0",@"梨":@"0"},@{@"滑蛋粥":@"2",@"红薯":@"0",@"板栗":@"10",@"玉米":@"1",@"香蕉":@"1",@"苹果":@"1",@"梨":@"0",@"蛋挞":@"1"},@{@"滑蛋粥":@"2",@"红薯":@"3",@"板栗":@"0",@"玉米":@"1",@"香蕉":@"1",@"苹果":@"0",@"梨":@"1"},@{@"滑蛋粥":@"2",@"红薯":@"1",@"板栗":@"10",@"玉米":@"1",@"香蕉":@"1",@"苹果":@"1",@"梨":@"0"},@{@"滑蛋粥":@"2",@"红薯":@"3",@"板栗":@"10",@"玉米":@"1",@"香蕉":@"1",@"苹果":@"0",@"梨":@"0"},@{@"滑蛋粥":@"2",@"红薯":@"5",@"板栗":@"0",@"玉米":@"1",@"香蕉":@"1",@"苹果":@"1",@"梨":@"0"},@{@"滑蛋粥":@"2",@"红薯":@"3",@"板栗":@"10",@"玉米":@"1",@"香蕉":@"1",@"苹果":@"0",@"梨":@"1",@"芝士":@"1"}];
+    self.barChartView.incomeStore = _barValueStore;//赋值
+    NSLog(@"----%@",self.barChartView.incomeStore);
+    
     self.barChartView.allTypes = self.types;
     self.barChartView.colorStore = self.colors;
     [self.view addSubview:self.barChartView];
@@ -201,7 +326,10 @@
     };
     self.barChartView.selectCallback = ^(NSUInteger index)
     {
-//        NSLog(@"选中第%@个",@(index));
+        GoodsSubViewController *goodsSubVC = [[GoodsSubViewController alloc]init];
+        [weakself.navigationController pushViewController:goodsSubVC animated:YES];
+        
+        NSLog(@"选中第%@个",@(index));
     };
     [self.barChartView storkePath];
 }
@@ -233,20 +361,11 @@
     [super viewDidLoad];
     self.title = @"按天为单位统计";
     self.view.backgroundColor = [UIColor whiteColor];
-   
+    
+    [self initNavigationItem];
     [self createTypeViews];
-    [self createBarChartView];
     
-    //调用网络方法
-    [self shopingNetworking:@"sales" type_name:@"0" goods_name:@"0" query:@"day" s_time:@"2016-12-26" e_time:@"2016-12-27"];
-    
-//    NSDictionary *result;
-//    NSDictionary *value = result[@"body"][@"value"];
-//    NSLog(@"value--%@",value);
-//    NSMutableArray *timeStore = [[value allKeys] mutableCopy];
-//    NSLog(@"timeStore---%@",timeStore);
-//    //排好序了
-//    NSArray *barValueStore = [value objectsForKeys:timeStore notFoundMarker:@"0"];
+    [self segmentedCChange:self.segmentedC];
     
 
 }
