@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0439F7DD1E0CC16A009309E3 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439F7DC1E0CC16A009309E3 /* HomeTableViewCell.m */; };
 		0439F7E01E0CC24D009309E3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0439F7DF1E0CC24D009309E3 /* HomeViewController.m */; };
-<<<<<<< Updated upstream
 		049286E21E1B87D700DD3270 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049286DD1E1B87D700DD3270 /* HistoryDetailViewController.m */; };
 		049286E31E1B87D700DD3270 /* HistoryRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049286DF1E1B87D700DD3270 /* HistoryRecordViewController.m */; };
 		049286E41E1B87D700DD3270 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049286E11E1B87D700DD3270 /* HistoryViewController.m */; };
@@ -29,19 +28,16 @@
 		049287161E1B999900DD3270 /* DetailOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049287131E1B999900DD3270 /* DetailOrderViewController.m */; };
 		049287171E1B999900DD3270 /* MemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049287151E1B999900DD3270 /* MemberViewController.m */; };
 		049287201E1B99FF00DD3270 /* MemberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492871D1E1B99FF00DD3270 /* MemberTableViewCell.m */; };
-		1D3D0F311E14EDC900B7EB24 /* ProductAnalysisNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D0F301E14EDC900B7EB24 /* ProductAnalysisNetwork.m */; };
-=======
-		1D1D153B1E1B5318000236EB /* GoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1D15381E1B5318000236EB /* GoodsViewController.m */; };
-		1D1D153C1E1B5318000236EB /* GoodsSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1D153A1E1B5318000236EB /* GoodsSubViewController.m */; };
-		1D1D153F1E1BF84D000236EB /* Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1D153E1E1BF84D000236EB /* Date.m */; };
-		1D1D15421E1BFE00000236EB /* MoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1D15411E1BFE00000236EB /* MoreView.m */; };
->>>>>>> Stashed changes
 		1D5B66BA1E0A19D900606F86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B66B81E0A19D900606F86 /* Main.storyboard */; };
 		1D5B66BC1E0A19D900606F86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B66BB1E0A19D900606F86 /* Assets.xcassets */; };
 		1D5B66BF1E0A19D900606F86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D5B66BD1E0A19D900606F86 /* LaunchScreen.storyboard */; };
-		1DA1AA041E10F9D0008C807B /* MZBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1AA031E10F9D0008C807B /* MZBarChartView.m */; };
 		24447CD51E1C9C8200CDAECD /* PullChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24447CD41E1C9C8200CDAECD /* PullChooseView.m */; };
 		24447CD81E1C9CB700CDAECD /* OnlyChooseDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24447CD71E1C9CB700CDAECD /* OnlyChooseDate.m */; };
+		24447CE51E1CCBAA00CDAECD /* Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 24447CDB1E1CCBAA00CDAECD /* Date.m */; };
+		24447CE61E1CCBAA00CDAECD /* GoodsSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24447CDD1E1CCBAA00CDAECD /* GoodsSubViewController.m */; };
+		24447CE71E1CCBAA00CDAECD /* GoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24447CDF1E1CCBAA00CDAECD /* GoodsViewController.m */; };
+		24447CE81E1CCBAA00CDAECD /* MoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24447CE11E1CCBAA00CDAECD /* MoreView.m */; };
+		24447CE91E1CCBAA00CDAECD /* MZBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24447CE41E1CCBAA00CDAECD /* MZBarChartView.m */; };
 		245083DE1E0B9A1C006DE0D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083DD1E0B9A1C006DE0D4 /* LoginViewController.m */; };
 		245083E11E0B9A45006DE0D4 /* LoginControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083E01E0B9A45006DE0D4 /* LoginControl.m */; };
 		245083EA1E0B9E53006DE0D4 /* BaseUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245083E51E0B9E53006DE0D4 /* BaseUINavigationController.m */; };
@@ -104,7 +100,6 @@
 		0439F7DC1E0CC16A009309E3 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		0439F7DE1E0CC24D009309E3 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0439F7DF1E0CC24D009309E3 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-<<<<<<< Updated upstream
 		049286DC1E1B87D700DD3270 /* HistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryDetailViewController.h; path = "TinyShop/历史记录/Controller/HistoryDetailViewController.h"; sourceTree = SOURCE_ROOT; };
 		049286DD1E1B87D700DD3270 /* HistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryDetailViewController.m; path = "TinyShop/历史记录/Controller/HistoryDetailViewController.m"; sourceTree = SOURCE_ROOT; };
 		049286DE1E1B87D700DD3270 /* HistoryRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryRecordViewController.h; path = "TinyShop/历史记录/Controller/HistoryRecordViewController.h"; sourceTree = SOURCE_ROOT; };
@@ -143,28 +138,24 @@
 		049287151E1B999900DD3270 /* MemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberViewController.m; sourceTree = "<group>"; };
 		0492871C1E1B99FF00DD3270 /* MemberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberTableViewCell.h; sourceTree = "<group>"; };
 		0492871D1E1B99FF00DD3270 /* MemberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberTableViewCell.m; sourceTree = "<group>"; };
-		1D3D0F2F1E14EDC800B7EB24 /* ProductAnalysisNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductAnalysisNetwork.h; sourceTree = "<group>"; };
-		1D3D0F301E14EDC900B7EB24 /* ProductAnalysisNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductAnalysisNetwork.m; sourceTree = "<group>"; };
-=======
-		1D1D15371E1B5318000236EB /* GoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsViewController.h; sourceTree = "<group>"; };
-		1D1D15381E1B5318000236EB /* GoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsViewController.m; sourceTree = "<group>"; };
-		1D1D15391E1B5318000236EB /* GoodsSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsSubViewController.h; sourceTree = "<group>"; };
-		1D1D153A1E1B5318000236EB /* GoodsSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsSubViewController.m; sourceTree = "<group>"; };
-		1D1D153D1E1BF84D000236EB /* Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
-		1D1D153E1E1BF84D000236EB /* Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Date.m; sourceTree = "<group>"; };
-		1D1D15401E1BFE00000236EB /* MoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreView.h; sourceTree = "<group>"; };
-		1D1D15411E1BFE00000236EB /* MoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreView.m; sourceTree = "<group>"; };
->>>>>>> Stashed changes
 		1D5B66AC1E0A19D900606F86 /* TinyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D5B66B91E0A19D900606F86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D5B66BB1E0A19D900606F86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D5B66BE1E0A19D900606F86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1DA1AA021E10F9D0008C807B /* MZBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZBarChartView.h; sourceTree = "<group>"; };
-		1DA1AA031E10F9D0008C807B /* MZBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZBarChartView.m; sourceTree = "<group>"; };
 		24447CD31E1C9C8200CDAECD /* PullChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullChooseView.h; sourceTree = "<group>"; };
 		24447CD41E1C9C8200CDAECD /* PullChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullChooseView.m; sourceTree = "<group>"; };
 		24447CD61E1C9CB700CDAECD /* OnlyChooseDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlyChooseDate.h; sourceTree = "<group>"; };
 		24447CD71E1C9CB700CDAECD /* OnlyChooseDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlyChooseDate.m; sourceTree = "<group>"; };
+		24447CDA1E1CCBAA00CDAECD /* Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
+		24447CDB1E1CCBAA00CDAECD /* Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Date.m; sourceTree = "<group>"; };
+		24447CDC1E1CCBAA00CDAECD /* GoodsSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsSubViewController.h; sourceTree = "<group>"; };
+		24447CDD1E1CCBAA00CDAECD /* GoodsSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsSubViewController.m; sourceTree = "<group>"; };
+		24447CDE1E1CCBAA00CDAECD /* GoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsViewController.h; sourceTree = "<group>"; };
+		24447CDF1E1CCBAA00CDAECD /* GoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsViewController.m; sourceTree = "<group>"; };
+		24447CE01E1CCBAA00CDAECD /* MoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreView.h; sourceTree = "<group>"; };
+		24447CE11E1CCBAA00CDAECD /* MoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreView.m; sourceTree = "<group>"; };
+		24447CE31E1CCBAA00CDAECD /* MZBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZBarChartView.h; sourceTree = "<group>"; };
+		24447CE41E1CCBAA00CDAECD /* MZBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZBarChartView.m; sourceTree = "<group>"; };
 		245083DC1E0B9A1C006DE0D4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		245083DD1E0B9A1C006DE0D4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		245083DF1E0B9A45006DE0D4 /* LoginControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginControl.h; sourceTree = "<group>"; };
@@ -414,10 +405,10 @@
 		1D5B66AE1E0A19D900606F86 /* TinyShop */ = {
 			isa = PBXGroup;
 			children = (
+				24447CD91E1CCBAA00CDAECD /* 商品运营 */,
 				24B6081E1E179A52002282A3 /* Tool */,
 				2450847E1E0D3EF6006DE0D4 /* 会员信息 */,
 				2450847F1E0D3EF6006DE0D4 /* 历史记录 */,
-				245084801E0D3EF6006DE0D4 /* 商品运营 */,
 				245084811E0D3EF6006DE0D4 /* 日常运营 */,
 				245084821E0D3EF6006DE0D4 /* 时段收入 */,
 				0439F7DA1E0CC149009309E3 /* Home */,
@@ -438,15 +429,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1DA1AA011E10F9D0008C807B /* MZBarChart */ = {
-			isa = PBXGroup;
-			children = (
-				1DA1AA021E10F9D0008C807B /* MZBarChartView.h */,
-				1DA1AA031E10F9D0008C807B /* MZBarChartView.m */,
-			);
-			path = MZBarChart;
-			sourceTree = "<group>";
-		};
 		22208203A7EC6774C8167D07 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +447,31 @@
 				24447CD71E1C9CB700CDAECD /* OnlyChooseDate.m */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		24447CD91E1CCBAA00CDAECD /* 商品运营 */ = {
+			isa = PBXGroup;
+			children = (
+				24447CDA1E1CCBAA00CDAECD /* Date.h */,
+				24447CDB1E1CCBAA00CDAECD /* Date.m */,
+				24447CDC1E1CCBAA00CDAECD /* GoodsSubViewController.h */,
+				24447CDD1E1CCBAA00CDAECD /* GoodsSubViewController.m */,
+				24447CDE1E1CCBAA00CDAECD /* GoodsViewController.h */,
+				24447CDF1E1CCBAA00CDAECD /* GoodsViewController.m */,
+				24447CE01E1CCBAA00CDAECD /* MoreView.h */,
+				24447CE11E1CCBAA00CDAECD /* MoreView.m */,
+				24447CE21E1CCBAA00CDAECD /* MZBarChart */,
+			);
+			path = "商品运营";
+			sourceTree = "<group>";
+		};
+		24447CE21E1CCBAA00CDAECD /* MZBarChart */ = {
+			isa = PBXGroup;
+			children = (
+				24447CE31E1CCBAA00CDAECD /* MZBarChartView.h */,
+				24447CE41E1CCBAA00CDAECD /* MZBarChartView.m */,
+			);
+			path = MZBarChart;
 			sourceTree = "<group>";
 		};
 		245083BF1E0B660C006DE0D4 /* Main */ = {
@@ -566,22 +573,6 @@
 				245084871E0D3F5D006DE0D4 /* HistoryTableViewController.m */,
 			);
 			path = "历史记录";
-			sourceTree = "<group>";
-		};
-		245084801E0D3EF6006DE0D4 /* 商品运营 */ = {
-			isa = PBXGroup;
-			children = (
-				1D1D15371E1B5318000236EB /* GoodsViewController.h */,
-				1D1D15381E1B5318000236EB /* GoodsViewController.m */,
-				1D1D15391E1B5318000236EB /* GoodsSubViewController.h */,
-				1D1D153A1E1B5318000236EB /* GoodsSubViewController.m */,
-				1D1D153D1E1BF84D000236EB /* Date.h */,
-				1D1D153E1E1BF84D000236EB /* Date.m */,
-				1D1D15401E1BFE00000236EB /* MoreView.h */,
-				1D1D15411E1BFE00000236EB /* MoreView.m */,
-				1DA1AA011E10F9D0008C807B /* MZBarChart */,
-			);
-			path = "商品运营";
 			sourceTree = "<group>";
 		};
 		245084811E0D3EF6006DE0D4 /* 日常运营 */ = {
@@ -957,7 +948,6 @@
 				24B6087D1E179A52002282A3 /* View+MASAdditions.m in Sources */,
 				24B608711E179A52002282A3 /* NSString+MD5.m in Sources */,
 				24B607A41E10FFAE002282A3 /* ChooseStoreView.m in Sources */,
-				1D1D153B1E1B5318000236EB /* GoodsViewController.m in Sources */,
 				24B608701E179A52002282A3 /* ZFCirque.m in Sources */,
 				049286E31E1B87D700DD3270 /* HistoryRecordViewController.m in Sources */,
 				049286F91E1B889A00DD3270 /* TypeModel.m in Sources */,
@@ -966,8 +956,10 @@
 				24B607A81E11030C002282A3 /* ChooseTableCell.m in Sources */,
 				24B6087C1E179A52002282A3 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				245083E11E0B9A45006DE0D4 /* LoginControl.m in Sources */,
+				24447CE71E1CCBAA00CDAECD /* GoodsViewController.m in Sources */,
 				24B608891E179A52002282A3 /* ViewController.m in Sources */,
 				24B6087E1E179A52002282A3 /* ViewController+MASAdditions.m in Sources */,
+				24447CE51E1CCBAA00CDAECD /* Date.m in Sources */,
 				24B608821E179A52002282A3 /* MZPieChartSet.m in Sources */,
 				0492870B1E1B895B00DD3270 /* OrderTableViewCell.m in Sources */,
 				0492870A1E1B895B00DD3270 /* OrderSectionHeaderView.m in Sources */,
@@ -981,42 +973,34 @@
 				24B607C81E12884B002282A3 /* PieChartView.m in Sources */,
 				24B608741E179A52002282A3 /* LogCategory.m in Sources */,
 				245084491E0BC6D6006DE0D4 /* ShopModel.m in Sources */,
+				24447CE91E1CCBAA00CDAECD /* MZBarChartView.m in Sources */,
 				049287171E1B999900DD3270 /* MemberViewController.m in Sources */,
 				24B607D31E13A828002282A3 /* MyPieChartView.m in Sources */,
 				24B6086E1E179A52002282A3 /* MZLineView.m in Sources */,
-<<<<<<< HEAD
 				24447CD51E1C9C8200CDAECD /* PullChooseView.m in Sources */,
-				2450848B1E0D3F90006DE0D4 /* GoodsViewController.m in Sources */,
-=======
->>>>>>> origin/master
 				24B608781E179A52002282A3 /* MASLayoutConstraint.m in Sources */,
 				049286E21E1B87D700DD3270 /* HistoryDetailViewController.m in Sources */,
 				24B608161E1793B5002282A3 /* DailyDetailViewController.m in Sources */,
-				1D1D15421E1BFE00000236EB /* MoreView.m in Sources */,
 				24B608751E179A52002282A3 /* MASCompositeConstraint.m in Sources */,
 				24B6087B1E179A52002282A3 /* NSArray+MASAdditions.m in Sources */,
 				049286F01E1B880100DD3270 /* HistoryTableViewCell.m in Sources */,
 				049286E91E1B87F000DD3270 /* HistoryDetailModel.m in Sources */,
 				245083F11E0B9EA0006DE0D4 /* DrawerCell.m in Sources */,
 				24B608761E179A52002282A3 /* MASConstraint.m in Sources */,
-				1D1D153C1E1B5318000236EB /* GoodsSubViewController.m in Sources */,
 				24B6081D1E1793F9002282A3 /* TimeViewController.m in Sources */,
+				24447CE81E1CCBAA00CDAECD /* MoreView.m in Sources */,
 				24B607CC1E128B78002282A3 /* ChartTableViewCell.m in Sources */,
 				2450844A1E0BC6D6006DE0D4 /* UserInstance.m in Sources */,
 				24B608171E1793B5002282A3 /* DailyViewController.m in Sources */,
 				24B607DF1E13DDA7002282A3 /* DailyTimeControll.m in Sources */,
 				24B608791E179A52002282A3 /* MASViewAttribute.m in Sources */,
 				245083EB1E0B9E53006DE0D4 /* DrawerViewController.m in Sources */,
-				1D1D153F1E1BF84D000236EB /* Date.m in Sources */,
+				24447CE61E1CCBAA00CDAECD /* GoodsSubViewController.m in Sources */,
 				0439F7DD1E0CC16A009309E3 /* HomeTableViewCell.m in Sources */,
 				24447CD81E1C9CB700CDAECD /* OnlyChooseDate.m in Sources */,
 				24B6086F1E179A52002282A3 /* UIView+Addtions.m in Sources */,
 				24B608841E179A52002282A3 /* UIView+Addtions.m in Sources */,
-<<<<<<< Updated upstream
-				1D3D0F311E14EDC900B7EB24 /* ProductAnalysisNetwork.m in Sources */,
 				049287021E1B890000DD3270 /* TypeTableViewCell.m in Sources */,
-=======
->>>>>>> Stashed changes
 				24B608721E179A52002282A3 /* NSString+Width.m in Sources */,
 				049287051E1B892F00DD3270 /* GoodsTableViewCell.m in Sources */,
 				24B6081C1E1793F9002282A3 /* TimeIncomeDetailViewController.m in Sources */,
@@ -1029,7 +1013,6 @@
 				245083DE1E0B9A1C006DE0D4 /* LoginViewController.m in Sources */,
 				24B608731E179A52002282A3 /* UIColor+Hex.m in Sources */,
 				245084881E0D3F5D006DE0D4 /* HistoryTableViewController.m in Sources */,
-				1DA1AA041E10F9D0008C807B /* MZBarChartView.m in Sources */,
 				049286EA1E1B87F000DD3270 /* HistoryOrderModel.m in Sources */,
 				049286F81E1B889A00DD3270 /* GoodsModel.m in Sources */,
 			);

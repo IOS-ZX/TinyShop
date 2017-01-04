@@ -96,17 +96,6 @@
     return shopId;
 }
 
-
-
-//再次封装获取店铺
-- (NSArray *)getNameArrayByShopIdArr:(NSArray *)shopIdArr
-{
-    NSMutableArray *result = [NSMutableArray array];
-    [shopIdArr enumerateObjectsUsingBlock:^(NSString *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [result addObject:[self getNameBySHopId:obj]];
-    }];
-    return result;
-}
 - (NSString *)getNameBySHopId:(NSString *)shopId{
     __block NSString *name;
     if ([shopId isEqualToString:self.userShop.shop_id]) {

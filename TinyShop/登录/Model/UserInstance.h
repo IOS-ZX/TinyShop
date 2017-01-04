@@ -32,8 +32,6 @@
 - (NSArray *)allShop;
 
 - (NSString *)getShopIdByShopName:(NSString *)name;
-- (NSArray *)getNameArrayByShopIdArr:(NSArray *)shopIdArr;
-
 
 - (NSString *)getNameBySHopId:(NSString *)shopId;
 
