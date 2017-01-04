@@ -10,8 +10,9 @@
 #import "DailyTimeControll.h"
 #import "MZLineView.h"
 #import "DailyDetailViewController.h"
+#import "OnlyChooseDate.h"
 
-@interface DailyViewController ()<PullChooseViewDelegate,ChooseStoreViewDelgate>
+@interface DailyViewController ()<PullChooseViewDelegate,ChooseStoreViewDelgate,OnlyChooseDateDelegate>
 
 /** 折线图 **/
 @property(nonatomic,strong)MZLineView *lineView;
@@ -33,12 +34,18 @@
 @property(nonatomic,strong)NSString *shopId;
 /** title **/
 @property(nonatomic,strong)NSString *titleText;
+/** date **/
+@property(nonatomic,strong)OnlyChooseDate *onlyChooseDate;
 
 @end
 
 @implementation DailyViewController
 
 #pragma mark - 回调
+
+- (void)chooseDatesOnlyForDate:(NSString *)date{
+    NSLog(@"date:%@",date);
+}
 
 // 下拉菜单选择回调
 - (void)pullChooseViewItemClick:(NSInteger)index{
@@ -48,6 +55,7 @@
         self.shopView.hidden = !self.shopView.hidden;
     }else if (index == 1){
         self.chooseDate.hidden = NO;
+//        self.onlyChooseDate.hidden = NO;
     }
 }
 
@@ -351,6 +359,16 @@
         [window addSubview:_chooseDate];
     }
     return _chooseDate;
+}
+
+- (OnlyChooseDate *)onlyChooseDate{
+    if (!_onlyChooseDate) {
+        _onlyChooseDate = [OnlyChooseDate new];
+        _onlyChooseDate.delegate = self;
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        [window addSubview:_onlyChooseDate];
+    }
+    return _onlyChooseDate;
 }
 
 @end
