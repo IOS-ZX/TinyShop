@@ -9,8 +9,7 @@
 #import "PullChooseView.h"
 
 @interface PullChooseView()<UITableViewDelegate,UITableViewDataSource>
-/** items **/
-@property(nonatomic,strong)NSArray *items;
+
 /** contentView **/
 @property(nonatomic,strong)UIImageView *contentView;
 /** maxWidth **/
@@ -122,6 +121,10 @@
     if (!CGRectContainsPoint(_contentView.frame, point)) {
         [self hiddenView];
     }
+}
+
+- (void)setItems:(NSArray *)items{
+    _items = items;
 }
 
 #pragma mark - 懒加载

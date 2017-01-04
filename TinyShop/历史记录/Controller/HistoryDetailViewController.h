@@ -12,5 +12,6 @@
 @interface HistoryDetailViewController : UIViewController
 
 @property (nonatomic,strong) HistoryOrderModel *historyOrder;
+@property (nonatomic,strong) NSString *shopName;
 
 @end

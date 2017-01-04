@@ -14,6 +14,7 @@
 @property (nonatomic,strong) NSString *date;
 @property (nonatomic,strong) NSString *shop_id;
 @property (nonatomic,strong) NSString *dinner;
+@property (nonatomic,strong) NSString *shop_name;
 @property (nonatomic,strong) HistoryDetailModel *model;
 
 @end

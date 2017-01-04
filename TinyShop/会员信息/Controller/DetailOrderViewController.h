@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "VipModel.h"
-#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
 
 @interface DetailOrderViewController : UIViewController
 

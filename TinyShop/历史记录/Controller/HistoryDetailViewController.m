@@ -30,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = self.shopName;
     self.view.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
     [self loadDataSource];
     self.tableView.delegate = self;
@@ -41,7 +42,7 @@
 - (void)loadDataSource{
     _dataSource = [NSMutableArray array];
 
-    [NetTool checkRequest:@"historyTypeAction" loadingMessage:@"加载中" parameter:@{@"shop_id":self.historyOrder.shop_id ,@"time":self.historyOrder.date} success:^(NSDictionary *result) {
+    [NetTool checkRequest:@"historyTypeAction" loadingMessage:@"加载中" parameter:@{@"body":@{@"shop_id":self.historyOrder.shop_id ,@"time":self.historyOrder.date}} success:^(NSDictionary *result) {
         
         NSDictionary *tangshi = [result[@"body"] valueForKey:@"tangshi"];
         HistoryDetailModel *model_tangshi = [HistoryDetailModel mj_objectWithKeyValues:tangshi];
@@ -53,6 +54,10 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
+        NSLog(@"食堂%@",tangshi);
+        NSLog(@"外卖%@",waimai);
+        NSLog(@"shop_id%@",self.historyOrder.shop_id);
+        NSLog(@"数组的长度%ld",_dataSource.count);
            
     } error:^(NSError *error) {
         [MBProgressHUD showError:@"服务器开小差了"];
@@ -111,6 +116,11 @@
         cell.typeIcon.image = [UIImage imageNamed:@"外卖图标"];
         cell.typeText.text = @"外卖";
     }
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    UIView* backView = [[UIView alloc]initWithFrame:cell.bounds];
+    backView.backgroundColor = [UIColor clearColor];
+    cell.selectedBackgroundView = backView;
     return cell;
 }
 
@@ -119,6 +129,7 @@
     HistoryRecordViewController *record = [[HistoryRecordViewController alloc]init];
     record.date = self.historyOrder.date;
     record.shop_id = self.historyOrder.shop_id;
+    record.shop_name = self.shopName;
     record.model = model;
     if (indexPath.section == 0) {
         record.dinner = @"0,2,5";

@@ -12,20 +12,41 @@
 #import "DetailOrderViewController.h"
 
 @interface MemberViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchResultsUpdating,
-UISearchControllerDelegate,UISearchBarDelegate>
+UISearchControllerDelegate,UISearchBarDelegate,PullChooseViewDelegate>
 
+/** 选择菜单 **/
+@property (nonatomic,strong) PullChooseView *chooseView;
+@property (nonatomic,strong) NSMutableArray *allShopName;
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *dataSource;
 @property (nonatomic,strong) UISearchController *searchController;
 @property (nonatomic,strong) NSMutableArray *searchArray;
+@property (nonatomic,strong) NSString *shopId;
+@property (nonatomic,strong) NSString *pageTitle;
 
 @end
 
 @implementation MemberViewController
 
+- (void)pullChooseViewItemClick:(NSInteger)index{
+    self.shopId = [[UserInstance sharedUserInstance]getShopIdByShopName:_allShopName[index]];
+    self.pageTitle = [[UserInstance sharedUserInstance] getALLShopNames][index];
+    self.navigationItem.title = self.pageTitle;
+    [self loadDataSource];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    UIBarButtonItem *shop = [[UIBarButtonItem alloc]initWithTitle:@"店铺" style:UIBarButtonItemStyleDone target:self action:@selector(chooseMore:)];
+    self.navigationItem.rightBarButtonItem = shop;
+    self.navigationItem.title = [[UserInstance sharedUserInstance] getALLShopNames][0];
+    _allShopName = [NSMutableArray array];
+    _allShopName = [[UserInstance sharedUserInstance] getALLShopNames];
+}
+
 -(UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H) style:UITableViewStylePlain];
         _tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
         //_tableView.tableFooterView = [UIView new];
     }
@@ -40,7 +61,7 @@ UISearchControllerDelegate,UISearchBarDelegate>
         _searchController.searchBar.frame = CGRectMake(_searchController.searchBar.frame.origin.x, _searchController.searchBar.frame.origin.y, _searchController.searchBar.frame.size.width, 44.0);
         _searchController.searchBar.placeholder = @"输入会员号码";
         //_searchController.searchBar.backgroundImage = [UIImage imageNamed:@"搜索框"];
-        [_searchController.searchBar setBackgroundColor:[UIColor colorWithRed:248/255.0 green:82/255.0 blue:61/255.0 alpha:1]];
+        [_searchController.searchBar setBarTintColor:[UIColor colorWithRed:248/255.0 green:82/255.0 blue:61/255.0 alpha:1]];
         //设置输入框的背景色
         [_searchController.searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"搜索框"] forState:UIControlStateNormal];
         //设置字体颜色/大小，和圆角边框
@@ -52,6 +73,7 @@ UISearchControllerDelegate,UISearchBarDelegate>
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.shopId= [UserInstance sharedUserInstance].mgrShopId;
     self.view.backgroundColor = [UIColor whiteColor];
     [self loadDataSource];
     self.tableView.delegate = self;
@@ -63,8 +85,7 @@ UISearchControllerDelegate,UISearchBarDelegate>
 
 - (void)loadDataSource{
     
-    //[NetTool requestWithSuffixURL:VIP_LIST_URL loadingMsg:@"加载中" params:@{@"body":@{@"shop_id":[UserInstance sharedUserInstance].mgrShopId,@"vip_mobile":@"",@"limit":@"0,10"}} success:^(NSDictionary *result) {
-      [NetTool checkRequest:@"vipListAction" loadingMessage:@"加载中" parameter:@{@"body":@{@"shop_id":[UserInstance sharedUserInstance].mgrShopId,@"vip_mobile":@"",@"limit":@"0,10"}} success:^(NSDictionary *result) {
+      [NetTool checkRequest:@"vipListAction" loadingMessage:@"加载中" parameter:@{@"body":@{@"shop_id":self.shopId,@"vip_mobile":@"",@"limit":@"0,10"}} success:^(NSDictionary *result) {
         _dataSource = [NSMutableArray new];
         for (NSDictionary *dic in result[@"body"]) {
             VipModel *VIP = [VipModel mj_objectWithKeyValues:dic];
@@ -129,6 +150,11 @@ UISearchControllerDelegate,UISearchBarDelegate>
         cell.vip_nickname.text = vip.vip_nickname;
         cell.vip_mobile.text = vip.vip_mobile;
         cell.uvgrade_money.text = [NSString stringWithFormat:@"预存款:%@元",vip.uvgrade_money];
+    
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        UIView* backView = [[UIView alloc]initWithFrame:cell.bounds];
+        backView.backgroundColor = [UIColor clearColor];
+        cell.selectedBackgroundView = backView;
     return cell;
 }
 
@@ -144,25 +170,19 @@ UISearchControllerDelegate,UISearchBarDelegate>
     [self.navigationController pushViewController:detailOrderPage animated:YES];
 }
 
-- (void)createSearchBar{
-   UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake((self.view.frame.size.width-300)/2, 100, 300, 40)];
-   searchBar.delegate = self;
-    searchBar.placeholder = [NSString stringWithCString:"搜索" encoding:NSUTF8StringEncoding];
-    //设置searchBar的背景色
-    //[searchBar setBackgroundImage:[UIImage imageNamed:@"搜索框"]];
-    [searchBar setBackgroundColor:[UIColor colorWithRed:248/255.0 green:82/255.0 blue:61/255.0 alpha:1]];
-    //设置输入框的背景色
-    [searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"搜索框"] forState:UIControlStateNormal];
-    //设置字体颜色/大小，和圆角边框
-    UITextField *searchField = [searchBar valueForKey:@"_searchField"];
-    searchField.textColor = [UIColor grayColor];
-    [searchField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
-    searchField.font = [UIFont systemFontOfSize:17];
-    searchField.layer.cornerRadius = searchBar.frame.size.height/2;
-    searchField.layer.masksToBounds = YES;
-    [searchBar setContentMode:UIViewContentModeLeft];
-    [self.view addSubview:searchBar];
-    
+- (void)chooseMore:(UIBarButtonItem*)sender{
+    self.chooseView.centerPoint = CGPointMake(self.view.width - 20 - sender.width / 2, 0);
+    [self.chooseView showView];
+}
+
+- (PullChooseView *)chooseView{
+    if (!_chooseView) {
+        _chooseView = [[PullChooseView alloc]initWithItems:_allShopName];
+        _chooseView.delegate = self;
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        [window addSubview:_chooseView];
+    }
+    return _chooseView;
 }
 
 @end

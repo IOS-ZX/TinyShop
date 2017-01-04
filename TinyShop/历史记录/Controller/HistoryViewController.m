@@ -10,8 +10,12 @@
 #import "HistoryOrderModel.h"
 #import "HistoryTableViewCell.h"
 #import "HistoryDetailViewController.h"
+#import "OnlyChooseDate.h"
 
-@interface HistoryViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface HistoryViewController ()<UITableViewDelegate,UITableViewDataSource,OnlyChooseDateDelegate>
+
+@property (nonatomic,strong) OnlyChooseDate *pickDate;
+@property (nonatomic,strong) NSString *lastPick;
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *dataSource;
 @property (nonatomic,strong) NSMutableArray *headerData;
@@ -24,13 +28,22 @@
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(SCREEN_W*0.05, 0, SCREEN_W*0.9, SCREEN_H) style:UITableViewStyleGrouped];
         _tableView.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
+        _tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     }
     return _tableView;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    UIBarButtonItem *pickDate = [[UIBarButtonItem alloc]initWithTitle:@"日期" style:UIBarButtonItemStyleDone target:self action:@selector(createPicker:)];
+    self.navigationItem.rightBarButtonItem = pickDate;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.lastPick = @"2016-12-31";
     [self loadDataSource];
+    self.navigationItem.title = @"历史记录";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.view.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
@@ -40,7 +53,7 @@
 
 - (void)loadDataSource{
     _dataSource = [NSMutableArray array];
-    [NetTool checkRequest:@"historyListAction" loadingMessage:@"加载中" parameter:@{@"body":@{@"shop_id":[[UserInstance sharedUserInstance] allShopIDs] ,@"s_time":@"2016-12-24",@"e_time":@"2016-12-28"}} success:^(NSDictionary *result) {
+    [NetTool checkRequest:@"historyListAction" loadingMessage:@"加载中" parameter:@{@"body":@{@"shop_id":[[UserInstance sharedUserInstance] allShopIDs] ,@"s_time":@"2016-12-28",@"e_time":self.lastPick}} success:^(NSDictionary *result) {
         
         _headerData = [NSMutableArray arrayWithArray:result[@"body"]];
         [result[@"body"] enumerateObjectsUsingBlock:^(NSDictionary *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -86,6 +99,10 @@
     NSString *month = [_headerData[section][@"date"] substringToIndex:7];
     UIImageView *headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_W*0.05, 5, SCREEN_W*0.9, 50)];
     headerImageView.image = [UIImage imageNamed:@"半圆角背景图"];
+    
+    UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(0, 5, 30, 50)];
+    icon.contentMode = UIViewContentModeTop;
+    icon.image = [UIImage imageNamed:@"订单记录图标"];
     
     UIImageView *calendar = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_W*0.1, 5, SCREEN_W*0.225, 40)];
     calendar.contentMode = UIViewContentModeCenter;
@@ -133,6 +150,7 @@
     week.font = [UIFont systemFontOfSize:12];
     week.textColor = [UIColor colorWithRed:248/255.0 green:82/255.0 blue:61/255.0 alpha:1];
     
+    [headerImageView addSubview:icon];
     [headerImageView addSubview:calendar];
     [headerImageView addSubview:calendarLabel];
     [headerImageView addSubview:dateDay];
@@ -158,6 +176,11 @@
     cell.sum_creditcard_money.text = [NSString stringWithFormat:@"刷卡:%@",model.sum_creditcard_money];
     cell.sum_use_balance.text = [NSString stringWithFormat:@"预付款:%@",model.sum_use_balance];
     cell.sum_aBulk.text = [NSString stringWithFormat:@"代金券:%@",model.sum_aBulk];
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    UIView* backView = [[UIView alloc]initWithFrame:cell.bounds];
+    backView.backgroundColor = [UIColor clearColor];
+    cell.selectedBackgroundView = backView;
     return cell;
 }
 
@@ -166,7 +189,28 @@
     HistoryOrderModel *model = _dataSource[indexPath.section][indexPath.row];
     HistoryDetailViewController *historyDetail = [[HistoryDetailViewController alloc]init];
     historyDetail.historyOrder = model;
+    historyDetail.shopName = [[UserInstance sharedUserInstance] getNameBySHopId:model.shop_id];
     [self.navigationController pushViewController:historyDetail animated:YES];
     
 }
+
+-(OnlyChooseDate *)pickDate{
+    if (!_pickDate) {
+        _pickDate = [[OnlyChooseDate alloc]init];
+        _pickDate.delegate = self;
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        [window addSubview:_pickDate];
+    }
+    return _pickDate;
+}
+
+- (void)createPicker:(UIBarButtonItem *)sender{
+    self.pickDate.hidden = NO;
+}
+
+- (void)chooseDatesOnlyForDate:(NSString *)date{
+    _lastPick = date;
+    [self loadDataSource];
+}
+
 @end

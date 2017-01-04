@@ -48,6 +48,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = self.shop_name;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self loadDataSource];

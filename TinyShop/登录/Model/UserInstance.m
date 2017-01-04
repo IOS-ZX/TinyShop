@@ -111,4 +111,17 @@
     return name;
 }
 
+- (NSMutableArray *)getALLShopNames{
+    __block NSMutableArray *saveNames;
+    saveNames = [NSMutableArray array];
+    [saveNames addObject:self.userShop.shop_name];
+    NSLog(@"%@",saveNames);
+    [self.userShop.subs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        ShopModel *model=(ShopModel *)obj;
+            [saveNames addObject:[model valueForKey:@"shop_name"]];
+            //*stop = YES;
+    }];
+    return saveNames;
+}
+
 @end

@@ -32,7 +32,7 @@
 
 -(UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(SCREENWIDTH*0.05, 240, SCREENWIDTH*0.9, SCREENHEIGHT) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(SCREEN_W*0.05, 240, SCREEN_W*0.9, SCREEN_H) style:UITableViewStyleGrouped];
         _tableView.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
         //注册cell
         [_tableView registerClass:[TypeTableViewCell class] forCellReuseIdentifier:@"TypeTableViewCell"];
@@ -40,16 +40,21 @@
         [_tableView registerClass:[OrderSectionHeaderView class] forHeaderFooterViewReuseIdentifier:@"OrderSectionHeaderView"];
         //section header 高度
         _tableView.sectionHeaderHeight = 100;
-        UIImageView *headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREENWIDTH*0.05, 5, SCREENWIDTH*0.9, 50)];
+        UIImageView *headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_W*0.05, 5, SCREEN_W*0.9, 50)];
         headerImageView.image = [UIImage imageNamed:@"半圆角背景图"];
         
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(SCREENWIDTH*0.05, 5, SCREENWIDTH*0.9, 50)];
+        UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 50)];
+        icon.contentMode = UIViewContentModeTop;
+        icon.image = [UIImage imageNamed:@"订单记录图标"];
+        
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_W*0.05, 5, SCREEN_W*0.9, 50)];
         label.text = @"订单消费记录";
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = [UIColor lightGrayColor];
         label.font = [UIFont systemFontOfSize:16];
         
         [headerImageView addSubview:label];
+        [headerImageView addSubview:icon];
         _tableView.tableHeaderView = headerImageView;
     }
     return _tableView;
@@ -57,6 +62,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"会员信息";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self loadDataSource];
@@ -67,16 +73,16 @@
 }
 
 - (void)loadUI{
-    _imageView1 = [[UIImageView alloc]initWithFrame:CGRectMake(SCREENWIDTH*0.05, 84, 50, 70)];
+    _imageView1 = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_W*0.05, 84, 30, 70)];
     _imageView1.image = [UIImage imageNamed:@"会员信息图标"];
     _imageView1.contentMode = UIViewContentModeTop;
-    _back = [[UIImageView alloc]initWithFrame:CGRectMake(SCREENWIDTH*0.05, 84, SCREENWIDTH*0.9, 70)];
+    _back = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_W*0.05, 84, SCREEN_W*0.9, 70)];
     _back.image = [UIImage imageNamed:@"半圆角背景图"];
     _back.contentMode = UIViewContentModeScaleToFill;
     
-    _vip_nickname = [[UILabel alloc]initWithFrame:CGRectMake((SCREENWIDTH*0.05)+60, 84, SCREENWIDTH*0.4, 35)];
-    _vip_mobile = [[UILabel alloc]initWithFrame:CGRectMake((SCREENWIDTH*0.05)+60, 109, SCREENWIDTH*0.4, 35)];
-    _sigd_discount = [[UILabel alloc]initWithFrame:CGRectMake(SCREENWIDTH*0.6, 84, SCREENWIDTH*0.4, 35)];
+    _vip_nickname = [[UILabel alloc]initWithFrame:CGRectMake((SCREEN_W*0.05)+60, 84, SCREEN_W*0.4, 35)];
+    _vip_mobile = [[UILabel alloc]initWithFrame:CGRectMake((SCREEN_W*0.05)+60, 109, SCREEN_W*0.4, 35)];
+    _sigd_discount = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_W*0.6, 84, SCREEN_W*0.4, 35)];
     _sigd_discount.textAlignment = NSTextAlignmentCenter;
     if ([self.vipInfo.userSex integerValue] == 0) {
         _vip_nickname.textColor = [UIColor colorWithRed:250/255.0 green:99/255.0 blue:169/255.0 alpha:1];
@@ -93,22 +99,22 @@
     [self.view addSubview:_vip_mobile];
     [self.view addSubview:_sigd_discount];
     
-    _money = [[UIView alloc]initWithFrame:CGRectMake(SCREENWIDTH*0.05, 155, SCREENWIDTH*0.9, 70)];
+    _money = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_W*0.05, 155, SCREEN_W*0.9, 70)];
     _money.backgroundColor = [UIColor whiteColor];
     
-    _account = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, SCREENWIDTH*0.9, 25)];
+    _account = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W*0.9, 25)];
     _account.textColor = [UIColor lightGrayColor];
     _account.font = [UIFont systemFontOfSize:12];
     _account.text = @"账户信息";
     _account.textAlignment = NSTextAlignmentCenter;
     [_money addSubview:_account];
     
-    _uvgrade_money = [[UILabel alloc]initWithFrame:CGRectMake(0, 25, SCREENWIDTH*0.45, 45)];
+    _uvgrade_money = [[UILabel alloc]initWithFrame:CGRectMake(0, 25, SCREEN_W*0.45, 45)];
     _uvgrade_money.textAlignment = NSTextAlignmentCenter;
     _uvgrade_money.font = [UIFont systemFontOfSize:14];
     _uvgrade_money.text = [NSString stringWithFormat:@"预存款: %@",self.vipInfo.uvgrade_money];
     
-    _uvgrade_consume_money = [[UILabel alloc]initWithFrame:CGRectMake(SCREENWIDTH*0.45, 25, SCREENWIDTH*0.45, 45)];
+    _uvgrade_consume_money = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_W*0.45, 25, SCREEN_W*0.45, 45)];
     _uvgrade_consume_money.textAlignment = NSTextAlignmentCenter;
     _uvgrade_consume_money.font = [UIFont systemFontOfSize:14];
     _uvgrade_consume_money.text = [NSString stringWithFormat:@"总消费: %@",self.vipInfo.uvgrade_consume_money];
@@ -118,7 +124,7 @@
 }
 
 - (void)loadDataSource{
-    //[NetTool requestWithSuffixURL:VIP_DETAIL_LIST_URL loadingMsg:@"加载中" params:@{@"body":@{@"shop_id":self.vipInfo.shop_id,@"vip_id":self.vipInfo.vip_base_id,@"limit":@"0,10"}} success:^(NSDictionary *result) {
+    
     [NetTool checkRequest:@"vipOrderAction" loadingMessage:@"加载中" parameter:@{@"body":@{@"shop_id":self.vipInfo.shop_id,@"vip_id":self.vipInfo.vip_base_id,@"limit":@"0,10"}} success:^(NSDictionary *result) {
     
         NSArray *orders = [NSArray arrayWithArray:[result objectForKey:@"body"]];

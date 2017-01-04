@@ -22,6 +22,9 @@
 /** 三角形的颜色 **/
 @property(nonatomic,strong)UIColor    *triangleColor;
 
+/** items **/
+@property(nonatomic,strong)NSArray *items;
+
 /** 代理 **/
 @property(nonatomic,assign)id<PullChooseViewDelegate> delegate;
 

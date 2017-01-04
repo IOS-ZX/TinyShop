@@ -38,4 +38,6 @@
 //get参数
 - (NSString *)getParamsString;
 
+- (NSMutableArray *)getALLShopNames;
+
 @end
