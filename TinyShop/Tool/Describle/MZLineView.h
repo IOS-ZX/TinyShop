@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 typedef NSString *(^TopTitleCallBack)(CGFloat sumValue);
 typedef void(^SelectCallBack)(NSUInteger);
+
 @interface MZLineView : UIView
 
 @property(nonatomic, strong) NSArray *titleStore;

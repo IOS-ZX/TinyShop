@@ -128,21 +128,25 @@
     __block NSMutableArray *branchWay = [NSMutableArray array];
     __block NSMutableArray *branchVip = [NSMutableArray array];
     [branchKeys enumerateObjectsUsingBlock:^(NSString * _Nonnull key, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSMutableDictionary *data = [NSMutableDictionary dictionary];
-        [data setObject:STRING(dic[@"body"][@"real_time"][@"branch"][key]) forKey:@"value"];
-        NSArray *value = [key componentsSeparatedByString:@"_"];
-        if (value.count > 2) {
-            [data setObject:[[UserInstance sharedUserInstance]getNameBySHopId:value[2]] forKey:@"title"];
+        CGFloat values = [dic[@"body"][@"real_time"][@"branch"][key] floatValue];
+        if (values > 0) {
+            NSMutableDictionary *data = [NSMutableDictionary dictionary];
+            [data setObject:STRING(@(values)) forKey:@"value"];
+            NSArray *value = [key componentsSeparatedByString:@"_"];
+            if (value.count > 2) {
+                [data setObject:[[UserInstance sharedUserInstance]getNameBySHopId:value[2]] forKey:@"title"];
+            }
+            [branchValues addObject:data];
+            NSArray *arr = [self periodTime:dic[@"body"][@"real_time"][@"period_time"][key]];
+            [branchDetail addObject:arr];
+            NSDictionary *vipData = dic[@"body"][@"vip"][key];
+            [branchVip addObject:[self makeVipData:vipData]];
+            [branchWay addObject:[self makeWay:dic[@"body"][@"way"][key]]];
         }
-        [branchValues addObject:data];
-        NSArray *arr = [self periodTime:dic[@"body"][@"real_time"][@"period_time"][key]];
-        [branchDetail addObject:arr];
-        NSDictionary *vipData = dic[@"body"][@"vip"][key];
-        [branchVip addObject:[self makeVipData:vipData]];
-        [branchWay addObject:[self makeWay:dic[@"body"][@"way"][key]]];
     }];
     reslut(branchValues,branchDetail,branchWay,branchVip);
 }
+
 
 + (NSArray *)periodTime:(NSDictionary *)dic{
     NSArray *allKey = [dic allKeys];

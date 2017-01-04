@@ -323,6 +323,9 @@
 - (UILabel *)percentLabelByIndex:(NSInteger)index
 {
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 70, 15)];
+    if (!self.percentStore || self.percentStore.count == 0) {
+        return label;
+    }
     NSString *percenTitle = [NSString stringWithFormat:@"%.0f%%",((NSNumber *)self.percentStore[index]).floatValue * 100];
     label.textColor = self.fontColorSet.percentTextColor;
     label.font = self.fontColorSet.percentTextFont;
@@ -373,7 +376,7 @@
 - (CGPathRef)shapLayerPathByIndex:(NSInteger)index
 {
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
-    if (self.startAngleStore == 0) {
+    if (!self.startAngleStore || self.startAngleStore.count == 0) {
         return nil;
     }
     //开始角度

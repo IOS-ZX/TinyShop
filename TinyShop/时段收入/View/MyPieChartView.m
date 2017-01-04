@@ -95,6 +95,9 @@
     MZPieChartDataSet *set = [MZPieChartDataSet new];
     __block NSMutableArray *titles = [NSMutableArray array];
     __block NSMutableArray *values = [NSMutableArray array];
+    if (!self.detailArray || self.detailArray.count <= index) {
+        return;
+    }
     [self.detailArray[index] enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull dic, NSUInteger idx, BOOL * _Nonnull stop) {
         [titles addObject:dic[@"title"]];
         [values addObject:dic[@"value"]];

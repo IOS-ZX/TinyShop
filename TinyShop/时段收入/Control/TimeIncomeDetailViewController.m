@@ -32,6 +32,9 @@
 
 // 请求数据
 - (void)loadDatas{
+    if (!self.time || !self.shopId) {
+        return;
+    }
     __weak typeof(self) weakSelf = self;
     [TimeControll subgraphRequest:^(NSArray *titles, NSArray *values) {
         weakSelf.chartView.detailArray = values;

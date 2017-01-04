@@ -19,6 +19,16 @@
     [self.navigationBar setTintColor:[UIColor redColor]];
     [self.navigationBar setBarTintColor:[UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1]];
     [self.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:FONT(17)]}];
+    
+    [self makeBottomLine];
+}
+
+- (void)makeBottomLine{
+    CALayer *bottomBorder = [CALayer layer];
+    float width = self.navigationController.view.frame.size.width;
+    bottomBorder.frame = CGRectMake(0.0f, 43, width, 1.0f);
+    bottomBorder.backgroundColor = [UIColor redColor].CGColor;
+    [self.navigationController.view.layer addSublayer:bottomBorder];
 }
 
 @end

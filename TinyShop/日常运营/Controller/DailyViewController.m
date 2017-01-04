@@ -116,13 +116,13 @@
     }else if ([months integerValue] > 1){
         months = [NSString stringWithFormat:@"%ld",[months integerValue] - 1];
         NSInteger upMonth = [self.chooseDate getDay:years month:months].count;
-        days = [NSString stringWithFormat:@"%ld",(8 - [days integerValue] + upMonth)];
+        days = [NSString stringWithFormat:@"%ld",([days integerValue] - 8 + upMonth)];
         str = [NSString stringWithFormat:@"%@-%@-%@",years,months,days];
     }else{
         years = [NSString stringWithFormat:@"%ld",[years integerValue] - 1];
         months = [NSString stringWithFormat:@"%ld",[months integerValue] - 1 + 12];
         NSInteger upMonth = [self.chooseDate getDay:years month:months].count;
-        days = [NSString stringWithFormat:@"%ld",(8 - [days integerValue] + upMonth)];
+        days = [NSString stringWithFormat:@"%ld",([days integerValue] - 8 + upMonth)];
         str = [NSString stringWithFormat:@"%@-%@-%@",years,months,days];
     }
     return str;
@@ -161,7 +161,7 @@
             str = [NSString stringWithFormat:@"%@-%@",years,months];
             break;
         case week:
-            str = [NSString stringWithFormat:@"2016,48"];
+            str = [self makeWeek];
             break;
         case day:
             str = [NSString stringWithFormat:@"%@-%@-%@",years,months,days];
@@ -174,6 +174,32 @@
 - (void)chooseMore:(UIBarButtonItem*)sender{
     self.chooseView.centerPoint = CGPointMake(self.view.width - 20 - sender.width / 2, 42);
     [self.chooseView showView];
+}
+
+// 计算周数
+- (NSString *)makeWeek{
+    NSString *week = @"";
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setDateFormat:@"MM"];
+    NSString *month = [formatter stringFromDate:date];
+    [formatter setDateFormat:@"dd"];
+    NSString *day = [formatter stringFromDate:date];
+    [formatter setDateFormat:@"yyyy"];
+    NSString *year = [formatter stringFromDate:date];
+    if ([month integerValue] > 1) {
+        NSInteger sum = 0;
+        for (NSInteger index = 1; index < [month integerValue]; index ++) {
+            sum += [self.chooseDate getDay:year month:[NSString stringWithFormat:@"%ld",index]].count;
+        }
+        day = [NSString stringWithFormat:@"%ld",sum];
+    }
+    if ([day integerValue] % 7 > 0) {
+        week = [NSString stringWithFormat:@"%@,%ld",year,[day integerValue] / 7 + 1];
+    }else{
+        week = [NSString stringWithFormat:@"%@,%ld",year,[day integerValue] / 7];
+    }
+    return week;
 }
 
 // 创建button

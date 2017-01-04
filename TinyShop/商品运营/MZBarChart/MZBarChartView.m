@@ -33,7 +33,7 @@
 @property(nonatomic, strong) NSMutableArray *barStore;
 //隐藏类型下标数组 [@(1),@(0),@(3)]
 @property(nonatomic, strong) NSMutableArray *hiddenTypeIndexStore;
-//隐藏类型字符串数组 [@"私家秘制",@"板栗",@"蛋挞"]
+//隐藏类型字符串数组 [@"玉米",@"板栗",@"蛋挞"]
 @property(nonatomic, strong) NSMutableArray *hiddenTypeStrString;
 //收入高度
 @property(nonatomic, assign) CGFloat incomeHeight;
@@ -162,6 +162,7 @@
     [showType removeObjectsInArray:self.hiddenTypeStrString];
     __weak typeof(self) weakSelf = self;
     [self.incomeStore enumerateObjectsUsingBlock:^(NSDictionary *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        // 返回字典中 对应key数组的value 没有找到key  默认value为0
         NSArray *allValues = [obj objectsForKeys:showType notFoundMarker:@"0"];
         
         __block CGFloat sum = 0;
@@ -180,6 +181,9 @@
 - (CGPoint)pointByIndex:(NSUInteger)idx value:(CGFloat)value
 {
     CGFloat centerX = 1+(self.singleWidth+1)*idx + self.singleWidth *0.5;
+    if (self.maxValue == 0) {
+        return CGPointMake(centerX, self.incomeTopMargin + self.incomeHeight);
+    }
     CGFloat centerY = self.incomeTopMargin + self.incomeHeight*(1 - value/self.maxValue);
     return CGPointMake(centerX, centerY);
     
@@ -211,40 +215,37 @@
 //隐藏或者显示一个类型时，重新刷新界面
 - (void)reStrokePath
 {
-    //重新计算值
+    //1、重新计算值
     [self calculate];
-    //2、改变topLabelText
+    //2、改变toplabel的值
     self.topLabel.text = self.topTitleCallBack(self.sumValue);
-    
-    [self.incomeStore enumerateObjectsUsingBlock:^(NSDictionary  *_Nonnull obj, NSUInteger barIndex, BOOL * _Nonnull stop) {
-        //3、每个柱状图小块的告诉
-        __block CGFloat barIncome = 0;
-        //每个bar所有小块的收入
-        NSArray *allValues = [obj objectsForKeys:self.allTypes notFoundMarker:@"0"];
+    [self.incomeStore enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger barIndex, BOOL * _Nonnull stop) {
         
-        [allValues enumerateObjectsUsingBlock:^(NSString  *_Nonnull value, NSUInteger typeIndex, BOOL * _Nonnull stop) {
-            CGFloat heigth = 0;
-            //如果隐藏下边数组不包含 typeIndex 则显示
+        //3、每一个柱状图小块高度
+        __block CGFloat barIncome = 0;
+        // 每个bar的所有小块的收入
+        NSArray *allValues = [obj objectsForKeys:self.allTypes notFoundMarker:@"0"];
+        [allValues enumerateObjectsUsingBlock:^(NSString * _Nonnull value, NSUInteger typeIndex, BOOL * _Nonnull stop) {
+            CGFloat height = 0;
+            //如果隐藏下标数组不包含 typeIndex 则显示
             if (![self.hiddenTypeIndexStore containsObject:@(typeIndex)]) {
-                heigth = [value floatValue] / self.maxValue * self.incomeHeight;
+                height = [value floatValue] / self.maxValue * self.incomeHeight;
+                if (self.maxValue == 0) {
+                    height = 0;
+                }
                 barIncome += [value floatValue];
             }
             //取出对应的小块，改变高度
             UIView *view = [self.barStore[barIndex] objectAtIndex:typeIndex];
-            
-            //修改约束
             [view mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.height.mas_equalTo(heigth);
-                
+                make.height.mas_equalTo(height);
             }];
-            
         }];
-        //4.改变 收入字符串
+        
+        //4、改变收入字符串
         UILabel *label = self.incomeLabelStore[barIndex];
         NSString *type = [NSString stringWithFormat:@"%@\n%@%@",self.brefixStr,self.floatType,self.suffixStr];
-        
         label.text = [NSString stringWithFormat:type,barIncome];
-        
     }];
 }
 //绘图
@@ -280,34 +281,32 @@
         
         //1. 添加柱状图灰色背景图
         UIView *barGrayView =  [self addBarGrayView:barIndex];
-       
-        //2、添加每个柱状图
+        //2、添加每一个柱状图
         __block CGFloat barIncome = 0;
-        //每个柱状图小块
+        //用来存每一个柱状图的小块
         NSMutableArray *singleBarStore = [NSMutableArray array];
-        
         [self.barStore addObject:singleBarStore];
-        
+        //所有收入
         NSArray *allValues = [obj objectsForKeys:self.allTypes notFoundMarker:@"0"];
-        [allValues enumerateObjectsUsingBlock:^(NSString  *_Nonnull value, NSUInteger typeIndex, BOOL * _Nonnull stop) {
+        [allValues enumerateObjectsUsingBlock:^(NSString * _Nonnull value, NSUInteger typeIndex, BOOL * _Nonnull stop) {
             
             CGFloat height = 0;
-            //隐藏下边数组不包含typeIndex 才显示
+            // 隐藏下标数组不包含 typeIndex 才显示
             if (![self.hiddenTypeIndexStore containsObject:@(typeIndex)]) {
-                height = [value floatValue]/self.maxValue * self.incomeHeight;
+                height = [value floatValue] / self.maxValue * self.incomeHeight;
+                if (self.maxValue == 0) {
+                    height = 0;
+                }
                 barIncome += [value floatValue];
-                
             }
-            //2.1添加每个柱状图的小块
+            //2.1 添加每一个柱状图的小块
             [self addSingleBarWithHeight:height typeIndex:typeIndex barGrayView:barGrayView];
-            
         }];
-        //3、添加收入
+        // 3、添加收入
         [self addincomeLabel:barIncome barGrayView:barGrayView lastSingleBar:singleBarStore.lastObject];
         
-        //4.添加button
+        // 4、添加Button
         [self addButtonByIndex:barIndex];
-        
     }];
 }
 
@@ -329,30 +328,26 @@
                          typeIndex:(NSUInteger)typeIndex
                        barGrayView:(UIView *)barGrayView
 {
+    //每一个柱状图数组
     NSMutableArray *singleBarStore = self.barStore.lastObject;
+    //上一个View
     UIView *lastView = singleBarStore.lastObject;
+    
     UIView *currentView = [UIView new];
     currentView.backgroundColor = self.colorStore[typeIndex];
     [singleBarStore addObject:currentView];
-    
+
     //添加约束
     [barGrayView addSubview:currentView];
-    
     [currentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(barGrayView.width, height));
         make.left.equalTo(barGrayView.mas_left);
-        
-        if (typeIndex == 0) {
-            make.bottom.equalTo(barGrayView.mas_bottom).offset(0);
-        }else
-        {
+        if (!lastView) {
+            make.bottom.equalTo(barGrayView.mas_bottom);
+        }else{
             make.bottom.equalTo(lastView.mas_top);
         }
-        
     }];
-    
-    
-
 }
 
 
@@ -370,23 +365,18 @@
     NSString *type = [NSString stringWithFormat:@"%@\n%@%@",self.brefixStr,self.floatType,self.suffixStr];
     label.text = [NSString stringWithFormat:type,barIncome];
     label.textAlignment = NSTextAlignmentCenter;
+//    label.backgroundColor = [UIColor redColor];
     [self.incomeLabelStore addObject:label];
     
-    [barGrayView addSubview:label];
-    
-    //添加约束
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.size.mas_equalTo(CGSizeMake(self.singleWidth, 35));
-        make.centerX.equalTo(barGrayView.mas_centerX);
-        make.bottom.equalTo(lastSingleBar.mas_top).offset(-10);
-    }];
-//    label.backgroundColor = [UIColor blueColor];
-//    
-//    //裁剪超出barGrayView视图区域之外的
 //    label.layer.masksToBounds = YES;
 //    label.clipsToBounds = YES;
-    
+    // 添加约束
+    [barGrayView addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(barGrayView.mas_centerX);
+        make.size.mas_equalTo(CGSizeMake(self.singleWidth, 35));
+        make.bottom.equalTo(lastSingleBar.mas_top).offset(-10);
+    }];
     
 }
 
@@ -411,25 +401,4 @@
     }
 }
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -360,8 +360,12 @@
 
 - (void)selectDetial
 {
-    if (self.selectCallback) {
-        self.selectCallback(self.selectIndex);
+    if ([self.incomeStore[self.selectIndex] floatValue] > 0) {
+        if (self.selectCallback) {
+            self.selectCallback(self.selectIndex);
+        }
+    }else{
+        [MBProgressHUD showError:@"没有数据"];
     }
     //取消选中
     [self selectpoint:self.pointButtonStore[self.selectIndex]];

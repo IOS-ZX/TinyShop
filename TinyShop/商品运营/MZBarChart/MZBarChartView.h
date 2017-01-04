@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MZLineView.h"
-#import "Masonry.h"
+#import <Masonry.h>
 
 @interface MZBarChartView : UIView
 
@@ -42,7 +42,7 @@
 @property(nonatomic, assign)NSUInteger floatNumber;
 
 //显示所有类型
-//- (void)showAllType;
+- (void)showAllType;
 //显示或者隐藏某些类型
 - (BOOL)hiddenOrShowTyped:(NSUInteger)typeIndex hiddenSign:(BOOL)sign;
 //绘图
