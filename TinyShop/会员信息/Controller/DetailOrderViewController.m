@@ -25,6 +25,7 @@
 @property (nonatomic,strong) UILabel *uvgrade_consume_money;
 @property (nonatomic,strong) NSMutableArray *dataSource;
 @property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,assign) int times;
 
 @end
 
@@ -46,6 +47,11 @@
         UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 50)];
         icon.contentMode = UIViewContentModeTop;
         icon.image = [UIImage imageNamed:@"订单记录图标"];
+        
+        _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            [self loadDataSource];
+            [self.tableView.mj_footer endRefreshing];
+        }];
         
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_W*0.05, 5, SCREEN_W*0.9, 50)];
         label.text = @"订单消费记录";
@@ -125,7 +131,8 @@
 
 - (void)loadDataSource{
     
-    [NetTool checkRequest:@"vipOrderAction" loadingMessage:@"加载中" parameter:@{@"body":@{@"shop_id":self.vipInfo.shop_id,@"vip_id":self.vipInfo.vip_base_id,@"limit":@"0,10"}} success:^(NSDictionary *result) {
+    _times += 10;
+    [NetTool checkRequest:@"vipOrderAction" loadingMessage:@"加载中" parameter:@{@"body":@{@"shop_id":self.vipInfo.shop_id,@"vip_id":self.vipInfo.vip_base_id,@"limit":[NSString stringWithFormat:@"0,%d",_times]}} success:^(NSDictionary *result) {
     
         NSArray *orders = [NSArray arrayWithArray:[result objectForKey:@"body"]];
         NSMutableArray *processOrders = [NSMutableArray array];

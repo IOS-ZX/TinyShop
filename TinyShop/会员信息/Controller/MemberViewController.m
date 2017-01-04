@@ -23,6 +23,7 @@ UISearchControllerDelegate,UISearchBarDelegate,PullChooseViewDelegate>
 @property (nonatomic,strong) NSMutableArray *searchArray;
 @property (nonatomic,strong) NSString *shopId;
 @property (nonatomic,strong) NSString *pageTitle;
+@property (nonatomic,assign) int times;
 
 @end
 
@@ -48,7 +49,14 @@ UISearchControllerDelegate,UISearchBarDelegate,PullChooseViewDelegate>
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H) style:UITableViewStylePlain];
         _tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        //_tableView.tableFooterView = [UIView new];
+        self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [self loadDataSource];
+            [self.tableView.mj_header endRefreshing];
+        }];
+        _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            [self loadDataSource];
+            [self.tableView.mj_footer endRefreshing];
+        }];
     }
     return _tableView;
 }
@@ -85,7 +93,8 @@ UISearchControllerDelegate,UISearchBarDelegate,PullChooseViewDelegate>
 
 - (void)loadDataSource{
     
-      [NetTool checkRequest:@"vipListAction" loadingMessage:@"加载中" parameter:@{@"body":@{@"shop_id":self.shopId,@"vip_mobile":@"",@"limit":@"0,10"}} success:^(NSDictionary *result) {
+      _times += 10;
+      [NetTool checkRequest:@"vipListAction" loadingMessage:@"加载中" parameter:@{@"body":@{@"shop_id":self.shopId,@"vip_mobile":@"",@"limit":[NSString stringWithFormat:@"0,%d",_times]}} success:^(NSDictionary *result) {
         _dataSource = [NSMutableArray new];
         for (NSDictionary *dic in result[@"body"]) {
             VipModel *VIP = [VipModel mj_objectWithKeyValues:dic];
@@ -152,9 +161,7 @@ UISearchControllerDelegate,UISearchBarDelegate,PullChooseViewDelegate>
         cell.uvgrade_money.text = [NSString stringWithFormat:@"预存款:%@元",vip.uvgrade_money];
     
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        UIView* backView = [[UIView alloc]initWithFrame:cell.bounds];
-        backView.backgroundColor = [UIColor clearColor];
-        cell.selectedBackgroundView = backView;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

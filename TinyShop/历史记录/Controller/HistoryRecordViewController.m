@@ -16,6 +16,7 @@
 
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *dataSource;
+@property (nonatomic,assign) int times;
 
 @end
 
@@ -31,8 +32,18 @@
         [_tableView registerClass:[OrderSectionHeaderView class] forHeaderFooterViewReuseIdentifier:@"OrderSectionHeaderView"];
         //section header 高度
         _tableView.sectionHeaderHeight = 100;
+        
+        _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            [self loadDataSource];
+            [self.tableView.mj_footer endRefreshing];
+        }];
+        
         UIImageView *headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREENWIDTH*0.05, 5, SCREENWIDTH*0.9, 50)];
         headerImageView.image = [UIImage imageNamed:@"半圆角背景图"];
+        
+        UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 50)];
+        icon.contentMode = UIViewContentModeTop;
+        icon.image = [UIImage imageNamed:@"订单记录图标"];
         
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(SCREENWIDTH*0.05, 5, SCREENWIDTH*0.9, 50)];
         label.text = @"订单消费记录";
@@ -41,6 +52,7 @@
         label.font = [UIFont systemFontOfSize:16];
         
         [headerImageView addSubview:label];
+        [headerImageView addSubview:icon];
         _tableView.tableHeaderView = headerImageView;
     }
     return _tableView;
@@ -58,8 +70,10 @@
 }
 
 - (void)loadDataSource{
-
-    [NetTool checkRequest:@"historyDetailedAction" loadingMessage:@"加载中" parameter:@{@"body":@{@"shop_id":self.shop_id ,@"time":self.date,@"dinner":self.dinner,@"limit":@"0,10"}} success:^(NSDictionary *result) {
+    
+    _times += 10;
+    NSLog(@"次数为%d",_times);
+    [NetTool checkRequest:@"historyDetailedAction" loadingMessage:@"加载中" parameter:@{@"body":@{@"shop_id":self.shop_id ,@"time":self.date,@"dinner":self.dinner,@"limit":[NSString stringWithFormat:@"0,%d",_times]}} success:^(NSDictionary *result) {
         NSArray *orders = [NSArray arrayWithArray:[result objectForKey:@"body"]];
         NSMutableArray *processOrders = [NSMutableArray array];
         [orders enumerateObjectsUsingBlock:^(NSDictionary*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

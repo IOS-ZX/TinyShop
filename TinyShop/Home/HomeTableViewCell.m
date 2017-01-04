@@ -37,9 +37,9 @@
     _rightImage = [[UIImageView alloc]initWithFrame:CGRectMake(30+SCREEN_W*0.75, 30, 40, 40)];
     _label1.font = [UIFont systemFontOfSize:FONT(20) weight:1];
     _label1.textColor = [UIColor blackColor];
-    _label2.font = [UIFont systemFontOfSize:14];
+    _label2.font = [UIFont systemFontOfSize:FONT(14)];
     _label2.textColor = [UIColor lightGrayColor];
-    _label3.font = [UIFont systemFontOfSize:14];
+    _label3.font = [UIFont systemFontOfSize:FONT(14)];
     _label3.textColor = [UIColor lightGrayColor];
     
     UIView *bottomLine = [[UIView alloc]initWithFrame:CGRectMake(0, 98, SCREEN_W, 2)];

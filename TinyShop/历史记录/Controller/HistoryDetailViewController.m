@@ -23,7 +23,9 @@
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H) style:UITableViewStylePlain];
-        _tableView.backgroundColor = [UIColor whiteColor];
+        _tableView.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
+        [_tableView setTableFooterView:[[UIView alloc]initWithFrame:CGRectZero]];
+        _tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     }
     return _tableView;
 }
@@ -118,9 +120,7 @@
     }
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    UIView* backView = [[UIView alloc]initWithFrame:cell.bounds];
-    backView.backgroundColor = [UIColor clearColor];
-    cell.selectedBackgroundView = backView;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

@@ -53,7 +53,7 @@
 
 - (void)loadDataSource{
     _dataSource = [NSMutableArray array];
-    [NetTool checkRequest:@"historyListAction" loadingMessage:@"加载中" parameter:@{@"body":@{@"shop_id":[[UserInstance sharedUserInstance] allShopIDs] ,@"s_time":@"2016-12-28",@"e_time":self.lastPick}} success:^(NSDictionary *result) {
+    [NetTool checkRequest:@"historyListAction" loadingMessage:@"加载中" parameter:@{@"body":@{@"shop_id":[[UserInstance sharedUserInstance] allShopIDs] ,@"s_time":@"2016-12-23",@"e_time":self.lastPick}} success:^(NSDictionary *result) {
         
         _headerData = [NSMutableArray arrayWithArray:result[@"body"]];
         [result[@"body"] enumerateObjectsUsingBlock:^(NSDictionary *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -100,7 +100,7 @@
     UIImageView *headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_W*0.05, 5, SCREEN_W*0.9, 50)];
     headerImageView.image = [UIImage imageNamed:@"半圆角背景图"];
     
-    UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(0, 5, 30, 50)];
+    UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 50)];
     icon.contentMode = UIViewContentModeTop;
     icon.image = [UIImage imageNamed:@"订单记录图标"];
     
@@ -171,16 +171,14 @@
     cell.sum_people.text = [NSString stringWithFormat:@"总人数:%@",model.sum_people];
     cell.sum_order.text = [NSString stringWithFormat:@"总单数:%@",model.sum_order];
     cell.sum_goods_amount.text = [NSString stringWithFormat:@"总应收:%@",model.sum_goods_amount];
-    cell.sum_discount.text = [NSString stringWithFormat:@"总差额:%@",model.sum_discount];
+    cell.sum_discount.text = [NSString stringWithFormat:@"总差额:%.2f",model.sum_discount.floatValue];
     cell.sum_cash_money.text = [NSString stringWithFormat:@"现金:%@",model.sum_cash_money];
     cell.sum_creditcard_money.text = [NSString stringWithFormat:@"刷卡:%@",model.sum_creditcard_money];
     cell.sum_use_balance.text = [NSString stringWithFormat:@"预付款:%@",model.sum_use_balance];
     cell.sum_aBulk.text = [NSString stringWithFormat:@"代金券:%@",model.sum_aBulk];
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    UIView* backView = [[UIView alloc]initWithFrame:cell.bounds];
-    backView.backgroundColor = [UIColor clearColor];
-    cell.selectedBackgroundView = backView;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

@@ -9,4 +9,5 @@ target 'TinyShop' do
   pod 'AFNetworking'
   pod 'MBProgressHUD'
   pod 'MJExtension'
+  pod 'MJRefresh'
 end
