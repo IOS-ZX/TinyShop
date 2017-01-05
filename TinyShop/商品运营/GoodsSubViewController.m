@@ -70,7 +70,7 @@
 //        //获取店铺名称
 //       NSArray *array = [[UserInstance sharedUserInstance] getNameArrayByShopIdArr:self.shopIDarr];
 //        NSLog(@"array:%@",array);
-//        
+//
 //        NSMutableDictionary *mutableDic = @{@"title":array[0]};
         
     } error:^(NSError *error) {

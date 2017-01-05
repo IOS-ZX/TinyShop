@@ -30,7 +30,7 @@
 }
 
 -(void)loadInterFace{
-    _leftImage = [[UIImageView alloc]initWithFrame:CGRectMake(30, 0, SCREEN_W*0.05, 80)];
+    _leftImage = [[UIImageView alloc]initWithFrame:CGRectMake(30, 10, SCREEN_W*0.05, SCREEN_W * 0.21)];
     _label1 = [[UILabel alloc]initWithFrame:CGRectMake(50+SCREEN_W*0.05, 0, SCREEN_W*0.4, 50)];
     _label2 = [[UILabel alloc]initWithFrame:CGRectMake(50+SCREEN_W*0.05, 50, SCREEN_W*0.4, 50)];
     _label3 = [[UILabel alloc]initWithFrame:CGRectMake(30+SCREEN_W*0.45, 50, SCREEN_W*0.2, 50)];
@@ -51,6 +51,15 @@
     [self.contentView addSubview:_label2];
     [self.contentView addSubview:_label3];
     [self.contentView addSubview:_rightImage];
+    
+//    [_leftImage mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.mas_top).offset(0);
+//        make.right.equalTo(self.mas_right).offset(30);
+//        make.size.mas_equalTo(CGSizeMake(SCREEN_W*0.05, SCREEN_W * 0.21));
+////        make.size.mas_equalTo(CGSizeMake(SCREEN_W*0.05, SCREEN_W * 0.21);
+//        
+//    }];
+    
 }
 
 

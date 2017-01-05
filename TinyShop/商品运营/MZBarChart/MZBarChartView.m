@@ -248,9 +248,31 @@
         label.text = [NSString stringWithFormat:type,barIncome];
     }];
 }
+
+-(void)removeall
+{
+    [self.topLabel removeFromSuperview];
+    [self.scrollview removeFromSuperview];
+    [self.backGrayView removeFromSuperview];
+    self.backGrayView = nil;
+    
+    self.topLabel = nil;
+    self.scrollview = nil;
+//    self.titleLabelStore = nil;
+//    self.incomeStore = nil;
+//    self.incomeLabelStore = nil;
+//
+//    self.buttonStore = nil;
+//    self.barStore = nil;
+//    self.hiddenTypeIndexStore = nil;
+//    self.hiddenTypeStrString = nil;
+    
+}
 //绘图
 - (void)storkePath
 {
+    [self removeall];
+    
     [self calculate];
     [self addSubview:self.topLabel];
     [self addSubview:self.scrollview];

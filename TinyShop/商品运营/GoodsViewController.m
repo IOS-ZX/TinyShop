@@ -273,11 +273,11 @@
        button.tag = BASE_TAG + idx;
        [button setBackgroundImage:[UIImage imageNamed:@"类别框-须自己填色"] forState:UIControlStateNormal];
        //设置字体
-       button.titleLabel.font = FONT(13);
+       button.titleLabel.font = FONT(14);
        
        [button addTarget:self action:@selector(showOrHiddenType:) forControlEvents:UIControlEventTouchUpInside];
        //设置副文本
-       UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 20, 10)];
+       UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W * 0.123, 10)];
        label.center = CGPointMake(button.width/2, button.height/2 +15 );
        label.text = @"统计";
        label.textColor = [UIColor whiteColor];
@@ -320,7 +320,7 @@
     
     self.barChartView.allTypes = self.types;
     self.barChartView.colorStore = self.colors;
-    [self.view addSubview:self.barChartView];
+//    [self.view addSubview:self.barChartView];
     self.barChartView.topTitleCallBack = ^NSString *(CGFloat sumValue){
         return [NSString stringWithFormat:@"总销售额：%.f",sumValue];
     };
@@ -333,6 +333,8 @@
     };
     [self.barChartView storkePath];
 }
+
+
 
 
 #pragma mark -- Color

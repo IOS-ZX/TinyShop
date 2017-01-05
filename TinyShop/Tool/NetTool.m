@@ -52,7 +52,7 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
-    manager.requestSerializer.timeoutInterval = 10.0;
+    manager.requestSerializer.timeoutInterval = 20.0;
     // HTTPS
     //允许无效或非法证书
     manager.securityPolicy.allowInvalidCertificates = YES;
